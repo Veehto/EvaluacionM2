@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* General rules */
+main,
+footer {
+    position: relative;
+    top: 4rem; /* To offset for fixed nav bar. */
+    /* font-family: 'Source Sans 3', sans-serif; */
+}
+
+figure {
+    overflow: hidden;
+}
+  
+figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    font-weight: bold;
+}
+
+h2 {
+    /* font-family: 'Bangers', cursive; */
+    font-size: 2.5rem;
+}
+
+.title {
+    padding-top: 2rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.form {
+    margin: 0 auto;
+}
+
+#location .map {
+    width: 30rem;
+}
+
+/* Nav section */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4rem;
+    z-index: 10;
+    background-color: #4a4a4a;
+    border-bottom: 1px solid seashell;
+    /* font-family: 'Source Sans 3', sans-serif; */
+    padding: 0 1rem;
+}
+
+header .logo {
+    font-size: 1.7rem;
+    text-decoration: none;
+    font-weight: bold;
+    /* font-family: 'Bangers', cursive; */
+    color: white;
+    margin-bottom: .2rem;
+}
+
+header nav ul {
+    display: flex;
+    margin: .5rem 0;
+}
+
+nav li {
+    padding-left: 1.875rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+header .mobile {
+    display: none;
+}
+
+/* Media query for nav section */
+@media only screen and (max-width: 895px) {
+    header .desktop {
+        display: none;
+    }
+
+    header .mobile {
+        display: block;
+        width: 100%;
+    }
+
+    header {
+        padding: .5rem;
+    }
+
+    header .mobile ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    header .mobile li {
+        padding: 0;
+    }
+}
+
+
+/* Main Section */
+#main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/foto_0000000920180613104426.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 46rem;
+}
+
+.welcome-box {
+    /* position: relative; */
+    /* top: 171px; */
+    /* left: 10%; */
+    padding: 0 5rem 2.5rem 5rem;
+    border: solid 1px #979797;
+    border-radius: 10px;
+    background-color: #4a4a4a;
+}
+
+.welcome-box .text {
+    width: 25.625rem;
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: white;
+    text-align: justify;
+}
+
+.welcome-box h1 {
+    text-transform: uppercase;
+    font-size: 3.125rem;
+}
+
+.welcome-box h2 {
+    /* font-family: 'Damion', cursive; */
+    font-size: 2.25rem;
+}
+
+.welcome-box .fron-card p {
+    line-height: .3;
+}
+
+.welcome-box .sign-up {
+    margin-top: 2.7rem;
+}
+
+.welcome-box button {
+    margin-top: .5rem;
+    padding: 1.25rem 7.25rem;
+    font-size: 1.25rem;
+}
+
+/* Media query for Main Section Box, small */
+@media only screen and (max-width: 895px) {
+    #main-section {
+        height: 28rem;
+    }
+    
+    .welcome-box {
+        position: static;
+        background-color: transparent;
+        border: none;
+        width: auto;
+        height: auto;
+    }
+}
+
+/* Media query for Main Section Box, very small */
+@media only screen and (max-width: 600px) {
+    #main-section {
+        height: 20rem;
+    }
+  
+    .welcome-box h1 {
+      font-size: 2.25rem;
+    }
+  
+    .welcome-box h2 {
+      font-size: 2rem;
+    }
+
+    .welcome-box button {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+
+/* Mission and Vision Section */
+/* #mission-vision .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.narrative-container {
+    padding: 1rem 4rem;
+}
+
+.narrative {
+    background-color: #f3f3f3;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+
+/* Services Section */
+#services {
+    padding: 4rem auto;
+    background-color: #f3f3f3;
+}
+
+#services .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 1.5rem 0;
+}
+
+#services figure {
+    flex-shrink: 0;
+    padding: 1.5rem;
+    margin: 1rem 1.25rem;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* #services figure .image-container {
+    height: 300px;
+    width: 500px;
+    margin: 0 auto;
+} */
+
+#services figure img {
+    height: 18rem;
+    width: 20rem;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+#services figure figcaption {
+    padding: 1.3rem 0;
+    font-weight: bold;
+    margin-top: 0.25rem;
+}
+
+#services figure p {
+    text-wrap: wrap;
+    word-wrap: break-word;
+}
+
+#services .services-description {
+    width: 20rem;
+    margin: 0 auto;
+}
+
+/* Media query for Services Section Box, small */
+@media only screen and (max-width: 895px) {
+    #services {
+        padding: 1rem;
+    }
+
+    #services figure {
+        padding: 1rem .2rem;
+        margin: 1rem .5rem;
+    }
+
+    #services figure img {
+        height: 12rem;
+        width: 18rem;
+        margin: 0 auto;
+    }
+    
+    #services figure figcaption {
+        padding: 1rem 0;
+        font-weight: bold;
+    }
+}
+
+/* Media query for Services Section Box, very small */
+@media only screen and (max-width: 600px) {
+    #services {
+      padding: 0;
+    }
+  }
+
+
+/* Testimonials Section */
+#testimonials {
+    padding: 4rem auto;
+    background-color: #f3f3f3;
+}
+
+/* Carousel */
+#testimonials {
+    background-color: #f3f3f3;
+}
+
+#carousel {
+    background-color: grey;
+}
+  
+.testimonial-text {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+.testimonials-image {
+    width: 10%;
+    border-radius: 100%;
+    margin: 20px auto;
+}
+
+.padding-container {
+    padding: 7% 15%;
+}
+
+/* Media query for Testimonials Section Box, small */
+@media only screen and (max-width: 895px) {
+    #testimonials .testimony {
+        font-size: 1.5rem;
+        padding: 0 .5rem;
+        padding-bottom: 3rem;
+        padding-top: 1.5rem;
+    }
+}
+
+/* Media query for Testimonials Section Box, very small */
+@media only screen and (max-width: 600px) {
+    #testimonials .testimony {
+        font-size: 1rem;
+        padding: 0 .5rem;
+        padding-bottom: 3rem;
+        padding-top: 1.5rem;
+    }
+}
+
+
+/* Contact and Copyright Section */
+#contact {
+    font-size: 2rem;
+}
+
+.icons-section-padding {
+    padding: 3rem 5rem;
+}
+
+.icons i {
+    margin: 0 1rem;
+    font-size: 2rem;
+}
+
+.icons a {
+    text-decoration: none;
+    color: black;
+}
+
+#copyright {
+    margin-top: 1rem;
+}
