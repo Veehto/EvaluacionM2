@@ -22,10 +22,12 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 ## Para Abrir el proyecto
 
 ### Clonar Repositorio desde GItHub con CLI
+```
 cd CARPETA_DE_TRABAJO
 git clone link
 cd EvaluaciónM2
 code .
+```
 
 ### Abrir el Proyecto Localmente
 
