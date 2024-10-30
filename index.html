@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-la">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,54 +12,58 @@
 <body>
     <header>
         <a href="./index.html" class="logo">Clínica Misión Real</a>
-        <nav class="desktop">
-            <ul>
-                <li><a href="#mission-vision">Misión</a></li>
-                <li><a href="./medics.html">Equipo</a></li>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="#testimonials">Testimonios</a></li>
-                <li><a href="./contact.html">Contacto</a></li>
+
+        <!-- Navigation Menu -->
+        <nav class="menu-desktop">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="#mission-vision" class="menu__link">Misión</a></li>
+                <li class="menu__item"><a href="./medics.html" class="menu__link">Equipo</a></li>
+                <li class="menu__item"><a href="#services" class="menu__link">Servicios</a></li>
+                <li class="menu__item"><a href="#testimonials" class="menu__link">Testimonios</a></li>
+                <li class="menu__item"><a href="./contact.html" class="menu__link">Contacto</a></li>
             </ul>
         </nav>
         
-        <nav class="mobile">
-            <ul>
-                <li><a href="#mission-vision"><img src="./assets/images/category_white_24dp.svg"></a></li>
-                <li><a href="./medics.html"><img src="./assets/images/people_white_24dp.svg"></a></li>
-                <li><a href="#services"><img src="./assets/images/category_white_24dp.svg"></a></li>
-                <li><a href="#testimonials"><img src="./assets/images/question_answer_white_24dp.svg"></a></li>
-                <li><a href="./contact.html"><img src="./assets/images/email_white_24dp.svg"></a></li>
+        <nav class="menu-mobile">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="#mission-vision" class="menu__link"><img src="./assets/images/category_white_24dp.svg"></a></li>
+                <li class="menu__item"><a href="./medics.html" class="menu__link"><img src="./assets/images/people_white_24dp.svg"></a></li>
+                <li class="menu__item"><a href="#services" class="menu__link"><img src="./assets/images/category_white_24dp.svg"></a></li>
+                <li class="menu__item"><a href="#testimonials" class="menu__link"><img src="./assets/images/question_answer_white_24dp.svg"></a></li>
+                <li class="menu__item"><a href="./contact.html" class="menu__link"><img src="./assets/images/email_white_24dp.svg"></a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="main-section">
-            <div class="welcome-box">
-                <div class="text">
-                    <div class=".front-card title center">
-                        <h2>Clínica</h2>
-                        <h1>Misión Real</h1>
-                        <p>Nuestra misión es con tu salud y comodidad.</p>
+        <!-- Welcome Section -->
+        <section id="welcome">
+            <div class="welcome__box">
+                <div class="welcome__text">
+                    <div class="welcome__slogan">
+                        <h2 class="welcome__subtitle">Clínica</h2>
+                        <h1 class="welcome__title">Misión Real</h1>
+                        <p class="welcome__paragraph">Nuestra misión es con tu salud y comodidad.</p>
                     </div>
     
-                    <div class="sign-up center">
-                        <p><strong>Reserva tu cita con un profesional acá</strong></p>
-                        <button>Reservar Cita</button>
+                    <div class="welcome__sign-up">
+                        <p class="welcome__paragraph"><strong>Reserva tu cita con un profesional acá</strong></p>
+                        <button class="welcome__btn">Reservar Cita</button>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="mission-vision">
-            <div class="title center">
-                <h2>Nuestra Misión y Visión contigo</h2>
+        
+        <!-- Mision & Vision Text Section -->
+        <section id="miss-vis">
+            <div class="title-box">
+                <h2 class="miss-vis__title">Nuestra Misión y Visión contigo</h2>
             </div>
             
-            <div class="narrative-container">
-                <article class="narrative center">
-                    <h3>Misión:</h3>
-                    <p>
+            <div class="miss-vis__box">
+                <article class="miss-vis__description">
+                    <h3 class="miss-vis__title">Misión:</h3>
+                    <p class="miss-vis__paragraph">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Perferendis, ea! Nesciunt rerum quos in delectus. 
                         Porro eligendi aut similique nemo dolores quo exercitationem eveniet, 
@@ -67,9 +71,9 @@
                     </p>
                 </article>
 
-                <article class="narrative center">
-                    <h3>Visión:</h3>
-                    <p>
+                <article class="miss-vis__description">
+                    <h3 class="miss-vis__title">Visión:</h3>
+                    <p class="miss-vis__paragraph">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Perferendis, ea! Nesciunt rerum quos in delectus. 
                         Porro eligendi aut similique nemo dolores quo exercitationem eveniet, 
@@ -79,18 +83,19 @@
             </div>
         </section>
 
+        <!-- Services Section -->
         <section id="services">
-            <div class="title center">
-                <h2>Servicios</h2>
-                <h3>Nuestra clínica ofrece los siguientes servicios:</h3>
+            <div class="title-box">
+                <h2 class="services__title">Servicios</h2>
+                <h3 class="services__subtitle">Nuestra clínica ofrece los siguientes servicios:</h3>
             </div>
 
-            <div class="flex">
-                <figure class="center">
-                    <img src="./assets/images/urgencias.jpg" alt="urgencias">
-                    <figcaption>Urgencias</figcaption>
-                    <div class="services-description">
-                        <p>
+            <div class="services-box">
+                <figure class="card">
+                    <img class="card__image" src="./assets/images/urgencias.jpg" alt="urgencias">
+                    <figcaption class="card__caption">Urgencias</figcaption>
+                    <div class="card__description">
+                        <p class="card__paragraph">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Perferendis, ea! Nesciunt rerum quos in delectus. 
                             Porro eligendi aut similique nemo dolores quo exercitationem eveniet, 
@@ -99,11 +104,11 @@
                     </div>
                 </figure>
     
-                <figure class="center">
-                    <img src="./assets/images/ambulatoria--1200x791.jpg" alt="servicio ambulatorio">
-                    <figcaption>Ambulatorio</figcaption>
-                    <div class="services-description">
-                        <p>
+                <figure class="card">
+                    <img class="card__image" src="./assets/images/ambulatoria--1200x791.jpg" alt="servicio ambulatorio">
+                    <figcaption class="card__caption">Ambulatorio</figcaption>
+                    <div class="card__description">
+                        <p class="card__paragraph">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Perferendis, ea! Nesciunt rerum quos in delectus. 
                             Porro eligendi aut similique nemo dolores quo exercitationem eveniet, 
@@ -112,11 +117,11 @@
                     </div>
                 </figure>
     
-                <figure class="center">
-                    <img src="./assets/images/paleativo.webp" alt="servicios paleativos">
-                    <figcaption>Paliativo</figcaption>
-                    <div class="services-description">
-                        <p>
+                <figure class="card">
+                    <img class="card__image" src="./assets/images/paleativo.webp" alt="servicios paleativos">
+                    <figcaption class="card__caption">Paliativo</figcaption>
+                    <div class="card__description">
+                        <p class="card__paragraph">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Perferendis, ea! Nesciunt rerum quos in delectus. 
                             Porro eligendi aut similique nemo dolores quo exercitationem eveniet, 
@@ -127,29 +132,30 @@
             </div>
         </section>
 
+        <!-- Testimonials Section -->
         <section id="testimonials">
-            <div class="title center">
-                <h2>Testimonios</h2>
-                <h3>Nuestros pacientes nos prefieren y te cuentan porqué:</h3>
+            <div class="title-box">
+                <h2 class="testimonials__title">Testimonios</h2>
+                <h3 class="testimonials__subtitle">Nuestros pacientes nos prefieren y te cuentan porqué:</h3>
             </div>
 
             <div id="carousel" class="carousel slide center" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item padding-container active">
-                        <h4 class="testimonial-text">"Perferendis, ea! Nesciunt rerum quos in delectus"</h4>
-                        <img class="testimonials-image d-block" src="./assets/images/lady-img.jpg" alt="">
+                    <div class="carousel-item active">
+                        <h4 class="testimonials__quote">"Perferendis, ea! Nesciunt rerum quos in delectus"</h4>
+                        <img class="testimonials__image d-block" src="./assets/images/lady-img.jpg" alt="">
                         <em>Nestor Caroca, Gerente de Ventas.</em>
                     </div>
     
-                    <div class="carousel-item padding-container">
-                        <h4 class="testimonial-text">"blanditiis tempore esse cumque, saepe tenetur!"</h4>
-                        <img class="testimonials-image d-block" src="./assets/images/lady2.png" alt="">
+                    <div class="carousel-item">
+                        <h4 class="testimonials__quote">"blanditiis tempore esse cumque, saepe tenetur!"</h4>
+                        <img class="testimonials__image d-block" src="./assets/images/lady2.png" alt="">
                         <em>Carla Miranda, Asistente de vuelo.</em>
                     </div>
     
-                    <div class="carousel-item padding-container">
-                        <h4 class="testimonial-text">"Perferendis, ea! Nesciunt rerum quos in delectus."</h4>
-                        <img class="testimonials-image d-block" src="./assets/images/man.jpg" alt="hombre sonriendo">
+                    <div class="carousel-item">
+                        <h4 class="testimonials__quote">"Perferendis, ea! Nesciunt rerum quos in delectus."</h4>
+                        <img class="testimonials__image d-block" src="./assets/images/man.jpg" alt="hombre sonriendo">
                         <em>Fernanda Ramírez, Abogada.</em>
                     </div>
                 </div>
@@ -168,19 +174,20 @@
     </main>
 
     <footer>
-        <div id="contact" class="center">
-            <h5>contacto@clinicamisionreal.com</h5>
-            <h5>600 765 3000</h5>
+        <!-- Contact & Copyright Section -->
+        <div id="contact">
+            <h5 class="contact__mail">contacto@clinicamisionreal.com</h5>
+            <h5 class="contact__number">600 765 3000</h5>
         </div>
 
-        <div class="icons icons-section-padding center">
-            <a href="https://x.com/?lang=en" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://es-la.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <div class="icons">
+            <a class="icons__link" href="https://x.com/?lang=en" target="_blank"><i class="fa-brands fa-x-twitter icons__item"></i></a>
+            <a class="icons__link" href="https://es-la.facebook.com/" target="_blank"><i class="fa-brands fa-facebook icons__item"></i></a>
+            <a class="icons__link" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram icons__item"></i></a>
         </div>
 
-        <div id="copyright" class="center">
-            <strong><p>© 2024 Clínica Misión Real, Todos Los Derechos Reservados.</p></strong>
+        <div id="copyright">
+            <strong><p class="copyright__paragraph">© 2024 Clínica Misión Real, Todos Los Derechos Reservados.</p></strong>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

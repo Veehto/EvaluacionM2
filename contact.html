@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-la">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,46 +10,50 @@
 <body>
     <header>
         <a href="./index.html" class="logo">Clínica Misión Real</a>
-        <nav class="desktop">
-            <ul>
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./medics.html">Equipo</a></li>
+
+        <!-- Navigation Menu -->
+        <nav class="menu-desktop">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="./index.html" class="menu__link">Inicio</a></li>
+                <li class="menu__item"><a href="./medics.html" class="menu__link">Equipo</a></li>
             </ul>
         </nav>
         
-        <nav class="mobile">
-            <ul>
-                <li><a href="./index.html"><img src="./assets/images/category_white_24dp.svg"></a></li>
-                <li><a href="./medics.html"><img src="./assets/images/people_white_24dp.svg"></a></li>
+        <nav class="menu-mobile">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="./index.html" class="menu__link"><img src="./assets/images/category_white_24dp.svg"></a></li>
+                <li class="menu__item"><a href="./medics.html" class="menu__link"><img src="./assets/images/people_white_24dp.svg"></a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="main-section">
-            <div class="welcome-box">
-                <div class="text">
-                    <div class=".front-card title center">
-                        <h2>Clínica</h2>
-                        <h1>Misión Real</h1>
-                        <p>Nuestra misión es con tu salud y comodidad.</p>
+        <!-- Welcome Section -->
+        <section id="welcome">
+            <div class="welcome__box">
+                <div class="welcome__text">
+                    <div class="welcome__slogan">
+                        <h2 class="welcome__subtitle">Clínica</h2>
+                        <h1 class="welcome__title">Misión Real</h1>
+                        <p class="welcome__paragraph">Nuestra misión es con tu salud y comodidad.</p>
                     </div>
     
-                    <div class="sign-up center">
-                        <p><strong>Reserva tu cita con un profesional acá</strong></p>
-                        <button>Reservar Cita</button>
+                    <div class="welcome__sign-up">
+                        <p class="welcome__paragraph"><strong>Reserva tu cita con un profesional acá</strong></p>
+                        <button class="welcome__btn">Reservar Cita</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="mission-vision">
-            <div class="title center">
+        <!-- Contact Form Section -->
+        <section id="miss-vis">
+            <div class="title-box">
                 <h2>Contacto</h2>
             </div>
             
-            <div class="narrative-container">
-                <article class="narrative center">
+            <div class="miss-vis__box">
+                <article class="miss-vis__description">
                     <form action="./index.html" method="post">
                         <h3>Ingresa tu consulta acá</h3>
                         <br>
@@ -80,8 +84,9 @@
             </div>
         </section>
 
+        <!-- Location Map Section -->
         <section id="location">
-            <div class="narrative center map">
+            <div class="miss-vis__description location__map">
                 <h3>Donde nos encontramos:</h3>
                 <br>
                 <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-70.67501664161684%2C-33.451338660164105%2C-70.66797852516176%2C-33.447466984990854&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=18/-33.449403/-70.671498">Ver más grande</a></small>
@@ -92,19 +97,20 @@
     </main>
 
     <footer>
-        <div id="contact" class="center">
-            <h5>contacto@clinicamisionreal.com</h5>
-            <h5>600 765 3000</h5>
+        <!-- Contact & Copyright Section -->
+        <div id="contact">
+            <h5 class="contact__mail">contacto@clinicamisionreal.com</h5>
+            <h5 class="contact__number">600 765 3000</h5>
         </div>
 
-        <div class="icons icons-section-padding center">
-            <a href="https://x.com/?lang=en" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://es-la.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <div class="icons">
+            <a class="icons__link" href="https://x.com/?lang=en" target="_blank"><i class="fa-brands fa-x-twitter icons__item"></i></a>
+            <a class="icons__link" href="https://es-la.facebook.com/" target="_blank"><i class="fa-brands fa-facebook icons__item"></i></a>
+            <a class="icons__link" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram icons__item"></i></a>
         </div>
 
-        <div id="copyright" class="center">
-            <strong><p>© 2024 Clínica Misión Real, Todos Los Derechos Reservados.</p></strong>
+        <div id="copyright">
+            <strong><p class="copyright__paragraph">© 2024 Clínica Misión Real, Todos Los Derechos Reservados.</p></strong>
         </div>
     </footer>
 </body>
