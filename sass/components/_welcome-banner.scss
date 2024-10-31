@@ -1,4 +1,4 @@
-@use 'abstracs/variables';
+@use '../abstracts/variables' as *;
 
 .welcome {
     display: flex;

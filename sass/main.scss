@@ -1,18 +1,16 @@
-@use 'abstracts/variables';
-
-@use 'vendors/bootstrap';
-
+@use 'base/base';
 @use 'base/reset';
-@use 'base/typography';
-
-@use 'layout/navigation';
-@use 'layout/header';
-@use 'layout/footer';
-@use 'layout/forms';
 
 @use 'components/buttons';
 @use 'components/carousel';
+@use 'components/welcome-banner';
 
-@use 'pages/index';
+@use 'layout/footer';
+@use 'layout/forms';
+@use 'layout/header';
+@use 'layout/location';
+@use 'layout/navigation';
+
 @use 'pages/contact';
+@use 'pages/index';
 @use 'pages/medics';

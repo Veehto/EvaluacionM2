@@ -1,4 +1,4 @@
-@use 'abstracts/variables';
+@use '../abstracts/variables' as *;
 
 .menu {
     background-color: $background-gray;
@@ -23,15 +23,19 @@
             text-decoration: underline;
         }
     }
+
+    &__mobile {
+        display: none;
+    }
 }
 
 /* Media query for nav section */
 @media only screen and (max-width: 895px) {
-    .menu-desktop {
+    .menu__desktop {
         display: none;
     }
 
-    .menu-mobile {
+    .menu__mobile {
         display: block;
         width: 100%;
     }
@@ -40,14 +44,14 @@
         padding: .5rem;
     }
 
-    .menu-mobile .menu__list {
+    .menu__mobile .menu__list {
         display: flex;
         justify-content: space-around;
         align-items: center;
         width: 100%;
     }
 
-    .menu-mobile .menu__item {
+    .menu__mobile .menu__item {
         padding: 0;
     }
 }

@@ -1,0 +1,379 @@
+main,
+footer {
+  position: relative;
+  top: 4rem; /* To offset for fixed nav bar. */
+}
+
+figure {
+  overflow: hidden;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+.title-box {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  font-weight: bold;
+}
+
+#carousel {
+  background-color: grey;
+  text-align: center;
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../assets/images/foto_0000000920180613104426.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 46rem;
+}
+.welcome__box {
+  padding: 0 5rem 2.5rem 5rem;
+  border: solid 1px #979797;
+  border-radius: 10px;
+  background-color: #4a4a4a;
+}
+.welcome__text {
+  width: 25.625rem;
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: white;
+  text-align: justify;
+}
+.welcome__slogan {
+  text-align: center;
+  padding-top: 2rem;
+}
+.welcome__title {
+  text-transform: uppercase;
+  font-size: 3.125rem;
+}
+.welcome__subtitle {
+  font-size: 2.25rem;
+}
+.welcome__paragraph {
+  line-height: 0.3;
+}
+.welcome__sign-up {
+  margin-top: 2.7rem;
+  text-align: center;
+}
+.welcome__btn {
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  padding: 1.25rem 7.25rem;
+  font-size: 1.25rem;
+}
+
+/* Media query for Welcome Box, small */
+@media only screen and (max-width: 895px) {
+  #welcome {
+    height: 28rem;
+  }
+  .welcome__box {
+    position: static;
+    background-color: transparent;
+    border: none;
+    width: auto;
+    height: auto;
+  }
+}
+/* Media query for Welcome Box, very small */
+@media only screen and (max-width: 600px) {
+  #welcome {
+    height: 20rem;
+  }
+  .welcome__title {
+    font-size: 2.25rem;
+  }
+  .welcome__subtitle {
+    font-size: 2rem;
+  }
+  .welcome__btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+.contact {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.icons {
+  padding: 3rem 5rem;
+  text-align: center;
+}
+.icons__item {
+  margin: 0 1rem;
+  font-size: 2rem;
+}
+.icons__link {
+  text-decoration: none;
+  color: black;
+}
+
+.copyright {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.form {
+  background-color: #f5f5f5;
+}
+.form__box {
+  padding: 1rem 4rem;
+}
+.form__inputs {
+  background-color: #f3f3f3;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  z-index: 10;
+  border-bottom: 1px solid #fff5ee;
+  padding: 0 1rem;
+}
+
+.logo {
+  font-size: 1.7rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.2rem;
+}
+
+.location {
+  background-color: #f5f5f5;
+}
+.location__box {
+  background-color: #f3f3f3;
+  margin: 2rem auto;
+  padding: 1rem 4rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.location__map {
+  width: 30rem;
+}
+
+.menu {
+  background-color: #4a4a4a;
+}
+.menu__list {
+  display: flex;
+  margin: 0.5rem 0;
+}
+.menu__item {
+  padding-left: 1.875rem;
+  list-style: none;
+}
+.menu__link {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+}
+.menu__linka:hover {
+  text-decoration: underline;
+}
+.menu__mobile {
+  display: none;
+}
+
+/* Media query for nav section */
+@media only screen and (max-width: 895px) {
+  .menu__desktop {
+    display: none;
+  }
+  .menu__mobile {
+    display: block;
+    width: 100%;
+  }
+  header {
+    padding: 0.5rem;
+  }
+  .menu__mobile .menu__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  .menu__mobile .menu__item {
+    padding: 0;
+  }
+}
+.miss-vis {
+  background-color: #f5f5f5;
+}
+.miss-vis__box {
+  padding: 1rem 4rem;
+}
+.miss-vis__description {
+  background-color: #f3f3f3;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.services {
+  padding: 4rem auto;
+  background-color: #f3f3f3;
+}
+.services__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 1.5rem 0;
+}
+
+.card {
+  flex-shrink: 0;
+  padding: 1.5rem;
+  margin: 1rem 1.25rem;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+.card__image {
+  height: 18rem;
+  width: 20rem;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+.card__caption {
+  padding: 1.3rem 0;
+  font-weight: bold;
+  margin-top: 0.25rem;
+}
+.card__description {
+  width: 20rem;
+  margin: 0 auto;
+}
+.card__paragraph {
+  text-wrap: wrap;
+  word-wrap: break-word;
+}
+
+/* Media query for Services Section Box, small */
+@media only screen and (max-width: 895px) {
+  #services {
+    padding: 1rem;
+  }
+  .card {
+    padding: 1rem 0.2rem;
+    margin: 1rem 0.5rem;
+  }
+  .card__image {
+    height: 12rem;
+    width: 18rem;
+    margin: 0 auto;
+  }
+  .card__caption {
+    padding: 1rem 0;
+    font-weight: bold;
+  }
+}
+/* Media query for Services Section Box, very small */
+@media only screen and (max-width: 600px) {
+  #services {
+    padding: 0;
+  }
+}
+.testimonials {
+  padding: 4rem auto;
+  background-color: #f3f3f3;
+}
+.testimonials__quote {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+.testimonials__image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px auto;
+}
+
+/* Media query for Testimonials Section Box, small */
+@media only screen and (max-width: 895px) {
+  .carousel-item {
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    padding-bottom: 3rem;
+    padding-top: 1.5rem;
+  }
+}
+/* Media query for Testimonials Section Box, very small */
+@media only screen and (max-width: 600px) {
+  .carousel-item {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    padding-bottom: 3rem;
+    padding-top: 1.5rem;
+  }
+}
+.compromise {
+  background-color: #f5f5f5;
+}
+.compromise__box {
+  padding: 1rem 4rem;
+}
+.compromise__description {
+  background-color: #f3f3f3;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.medics {
+  padding: 4rem auto;
+  background-color: #f3f3f3;
+}
+.medics__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 1.5rem 0;
+}
+
+/*# sourceMappingURL=style.css.map */
