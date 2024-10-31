@@ -261,7 +261,7 @@ header .logo {
     background-color: #f3f3f3;
 }
 
-.services-box {
+.services__box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -297,15 +297,17 @@ header .logo {
     margin-top: 0.25rem;
 }
 
+.card__description {
+    width: 20rem;
+    margin: 0 auto;
+}
+
 .card__paragraph {
     text-wrap: wrap;
     word-wrap: break-word;
 }
 
-.card__description {
-    width: 20rem;
-    margin: 0 auto;
-}
+
 
 /* Media query for Services Section Box, small */
 @media only screen and (max-width: 895px) {
@@ -354,7 +356,7 @@ header .logo {
 .carousel-item {
     padding: 7% 15%;
 }
-  
+
 .testimonials__quote {
     font-size: 3rem;
     line-height: 1.5;

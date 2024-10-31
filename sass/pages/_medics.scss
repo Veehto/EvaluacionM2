@@ -1,0 +1,33 @@
+@use 'abstracts/variables';
+
+// REPEATS styles with miss-vis
+.compromise {
+    background-color: $background-white;
+
+    &__box {
+        padding: 1rem 4rem;
+    }
+
+    &__description {
+        background-color: $background-section;
+        margin: 2rem auto;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+    }
+}
+
+// REPEATS styles with services
+.medics {
+    padding: 4rem auto;
+    background-color: $background-section;
+
+    &__box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding: 1.5rem 0;
+    }
+}

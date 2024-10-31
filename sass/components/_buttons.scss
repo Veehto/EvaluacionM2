@@ -1,0 +1,7 @@
+@use 'abstracts/variables';
+
+button {
+    border-radius: 10px;
+    background-color: $background-section;
+    font-weight: bold;
+}

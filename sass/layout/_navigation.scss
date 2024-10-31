@@ -1,0 +1,53 @@
+@use 'abstracts/variables';
+
+.menu {
+    background-color: $background-gray;
+
+    &__list {
+        display: flex;
+        margin: .5rem 0;
+    }
+
+    &__item {
+        padding-left: 1.875rem;
+        list-style: none;
+    }
+
+    &__link {
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: white;
+
+        &a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Media query for nav section */
+@media only screen and (max-width: 895px) {
+    .menu-desktop {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: block;
+        width: 100%;
+    }
+
+    header {
+        padding: .5rem;
+    }
+
+    .menu-mobile .menu__list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu-mobile .menu__item {
+        padding: 0;
+    }
+}

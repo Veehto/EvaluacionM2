@@ -1,0 +1,26 @@
+@use 'abstracts/variables';
+
+.contact {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.icons {
+    padding: 3rem 5rem;
+    text-align: center;
+
+    &__item {
+        margin: 0 1rem;
+        font-size: 2rem;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.copyright {
+    margin-top: 1rem;
+    text-align: center;
+}
