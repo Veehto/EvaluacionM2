@@ -44,7 +44,7 @@ code .
 
 
 ## Estructura del proyecto:
-``
+
 .Evaluación M2/
 ├── assets/
 │   ├── css/
@@ -82,4 +82,3 @@ code .
 ├── index.html
 ├── medics.html
 └── README.md
-``
