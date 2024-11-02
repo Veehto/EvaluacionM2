@@ -44,41 +44,43 @@ code .
 
 
 ## Estructura del proyecto:
+```
+.
+|-- assets/
+|   |-- css/
+|   |   `-- styles.css (vanilla css, antes de aplicar BEM y Sass.)
+|   `-- images/
+|       `-- (todas las imágenes)
+|-- sass/
+|   |-- abstracts/
+|   |   `-- _variables.scss
+|   |-- base/
+|   |   |-- _base.scss
+|   |   |-- _reset.scss
+|   |   `-- _typography.scss
+|   |-- components/
+|   |   |-- _components.scss
+|   |   |-- _carousel.scss
+|   |   `-- _welcome-banner.scss
+|   |-- layout/
+|   |   |-- _footer.scss
+|   |   |-- _forms.scss
+|   |   |-- _header.scss
+|   |   |-- _location.scss
+|   |   `-- _navigation.scss
+|   |-- pages/
+|   |   |-- _contact.scss
+|   |   |-- _index.scss
+|   |   `-- _medics.scss
+|   |-- themes
+|   |-- vendors/
+|   |   `-- _bootstrap.scss
+|   |-- main.scss
+|   |-- style.css
+|   `-- style.css.map
+|-- contact.html
+|-- index.html
+|-- medics.html
+`-- README.md
 
-.Evaluación M2/
-├── assets/
-│   ├── css/
-│   │   └── styles.css (vanilla css, antes de aplicar BEM y Sass.)
-│   └── images/
-│       └── (todas las imágenes.)
-├── sass/
-│   ├── abstracts/
-│   │   └── _variables.scss
-│   ├── base/
-│   │   ├── _base.scss
-│   │   ├── _reset.scss
-│   │   └── _typography.scss
-│   ├── components/
-│   │   ├── _components.scss
-│   │   ├── _carousel.scss
-│   │   └── _welcome-banner.scss
-│   ├── layout/
-│   │   ├── _footer.scss
-│   │   ├── _forms.scss
-│   │   ├── _header.scss
-│   │   ├── _location.scss
-│   │   └── _navigation.scss
-│   ├── pages/
-│   │   ├── _contact.scss
-│   │   ├── _index.scss
-│   │   └── _medics.scss
-│   ├── themes/ (vacía)
-│   ├── vendors/
-│   │   └── _bootstrap.scss
-│   ├── main.scss
-│   ├── style.css
-│   └── style.css.map
-├── contact.html
-├── index.html
-├── medics.html
-└── README.md
+```
