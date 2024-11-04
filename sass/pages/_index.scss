@@ -1,15 +1,15 @@
-@use '../abstracts/variables' as *;
+@use '../abstracts/variables' as vars;
 
 // Mission & Vision Section
 .miss-vis {
-    background-color: $background-white;
+    background-color: vars.$background-white;
 
     &__box {
         padding: 1rem 4rem;
     }
 
     &__description {
-        background-color: $background-section;
+        background-color: vars.$background-section;
         margin: 2rem auto;
         padding: 1rem;
         border-radius: 10px;
@@ -22,7 +22,7 @@
 // Services Section
 .services {
     padding: 4rem auto;
-    background-color: $background-section;
+    background-color: vars.$background-section;
 
     &__box{
         display: flex;
@@ -38,7 +38,7 @@
     flex-shrink: 0;
     padding: 1.5rem;
     margin: 1rem 1.25rem;
-    background-color: $background-white;
+    background-color: vars.$background-white;
     border-radius: 10px;
 
     &__image {
@@ -100,7 +100,7 @@
 // Testimonials Section
 .testimonials {
     padding: 4rem auto;
-    background-color: $background-section;
+    background-color: vars.$background-section;
 
     &__quote {
         font-size: 3rem;

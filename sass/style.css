@@ -1,3 +1,7 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 main,
 footer {
   position: relative;
@@ -26,6 +30,29 @@ h2 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
 }
 
 button {
@@ -35,7 +62,7 @@ button {
 }
 
 #carousel {
-  background-color: grey;
+  background-color: #fff5ee;
   text-align: center;
 }
 

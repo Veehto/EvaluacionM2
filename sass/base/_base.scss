@@ -1,4 +1,8 @@
-@use '../abstracts/variables' as *;
+@use './fonts' as f;
+
+body {
+    font-family: f.$font;
+}
 
 main,
 footer {
