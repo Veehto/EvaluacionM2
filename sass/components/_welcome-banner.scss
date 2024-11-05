@@ -4,13 +4,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // no pude hacer funcionar url() para que mostrara la imagen de fondo.
-    background-image: url('../../assets/images/foto_0000000920180613104426.jpg');
+    background-image: url('../assets/images/foto_0000000920180613104426.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 46rem;
-    background-color: vars.$temp-color;
 
     &__box {
         padding: 0 5rem 2.5rem 5rem;

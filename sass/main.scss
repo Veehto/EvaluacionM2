@@ -1,7 +1,7 @@
 @use 'base/base';
 @use 'base/reset';
 @use 'base/typography';
-// @use 'base/fonts';
+@use 'base/fonts';
 
 @use 'components/buttons';
 @use 'components/carousel';
@@ -16,3 +16,5 @@
 @use 'pages/contact';
 @use 'pages/index';
 @use 'pages/medics';
+
+@use '../node_modules/bootstrap/scss/bootstrap.scss';
