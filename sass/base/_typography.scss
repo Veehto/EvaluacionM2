@@ -1,4 +1,17 @@
-h1, h2, h3 {
+// Typography Resets
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+    text-wrap: balance; // Balancea la cantidad de palabras de los títulos al cambiar de width.
+}
+
+h1,
+h2,
+h3 {
     font-weight: 700;
     line-height: 1.1;
     margin-top: 0;
@@ -6,6 +19,13 @@ h1, h2, h3 {
 
 p {
     margin-top: 0;
+}
+
+p,
+li,
+figcaption {
+    text-wrap: pretty; // Previene que queden palabras solas al final de un párrafo (orphan words).
+    max-width: 65ch; // Previene que las línea de texto sean muy largas (difícil de seguir con los ojos).
 }
 
 a,

@@ -1,14 +1,19 @@
 @use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixs;
 
 .welcome {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include mixs.flexible(flex, center, center);
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     background-image: url('../assets/images/foto_0000000920180613104426.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    @include mixs.background(cover, center, no-repeat);
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
     height: 46rem;
+
+    
 
     &__box {
         padding: 0 5rem 2.5rem 5rem;
