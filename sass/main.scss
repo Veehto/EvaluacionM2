@@ -1,7 +1,9 @@
+$primary: #044fc0;
+$secondary: #b6c1ca;
+
 @use 'base/base';
 @use 'base/reset';
 @use 'base/typography';
-@use 'base/fonts';
 
 @use 'components/buttons';
 @use 'components/carousel';
@@ -18,3 +20,5 @@
 @use 'pages/medics';
 
 @use '../node_modules/bootstrap/scss/bootstrap.scss';
+
+@use 'base/fonts';

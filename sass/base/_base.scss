@@ -1,13 +1,7 @@
-@use './fonts' as f;
-
-body {
-    font-family: f.$font;
-}
-
 main,
 footer {
     position: relative;
-    top: 4rem; /* To offset for fixed nav bar. */
+    top: 3.5rem; /* To offset for fixed nav bar. */
 }
 
 figure {

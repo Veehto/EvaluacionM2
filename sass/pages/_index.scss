@@ -10,7 +10,8 @@
 
     &__description {
         background-color: vars.$background-section;
-        margin: 0 auto;
+        margin-inline: auto;
+        margin-bottom: 2rem;
         padding: 1rem;
         border-radius: 10px;
         text-align: center;
@@ -72,7 +73,7 @@
     }
 
     .card {
-        padding: 1rem .2rem;
+        padding: 1rem;
         margin: 1rem .5rem;
     }
 
@@ -92,45 +93,5 @@
 @media only screen and (max-width: 600px) {
     #services {
       padding: 0;
-    }
-}
-
-
-
-// Testimonials Section
-.testimonials {
-    padding: 4rem auto;
-    background-color: vars.$background-section;
-
-    &__quote {
-        font-size: 3rem;
-        line-height: 1.5;
-    }
-
-    &__image {
-        height: 10rem;
-        width: 10rem;
-        border-radius: 50%;
-        margin: 20px auto;
-    }
-}
-
-/* Media query for Testimonials Section Box, small */
-@media only screen and (max-width: 895px) {
-    .carousel-item {
-        font-size: 1.5rem;
-        padding: 0 .5rem;
-        padding-bottom: 3rem;
-        padding-top: 1.5rem;
-    }
-}
-
-/* Media query for Testimonials Section Box, very small */
-@media only screen and (max-width: 600px) {
-    .carousel-item {
-        font-size: 1rem;
-        padding: 0 .5rem;
-        padding-bottom: 3rem;
-        padding-top: 1.5rem;
     }
 }

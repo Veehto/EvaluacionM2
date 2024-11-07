@@ -15,11 +15,10 @@
     <script src="https://kit.fontawesome.com/4e26ad892b.js" crossorigin="anonymous"></script>
     <title>Equipo Médico</title>
 </head>
-<body>
-    <header class="menu">
+<body class="bg-body">
+    <!-- <header class="menu">
         <a href="./index.html" class="logo">Clínica Misión Real</a>
 
-        <!-- Navigation Menu -->
         <nav class="menu__desktop">
             <ul class="menu__list">
                 <li class="menu__item"><a href="./index.html" class="menu__link">Inicio</a></li>
@@ -33,12 +32,103 @@
                 <li class="menu__item"><a href="./contact.html" class="menu__link"><img src="./assets/images/email_white_24dp.svg"></a></li>
             </ul>
         </nav>
+    </header> -->
+
+    <!-- Bootstrap Modal Pop-up Form -->
+    <div class="modal fade" id="reserva" tabindex="-1" aria-labelledby="reserva" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="reserva">Reservar Hora</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div>
+                        <label for="area" class="form-label">Selecciona Área</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="area" id="area-1">
+                            <label class="form-check-label" for="area-1">
+                                Consultas
+                            </label>
+                        </div>
+                      
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="area" id="area-2" checked="">
+                            <label class="form-check-label" for="area-2">
+                                Telemedicina
+                            </label>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Especialidad</option>
+                        <option value="1">Medicina General</option>
+                        <option value="2">Cardiología</option>
+                        <option value="3">Oncología</option>
+                        <option value="4">Dermatología</option>
+                    </select>
+
+                    <br>
+
+                    <label for="document-id-1" class="form-label">Datos del Paciente</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="document-id" id="document-id-1">
+                        <label class="form-check-label" for="document-id-1">
+                            RUT
+                        </label>
+                    </div>
+                  
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="document-id" id="document-id-2" checked="">
+                        <label class="form-check-label" for="document-id-2">
+                            Pasaporte
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="FormControlInput1" placeholder="12.345.678-9">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <header>
+        <nav class="navbar navbar-expand-md bg-primary-subtle">
+            <div class="container">
+                <a class="navbar-brand text-uppercase" href="./index.html">Misión Real</a>
+        
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+      
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
         <!-- Welcome Section -->
         <section id="welcome" class="welcome">
-            <div class="welcome__box">
+            <div class="welcome__box bg-secondary">
                 <div class="welcome__text">
                     <div class="welcome__slogan">
                         <h2 class="welcome__subtitle">Clínica</h2>
@@ -48,19 +138,19 @@
     
                     <div class="welcome__sign-up">
                         <p class="welcome__paragraph"><strong>Reserva tu cita con un profesional acá</strong></p>
-                        <button class="welcome__btn">Reservar Cita</button>
+                        <button class="welcome__btn bg-light" data-bs-toggle="modal" data-bs-target="#reserva">Reservar Hora</button>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Compromise Section -->
-        <section id="compromise" class="compromise">
+        <section id="compromise" class="compromise bg-body-secondary">
             <div class="title-box">
                 <h2>Nuestro Compromiso con la Excelencia Médica</h2>
             </div>
             
-            <div class="compromise__box">
+            <!-- <div class="compromise__box">
                 <article class="compromise__description">
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -69,18 +159,34 @@
                         blanditiis tempore esse cumque, saepe tenetur!
                     </p>
                 </article>
+            </div> -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <article class="compromise__description bg-primary-subtle">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Perferendis, ea! Nesciunt rerum quos in delectus. 
+                                Porro eligendi aut similique nemo dolores quo exercitationem eveniet, 
+                                blanditiis tempore esse cumque, saepe tenetur!
+                            </p>
+                        </article>
+                    </div>
+    
+                </div>
             </div>
         </section>
 
         <!-- Medical Team Section -->
-        <section id="medics" class="medics">
+        <section id="medics" class="medics bg-body-secondary">
             <div class="title-box">
                 <h2 class="medics__title">Equipo Médico</h2>
                 <h3 class="medics__subtitle">Nuestra clínica emplea a los mejores profesionales:</h3>
             </div>
 
             <div class="medics__box">
-                <figure class="card">
+                <figure class="card bg-body-tertiary">
                     <img class="card__image" src="./assets/images/medico-general.png" alt="medico general">
                     <figcaption class="card__caption">Pablo García, Médico General</figcaption>
                     <div class="card__description">
@@ -93,7 +199,7 @@
                     </div>
                 </figure>
     
-                <figure class="card">
+                <figure class="card bg-body-tertiary">
                     <img class="card__image" src="./assets/images/cardiologa.png" alt="cardiologa">
                     <figcaption class="card__caption">Carmen López, Cardióloga</figcaption>
                     <div class="card__description">
@@ -106,7 +212,7 @@
                     </div>
                 </figure>
     
-                <figure class="card">
+                <figure class="card bg-body-tertiary">
                     <img class="card__image" src="./assets/images/oncologo.png" alt="oncologo">
                     <figcaption class="card__caption">Jaime Messina, Oncólogo</figcaption>
                     <div class="card__description">
@@ -119,7 +225,7 @@
                     </div>
                 </figure>
 
-                <figure class="card">
+                <figure class="card bg-body-tertiary">
                     <img class="card__image" src="./assets/images/dermatologa.png" alt="dermatologa">
                     <figcaption class="card__caption">Camila Arenas, Dermatóloga</figcaption>
                     <div class="card__description">
@@ -148,7 +254,7 @@
             <a class="icons__link" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram icons__item"></i></a>
         </div>
 
-        <div id="copyright" class="copyright">
+        <div id="copyright" class="copyright bg-primary-subtle">
             <strong><p class="copyright__paragraph">© 2024 Clínica Misión Real, Todos Los Derechos Reservados.</p></strong>
         </div>
     </footer>

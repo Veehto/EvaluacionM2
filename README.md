@@ -24,16 +24,18 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 
 * Metodología BEM: También se cambia la convención de nombres de clases en las guías de estilo a BEM, para factorizar las reglas de estilo, mejorando la comprensión del código y si reutilización.
 
+* Bootstrap package: Uso del paquete de Bootstrap para agilizar e unificar la implementación del código. Se ocupan  principalmente 4 componentes: Nav Bar, Modal, Form y Carousel. También se hacen modificaciones personalizadas a algunos estilos de colores de Bootstrap, con la finalidad de ajustarse a la imagen e identidad de la clínica.
+
 
 ## Para Abrir el proyecto
 
 ### Visitar Repositorio
-* https://github.com/Veehto/EvaluacionM2/tree/BEM-Sass-branch
-* Asegurarse de que descargar proyecto desde rama **BEM-Sass-branch**.
+* https://github.com/Veehto/EvaluacionM2/tree/Bootstrap-Sass-BEM
+* Asegurarse de que descargar proyecto desde rama **Bootstrap-Sass-BEM**.
 
 ### Clonar Repositorio desde GItHub con CLI
 ```
-git clone --branch BEM-Sass-branch https://github.com/Veehto/EvaluacionM2.git TU_CARPETA
+git clone --branch Bootstrap-Sass-BEM https://github.com/Veehto/EvaluacionM2.git TU_CARPETA
 code .
 ```
 
@@ -46,41 +48,48 @@ code .
 ## Estructura del proyecto:
 ```
 .
-|-- assets/
-|   |-- css/
-|   |   `-- styles.css (vanilla css, antes de aplicar BEM y Sass.)
-|   `-- images/
-|       `-- (todas las imágenes)
-|-- sass/
-|   |-- abstracts/
-|   |   `-- _variables.scss
-|   |-- base/
-|   |   |-- _base.scss
-|   |   |-- _reset.scss
-|   |   `-- _typography.scss
-|   |-- components/
-|   |   |-- _components.scss
-|   |   |-- _carousel.scss
-|   |   `-- _welcome-banner.scss
-|   |-- layout/
-|   |   |-- _footer.scss
-|   |   |-- _forms.scss
-|   |   |-- _header.scss
-|   |   |-- _location.scss
-|   |   `-- _navigation.scss
-|   |-- pages/
-|   |   |-- _contact.scss
-|   |   |-- _index.scss
-|   |   `-- _medics.scss
-|   |-- themes
-|   |-- vendors/
-|   |   `-- _bootstrap.scss
-|   |-- main.scss
-|   |-- style.css
-|   `-- style.css.map
-|-- contact.html
-|-- index.html
-|-- medics.html
-`-- README.md
+├── assets/
+│   ├── css/
+│   │   └── styles.css (vanilla css, antes de aplicar BEM y Sass.)
+│   └── images/
+│       └── (todas las imágenes)
+├── node_modules (gitignored)
+├── sass/
+│   ├── abstracts/
+│   │   ├── _functions.scss
+│   │   ├── _mixins.scss
+│   │   └── _variables.scss
+│   ├── base/
+│   │   ├── _base.scss
+│   │   ├── _fonts.scss
+│   │   ├── _reset.scss
+│   │   └── _typography.scss
+│   ├── components/
+│   │   ├── _components.scss
+│   │   ├── _carousel.scss
+│   │   └── _welcome-banner.scss
+│   ├── layout/
+│   │   ├── _footer.scss
+│   │   ├── _forms.scss
+│   │   ├── _header.scss
+│   │   ├── _location.scss
+│   │   └── _navigation.scss
+│   ├── pages/
+│   │   ├── _contact.scss
+│   │   ├── _index.scss
+│   │   └── _medics.scss
+│   ├── themes
+│   ├── vendors/
+│   │   └── _bootstrap.scss
+│   ├── main.scss
+│   ├── style.css
+│   └── style.css.map
+├── .gitignore
+├── contact.html
+├── index.html
+├── medics.html
+├── package-lock.json
+├── package.json
+└── README.md
 
 ```

@@ -2,17 +2,14 @@
 @use '../abstracts/mixins' as mixs;
 
 header {
-    @include mixs.flexible(flex, space-between, center);
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
+    // @include mixs.flexible(flex, space-between, center);
     position: fixed;
     top: 0;
     width: 100%;
-    height: 4rem;
+    height: 3.5rem;
     z-index: 10;
     border-bottom: 1px solid vars.$background-seashell;
-    padding: 0 1rem;
+    // padding: 0 1rem;
 }
 
 .logo {
