@@ -27,8 +27,7 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 * Bootstrap package: Uso del paquete de Bootstrap para agilizar e unificar la implementación del código. Se ocupan  principalmente 4 componentes: Nav Bar, Modal, Form y Carousel. También se hacen modificaciones personalizadas a algunos estilos de colores de Bootstrap, con la finalidad de ajustarse a la imagen e identidad de la clínica.
 
 
-## Implementación de JavaScript
-
+## Futura Implementación de JavaScript
 Se elige implementar JavaScript al proyecto en curso por ser la opción más pertinente considerando la mano de obra, tiempo a disposición del equipo, y familiaridad con el lenguaje. 
 Otra razón importante es que el por las necesidades de la institución que precisa una página web, ésta necesitará tener una funcionalidad que permita atender las solicitudes de los visitantes 
 y posibles futuros pacientes, sin olvidar también que el internet de hoy en día llama a la presencia de aplicaciones web, más que a la implementación de páginas estáticas, 
@@ -73,13 +72,14 @@ code .
 │   │   ├── _reset.scss
 │   │   └── _typography.scss
 │   ├── components/
-│   │   ├── _components.scss
+│   │   ├── _buttons.scss
+│   │   ├── _cards.scss
 │   │   ├── _carousel.scss
+│   │   ├── _narrative.scss
 │   │   └── _welcome-banner.scss
 │   ├── layout/
 │   │   ├── _footer.scss
 │   │   ├── _forms.scss
-│   │   ├── _header.scss
 │   │   ├── _location.scss
 │   │   └── _navigation.scss
 │   ├── pages/
