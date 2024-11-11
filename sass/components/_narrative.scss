@@ -1,0 +1,19 @@
+@use '../abstracts/variables' as vars;
+
+// Mission & Vision Section, Compromise Section
+.narrative {
+    background-color: vars.$background-white;
+
+    &__box {
+        padding: 1rem 4rem;
+    }
+
+    &__description {
+        background-color: vars.$background-section;
+        margin-inline: auto;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+    }
+}

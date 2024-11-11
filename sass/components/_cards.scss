@@ -1,0 +1,76 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixs;
+
+// Services Section and Medics Section
+.deck {
+    padding: 4rem auto;
+    background-color: vars.$background-section;
+
+    &__box{
+        @include mixs.flexible(flex, center, center);
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding: 1.5rem 0;
+    }
+}
+
+.card {
+    flex-shrink: 0;
+    padding: 1.5rem;
+    margin: 1rem 1.25rem;
+    background-color: vars.$background-white;
+    border-radius: 10px;
+
+    &__image {
+        height: 18rem;
+        width: 20rem;
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+
+    &__caption {
+        padding: 1.3rem 0;
+        font-weight: bold;
+        margin-top: 0.25rem;
+    }
+
+    &__description {
+        width: 20rem;
+        margin: 0 auto;
+    }
+
+    &__paragraph {
+        text-wrap: wrap;
+        word-wrap: break-word;
+    }
+}
+
+/* Media query for Services Section Box, small */
+@media only screen and (max-width: 895px) {
+    .deck {
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+        margin: 1rem .5rem;
+    }
+
+    .card__image {
+        height: 12rem;
+        width: 18rem;
+        margin: 0 auto;
+    }
+    
+    .card__caption {
+        padding: 1rem 0;
+        font-weight: bold;
+    }
+}
+
+/* Media query for Services Section Box, very small */
+@media only screen and (max-width: 600px) {
+    .deck {
+      padding: 0;
+    }
+}

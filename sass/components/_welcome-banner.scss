@@ -3,14 +3,8 @@
 
 .welcome {
     @include mixs.flexible(flex, center, center);
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
     background-image: url('../assets/images/foto_0000000920180613104426.jpg');
-    @include mixs.background(cover, center, no-repeat, 1);
-    // background-size: cover;
-    // background-position: center;
-    // background-repeat: no-repeat;
+    @include mixs.background(cover, center, no-repeat);
     height: 46rem;
 
     &__box {

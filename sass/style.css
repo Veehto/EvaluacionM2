@@ -70,12 +70,80 @@ a:active {
   text-decoration: none;
 }
 
+.deck {
+  padding: 4rem auto;
+  background-color: #f0ecec;
+}
+.deck__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 1.5rem 0;
+}
+
+.card {
+  flex-shrink: 0;
+  padding: 1.5rem;
+  margin: 1rem 1.25rem;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+.card__image {
+  height: 18rem;
+  width: 20rem;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+.card__caption {
+  padding: 1.3rem 0;
+  font-weight: bold;
+  margin-top: 0.25rem;
+}
+.card__description {
+  width: 20rem;
+  margin: 0 auto;
+}
+.card__paragraph {
+  text-wrap: wrap;
+  word-wrap: break-word;
+}
+
+/* Media query for Services Section Box, small */
+@media only screen and (max-width: 895px) {
+  .deck {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+    margin: 1rem 0.5rem;
+  }
+
+  .card__image {
+    height: 12rem;
+    width: 18rem;
+    margin: 0 auto;
+  }
+
+  .card__caption {
+    padding: 1rem 0;
+    font-weight: bold;
+  }
+}
+/* Media query for Services Section Box, very small */
+@media only screen and (max-width: 600px) {
+  .deck {
+    padding: 0;
+  }
+}
 .carousel {
   background-color: #fff5ee;
   text-align: center;
 }
 .carousel__band {
-  height: 20rem;
+  height: 25rem;
 }
 
 .testimonials {
@@ -121,6 +189,21 @@ a:active {
     padding-top: 1.5rem;
   }
 }
+.narrative {
+  background-color: #f5f5f5;
+}
+.narrative__box {
+  padding: 1rem 4rem;
+}
+.narrative__description {
+  background-color: #f0ecec;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
 .welcome {
   display: flex;
   justify-content: center;
@@ -129,14 +212,13 @@ a:active {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(1);
   height: 46rem;
 }
 .welcome__box {
   padding: 0 5rem 2.5rem 5rem;
   border: solid 1px #979797;
   border-radius: 10px;
-  background-color: #4a4a4a;
+  background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity));
 }
 .welcome__text {
   width: 25.625rem;
@@ -243,6 +325,17 @@ a:active {
   text-align: center;
 }
 
+.location {
+  background-color: #f5f5f5;
+}
+.location__box {
+  background-color: #f0ecec;
+  margin-inline: auto;
+  padding: 1rem 4rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -260,19 +353,8 @@ header {
   margin-bottom: 0.2rem;
 }
 
-.location {
-  background-color: #f5f5f5;
-}
-.location__box {
-  background-color: #f0ecec;
-  margin-inline: auto;
-  padding: 1rem 4rem;
-  border-radius: 10px;
-  text-align: center;
-}
-
 .menu {
-  background-color: #4a4a4a;
+  background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity));
 }
 .menu__list {
   display: flex;
@@ -306,10 +388,6 @@ header {
     width: 100%;
   }
 
-  header {
-    padding: 0.5rem;
-  }
-
   .menu__mobile .menu__list {
     display: flex;
     justify-content: space-around;
@@ -321,116 +399,6 @@ header {
     padding: 0;
   }
 }
-.miss-vis {
-  background-color: #f5f5f5;
-}
-.miss-vis__box {
-  padding: 1rem 4rem;
-}
-.miss-vis__description {
-  background-color: #f0ecec;
-  margin-inline: auto;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.services {
-  padding: 4rem auto;
-  background-color: #f0ecec;
-}
-.services__box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  padding: 1.5rem 0;
-}
-
-.card {
-  flex-shrink: 0;
-  padding: 1.5rem;
-  margin: 1rem 1.25rem;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-}
-.card__image {
-  height: 18rem;
-  width: 20rem;
-  margin: 0 auto;
-  border-radius: 5px;
-}
-.card__caption {
-  padding: 1.3rem 0;
-  font-weight: bold;
-  margin-top: 0.25rem;
-}
-.card__description {
-  width: 20rem;
-  margin: 0 auto;
-}
-.card__paragraph {
-  text-wrap: wrap;
-  word-wrap: break-word;
-}
-
-/* Media query for Services Section Box, small */
-@media only screen and (max-width: 895px) {
-  #services {
-    padding: 1rem;
-  }
-
-  .card {
-    padding: 1rem;
-    margin: 1rem 0.5rem;
-  }
-
-  .card__image {
-    height: 12rem;
-    width: 18rem;
-    margin: 0 auto;
-  }
-
-  .card__caption {
-    padding: 1rem 0;
-    font-weight: bold;
-  }
-}
-/* Media query for Services Section Box, very small */
-@media only screen and (max-width: 600px) {
-  #services {
-    padding: 0;
-  }
-}
-.compromise {
-  background-color: #f5f5f5;
-}
-.compromise__box {
-  padding: 1rem 4rem;
-}
-.compromise__description {
-  background-color: #f0ecec;
-  margin: 2rem auto;
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.medics {
-  padding: 4rem auto;
-  background-color: #f0ecec;
-}
-.medics__box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  padding: 1.5rem 0;
-}
-
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors

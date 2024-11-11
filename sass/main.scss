@@ -6,18 +6,18 @@ $secondary: #b6c1ca;
 @use 'base/typography';
 
 @use 'components/buttons';
+@use 'components/cards';
 @use 'components/carousel';
+@use 'components/narrative';
 @use 'components/welcome-banner';
 
 @use 'layout/footer';
 @use 'layout/forms';
-@use 'layout/header';
 @use 'layout/location';
 @use 'layout/navigation';
 
 @use 'pages/contact';
-@use 'pages/index';
-@use 'pages/medics';
+
 
 @use '../node_modules/bootstrap/scss/bootstrap.scss';
 
