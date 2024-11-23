@@ -1,3 +1,0 @@
-### Visitar Repositorio
-* https://github.com/Veehto/EvaluacionM2/tree/Bootstrap-Sass-BEM
-* Asegurarse de que descargar proyecto desde rama **Bootstrap-Sass-BEM**.

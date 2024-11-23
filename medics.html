@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./sass/style.css">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/4e26ad892b.js" crossorigin="anonymous"></script>
+    <script src="load-list.js" defer></script>
     <title>Equipo Médico</title>
 </head>
 <body class="bg-body">
@@ -63,12 +64,18 @@
 
                     <br>
 
-                    <select class="form-select" aria-label="Default select example">
+                    <select id="specialties" class="form-select" aria-label="Default select example">
                         <option selected>Especialidad</option>
                         <option value="1">Medicina General</option>
                         <option value="2">Cardiología</option>
                         <option value="3">Oncología</option>
                         <option value="4">Dermatología</option>
+                    </select>
+
+                    <br>
+
+                    <select id="specialists" class="form-select" aria-label="Default select example" hidden>
+
                     </select>
 
                     <br>

@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Juan Pérez",
+        "specialty": "Medicina General",
+        "age": 35
+    },
+    {
+        "name": "Pablo García",
+        "specialty": "Medicina General",
+        "age": 45
+    },
+    {
+        "name": "Carmen López",
+        "specialty": "Cardiología",
+        "age": 40
+    },
+    {
+        "name": "Alicia Marambio",
+        "specialty": "Cardiología",
+        "age": 32
+    },
+    {
+        "name": "Pedro Messina",
+        "specialty": "Oncología",
+        "age": 49
+    },
+    {
+        "name": "Pablo Urritia",
+        "specialty": "Oncología",
+        "age": 50
+    },
+    {
+        "name": "Camila Arenas",
+        "specialty": "Dermatología",
+        "age": 35
+    },
+    {
+        "name": "Esteban Fernández",
+        "specialty": "Dermatología",
+        "age": 55
+    }
+]
