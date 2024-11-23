@@ -1,5 +1,5 @@
 // Cargar lista de doctores desde archivo json.
-fetch('./doctors.json')
+fetch('../doctors.json')
 .then(response => {
     if (response.ok) {
         return response.json();
