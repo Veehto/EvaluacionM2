@@ -2,41 +2,105 @@
     {
         "name": "Juan Pérez",
         "specialty": "Medicina General",
-        "age": 35
+        "experience": 5,
+        "schedule": ["lunes", "miércoles", "viernes"],
+        "available": true,
+        "contact": {
+            "mail":"jperez@misionreal.cl",
+            "phone": "+56 22 367 512"
+        },
+        "image": "../assets/images/juan-perez.png",
+        "services": ["Consulta", "Telemedicina"]
     },
     {
         "name": "Pablo García",
         "specialty": "Medicina General",
-        "age": 45
+        "experience": 10,
+        "schedule": ["martes", "jueves"],
+        "available": true,
+        "contact": {
+            "mail":"pgarcia@misionreal.cl",
+            "phone": "+56 22 367 521"
+        },
+        "image": "../assets/images/pablo-garcia.png",
+        "services": ["Consulta"]
     },
     {
         "name": "Carmen López",
         "specialty": "Cardiología",
-        "age": 40
+        "experience": 10,
+        "schedule": ["lunes", "miércoles", "viernes"],
+        "available": true,
+        "contact": {
+            "mail":"clopez@misionreal.cl",
+            "phone": "+56 22 367 559"
+        },
+        "image": "../assets/images/carmen-lopez.png",
+        "services": ["Consulta", "Telemedicina"]
     },
     {
         "name": "Alicia Marambio",
         "specialty": "Cardiología",
-        "age": 32
+        "experience": 6,
+        "schedule": ["martes", "jueves"],
+        "available": true,
+        "contact": {
+            "mail":"amarambio@misionreal.cl",
+            "phone": "+56 22 367 554"
+        },
+        "image": "../assets/images/alicia-marambio.png",
+        "services": ["Consulta", "Telemedicina"]
     },
     {
         "name": "Pedro Messina",
         "specialty": "Oncología",
-        "age": 49
+        "experience": 12,
+        "schedule": ["lunes", "miércoles", "viernes"],
+        "available": true,
+        "contact": {
+            "mail":"pmessina@misionreal.cl",
+            "phone": "+56 22 367 582"
+        },
+        "image": "../assets/images/pedro-messina.png",
+        "services": ["Consulta", "Telemedicina"]
     },
     {
         "name": "Pablo Urritia",
         "specialty": "Oncología",
-        "age": 50
+        "experience": 20,
+        "schedule": ["martes", "jueves"],
+        "available": true,
+        "contact": {
+            "mail":"purrutia@misionreal.cl",
+            "phone": "+56 22 367 583"
+        },
+        "image": "../assets/images/pablo-urrutia.png",
+        "services": ["Consulta"]
     },
     {
         "name": "Camila Arenas",
         "specialty": "Dermatología",
-        "age": 35
+        "experience": 6,
+        "schedule": ["lunes", "miércoles", "viernes"],
+        "available": true,
+        "contact": {
+            "mail":"carenas@misionreal.cl",
+            "phone": "+56 22 367 562"
+        },
+        "image": "../assets/images/camila-arenas.png",
+        "services": ["Consulta", "Telemedicina"]
     },
     {
         "name": "Esteban Fernández",
         "specialty": "Dermatología",
-        "age": 55
+        "experience": 25,
+        "schedule": ["martes", "jueves"],
+        "available": true,
+        "contact": {
+            "mail":"efernandez@misionreal.cl",
+            "phone": "+56 22 367 561"
+        },
+        "image": "../assets/images/esteban-fernandez.png",
+        "services": ["Consulta"]
     }
 ]

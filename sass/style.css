@@ -204,6 +204,15 @@ a:active {
   text-align: center;
 }
 
+#portrait {
+  display: flex;
+  flex-direction: row;
+  height: 15rem;
+}
+#portrait__img {
+  width: 12rem;
+}
+
 .welcome {
   display: flex;
   justify-content: center;

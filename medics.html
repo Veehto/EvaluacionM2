@@ -16,6 +16,7 @@
     <script src="js/load-list.js" defer></script>
     <title>Equipo Médico</title>
 </head>
+
 <body class="bg-body">
     <!-- <header class="menu">
         <a href="./index.html" class="logo">Clínica Misión Real</a>
@@ -45,6 +46,25 @@
                 </div>
 
                 <div class="modal-body">
+                    <label for="document-id-1" class="form-label">Datos del Paciente</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="document-id" id="document-id-1">
+                        <label class="form-check-label" for="document-id-1">
+                            RUT
+                        </label>
+                    </div>
+                  
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="document-id" id="document-id-2" checked="">
+                        <label class="form-check-label" for="document-id-2">
+                            Pasaporte
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="FormControlInput1" placeholder="12.345.678-9">
+                    </div>
+
                     <div>
                         <label for="area" class="form-label">Selecciona Área</label>
                         <div class="form-check">
@@ -74,29 +94,21 @@
 
                     <br>
 
+                    <!-- Dynamic dropdown menu -->
                     <select id="specialists" class="form-select" aria-label="Default select example" hidden>
 
                     </select>
 
                     <br>
 
-                    <label for="document-id-1" class="form-label">Datos del Paciente</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="document-id" id="document-id-1">
-                        <label class="form-check-label" for="document-id-1">
-                            RUT
-                        </label>
-                    </div>
-                  
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="document-id" id="document-id-2" checked="">
-                        <label class="form-check-label" for="document-id-2">
-                            Pasaporte
-                        </label>
-                    </div>
-
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="FormControlInput1" placeholder="12.345.678-9">
+                    <!-- Dynamic medic card -->
+                    <div id="portrait" class="card" hidden>
+                        <img id="portrait__img" src="" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text"></p>
+                            <a href="#" class="btn btn-primary">Agendar</a>
+                        </div>
                     </div>
                 </div>
 
@@ -194,7 +206,7 @@
 
             <div class="deck__box">
                 <figure class="card bg-body-tertiary">
-                    <img class="card__image" src="./assets/images/medico-general.png" alt="medico general">
+                    <img class="card__image" src="./assets/images/pablo-garcia.png" alt="medico general">
                     <figcaption class="card__caption">Pablo García, Médico General</figcaption>
                     <div class="card__description">
                         <p class="card__paragraph">
@@ -207,7 +219,7 @@
                 </figure>
     
                 <figure class="card bg-body-tertiary">
-                    <img class="card__image" src="./assets/images/cardiologa.png" alt="cardiologa">
+                    <img class="card__image" src="./assets/images/carmen-lopez.png" alt="cardiologa">
                     <figcaption class="card__caption">Carmen López, Cardióloga</figcaption>
                     <div class="card__description">
                         <p class="card__paragraph">
@@ -220,8 +232,8 @@
                 </figure>
     
                 <figure class="card bg-body-tertiary">
-                    <img class="card__image" src="./assets/images/oncologo.png" alt="oncologo">
-                    <figcaption class="card__caption">Jaime Messina, Oncólogo</figcaption>
+                    <img class="card__image" src="./assets/images/pedro-messina.png" alt="oncologo">
+                    <figcaption class="card__caption">Pedro Messina, Oncólogo</figcaption>
                     <div class="card__description">
                         <p class="card__paragraph">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -233,7 +245,7 @@
                 </figure>
 
                 <figure class="card bg-body-tertiary">
-                    <img class="card__image" src="./assets/images/dermatologa.png" alt="dermatologa">
+                    <img class="card__image" src="./assets/images/camila-arenas.png" alt="dermatologa">
                     <figcaption class="card__caption">Camila Arenas, Dermatóloga</figcaption>
                     <div class="card__description">
                         <p class="card__paragraph">

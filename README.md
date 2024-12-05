@@ -73,6 +73,28 @@ a menos que solamente las características de éstas últimas satisfagan las nec
 ### Uso de try/catch
 * La sentencia try siempre comienza con un bloque try. Luego, debe estar presente un bloque catch o un bloque finally. También es posible tener bloques catch y finally. Esto nos da tres formas para la sentencia try. Un bloque catch contiene instrucciones que especifican qué hacer si se lanza una excepción en el bloque try. Si alguna instrucción dentro del bloque try (o en una función llamada desde dentro del bloque try) lanza una excepción, el control se transfiere inmediatamente al bloque catch. Si no se lanza ninguna excepción en el bloque try, se omite el bloque catch. El bloque finally siempre se ejecutará antes de que el flujo de control salga de la construcción try...catch...finally. Siempre se ejecuta, independientemente de si se generó o detectó una excepción.
 
+### Uso de Objetos JSON
+* Se crea un nuevo archivo .json que funciona como la base de datos de los doctores de la cínica. El archivo se constituye de un arreglo de objetos que representa cada doctor, y las claves de cada objeto son la información de cada doctor (nombre, especialidad, experiencia, disponibilidad, info. de contacto, etc.).
+
+* Se usa el archivo .json en el archivo JavaScript principal por medio de la API fetch, y una vez que la promesa se cumple se manipula el archivo para mostrar su información en la página.
+    - **clonación**: se crea un copia de un elemento del objeto JSON que contiene los doctores y lo modifica. En este caso, se extrae un doctor del archivo .json usando el spread operator y se modifica esta copia para cambiar la disponibilidad del doctor.
+    - **Merge**: fusiona el contenido de dos objetos JSON en uno nuevo. Esto lo hace tomando el objeto JSON de doctores y otro objeto llamado "services", se toman los contenidos de estos usando el spread operator, y lo almacena en una variable nueva.
+    - **Recorrido**: Se recorre el objeto JSON de doctores para mostrar estos en la página al usuario de diversas formas: 
+        - en el dropdown menu en la sección para reservar hora, al seleccionar una especialidad, se recorre el objeto JSON doctores y se compara con la elección de la especialidad para mostrar en otro dropdown menu los doctores para cada especialidad.
+        - al seleccionar un doctor, se recorre nuevamente el objeto para obtener la información de este doctor y desplegarla en una tarjeta que incluye su foto, nombre, especialidad y horario de atención.
+        - dentro del archivo JavaScript se recorre el objeto JSON de doctores aplicando a cada elemento el método estático del objeto JSON stringify() y se imprime a la consola los objetos en formato JSON.
+
+### Uso de Estructuras de Datos
+* **Arrays (Arreglos)**: se implementa un arreglo nuevo que va a almacenar distintos objetos que representan doctores, y este arreglo se almacena en una variable. El arreglo representa una lista de doctores. A este arreglo se le agregan los doctores usando el método push(), se hace una búsqueda usando el método find() para encontrar el doctor con menos años de experiencia, y se elimina un doctor de al final del arreglo usando el método pop().
+
+* **Stacks (Pilas)**: Se simula una pila utilizando un arreglo, esto para simular cómo sería cuando los usuarios tienen más de una reserva en la clínica. Como los stacks funcionan de forma LIFO, se utiliza el método pop() para sacar la última cita en el arreglo e almacenarla en una variable. Después se imprime a la consola para mostrar la siguiente cita al doctor del paciente.
+
+* **Queues (Colas)**: Se simula una cola utilizando un arreglo, esto para simular el orden de llegada de los pacientes. Como el orden de ejecución de las queues es FIFO, se utiliza el método shift() para sacar el primer elemento del arreglo y almacenarlo en una variable. Después se imprime a la consola para mostrar qué paciente es el siguiente.
+
+### Uso de Algoritmos
+* **Algoritmo de Búsqueda**: Se aplica el modelo de algoritmo lineal para recorrer el objeto JSON de doctores para encontrar un doctor en específico, filtrando por medio del nombre que es el parámetro que se le da a la función de búsqueda que aplica el algoritmo. La complejidad del algoritmo es O(n), ya que la búsqueda lineal se ejecuta en tiempo lineal y realiza un máximo de n comparaciones, donde n es la longitud de la lista. El tiempo de ejecución aumenta, como máximo, de forma lineal con el tamaño de los elementos presentes en la lista.
+
+* **Algoritmo de Ordenamiento**: Se aplica el algoritmo de ordenamiento bubble sort, ya que se apunta a ordenar a los doctores de forma descendente con respecto a sus años de experiencia, esto lo hace comparando pares de elementos adyacentes y los intercambia si están en el orden correcto. La complejidad del algoritmo bubble sort tiende a ser cuadrática O(n^2) ya que tenemos que recorrer la el arreglo tantas veces como pares haya.
 
 ## Para Abrir el proyecto
 
@@ -80,7 +102,7 @@ a menos que solamente las características de éstas últimas satisfagan las nec
 * https://github.com/Veehto/EvaluacionM2/tree/JS-branch
 * Asegurarse de que descargar proyecto desde rama **JS-branch**.
 
-### Clonar Repositorio desde GItHub con CLI
+### Clonar Repositorio desde GitHub con CLI
 ```
 git clone --branch JS-branch https://github.com/Veehto/EvaluacionM2.git TU_CARPETA
 code .
@@ -119,6 +141,7 @@ code .
 │   │   ├── _cards.scss
 │   │   ├── _carousel.scss
 │   │   ├── _narrative.scss
+│   │   ├── _portrait.scss
 │   │   └── _welcome-banner.scss
 │   ├── layout/
 │   │   ├── _footer.scss
@@ -142,6 +165,7 @@ code .
 ├── medics.html
 ├── package-lock.json
 ├── package.json
-└── README.md
+├── README.md
+└── services.json
 
 ```

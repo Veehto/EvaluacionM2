@@ -1,0 +1,12 @@
+[
+    {
+        "Consultas": true,
+        "Telemedicina": true,
+        "Radiología e Imágenes": true,
+        "Laboratorio": true,
+        "Vacunatorio": true,
+        "Kinesiología": true,
+        "Odontología": true,
+        "Urgencias":true
+    }
+]

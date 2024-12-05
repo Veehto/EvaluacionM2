@@ -17,6 +17,7 @@
     <script src="js/load-list.js" defer></script>
     <title>Contacto</title>
 </head>
+
 <body>
     <!-- <header class="menu">
         <a href="./index.html" class="logo">Clínica Misión Real</a>
@@ -46,6 +47,25 @@
                 </div>
 
                 <div class="modal-body">
+                    <label for="document-id-1" class="form-label">Datos del Paciente</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="document-id" id="document-id-1">
+                        <label class="form-check-label" for="document-id-1">
+                            RUT
+                        </label>
+                    </div>
+                  
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="document-id" id="document-id-2" checked="">
+                        <label class="form-check-label" for="document-id-2">
+                            Pasaporte
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="FormControlInput1" placeholder="12.345.678-9">
+                    </div>
+
                     <div>
                         <label for="area" class="form-label">Selecciona Área</label>
                         <div class="form-check">
@@ -75,29 +95,21 @@
 
                     <br>
 
+                    <!-- Dynamic dropdown menu -->
                     <select id="specialists" class="form-select" aria-label="Default select example" hidden>
 
                     </select>
 
                     <br>
 
-                    <label for="document-id-1" class="form-label">Datos del Paciente</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="document-id" id="document-id-1">
-                        <label class="form-check-label" for="document-id-1">
-                            RUT
-                        </label>
-                    </div>
-                  
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="document-id" id="document-id-2" checked="">
-                        <label class="form-check-label" for="document-id-2">
-                            Pasaporte
-                        </label>
-                    </div>
-
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="FormControlInput1" placeholder="12.345.678-9">
+                    <!-- Dynamic medic card -->
+                    <div id="portrait" class="card" hidden>
+                        <img id="portrait__img" src="" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text"></p>
+                            <a href="#" class="btn btn-primary">Agendar</a>
+                        </div>
                     </div>
                 </div>
 
