@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./sass/style.css">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/4e26ad892b.js" crossorigin="anonymous"></script>
-    <script src="js/contact.js" defer></script>
+    <script src="js/contact-form.js" defer></script>
     <script src="js/load-list.js" defer></script>
     <title>Contacto</title>
 </head>
@@ -172,8 +172,8 @@
             
             <div class="form__box">
                 <article class="form__inputs bg-primary-subtle">
-                    <form action="./index.html" method="post">
-                        <h3>Ingresa tu consulta acá</h3>
+                    <form id="contact-form" action="./index.html" method="post">
+                        <h3>¡Haznos tus preguntas!</h3>
                         <br>
                         <label for="name">Nombre: </label>
                         <input id="name" name="name" type="text" value="" required>
@@ -197,7 +197,6 @@
                         <br>
 
                         <input type="submit" value="Enviar">
-
                     </form>
                 </article>
             </div>

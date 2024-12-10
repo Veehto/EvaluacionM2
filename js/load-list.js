@@ -7,29 +7,31 @@ fetch('../doctors.json')
     throw Error('Request failed.');
 })
 .then(jsonResponse => {
-    console.log('Data loaded successfully', jsonResponse);  // imprime los datos a la consola.
+    // console.log('Data loaded successfully', jsonResponse);  // imprime los datos a la consola.
 
 
-    // Clonación: crea un copia de un elemento del objeto JSON doctores y lo modifica:
+
+    // =====================================================================================================================
+    // COPY (CLONACIÓN): crea un copia de un elemento del objeto JSON doctores y lo modifica:
     const doctorOnVacation = { ...jsonResponse[0] };
     doctorOnVacation.available = false;
-    console.log(doctorOnVacation);
+    // console.log(doctorOnVacation);
 
-    // Merge: fusiona el contenido de dos objetos JSON en uno.
+    // MERGE (FUSIONAR): fusiona el contenido de dos objetos JSON en uno.
     const servicios = {
         Consultas: true,
         Telemedicina: true,
         Urgencias: true
     };
     const doctorServices = { ...jsonResponse[0], ...servicios };
-    console.log(doctorServices);
+    // console.log(doctorServices);
 
-    // Recorrido y Stringify:
-    jsonResponse.forEach((element) => {
-        console.log(JSON.stringify(element));
-    });
+    // RECORRIDO & STRINGIFY:
+    // jsonResponse.forEach((element) => {
+    //     console.log(JSON.stringify(element));
+    // });
 
-    // Arreglos:
+    // ARRAYS (ARREGLOS):
     const newDoctors = [];
     const newDoc1 = {
         name: 'Mario Klaus Herrera',
@@ -47,30 +49,51 @@ fetch('../doctors.json')
         experience: 2
     };
     newDoctors.push(newDoc1, newDoc2, newDoc3);
-    console.log(newDoctors);
+    // console.log(newDoctors);
     const disqualified = newDoctors.find(element => element.experience < 3);
-    console.log(disqualified);
+    // console.log(disqualified);
     newDoctors.pop();
-    console.log(newDoctors);
+    // console.log(newDoctors);
 
-    // Stack simulation:
+    // STACKS (PILAS):
     const appointments = [];
     const appoint1 = {
+        id: 1,
         specialty: 'Medicina General',
+        doctor: 'Pablo García',
+        patient: "Fernando Numen",
         date: 'lunes',
-        time: '10:30'
+        time: '10:30',
+        cost: 20000,
+        minutes: 20
     };
     const appoint2 = {
+        id: 2,
         specialty: 'Dermatología',
+        doctor: 'Camila Arenas',
+        patient: "Alicia Castro",
+        date: 'martes',
+        time: '16:30',
+        cost: 30000,
+        minutes: 15
+    };
+    const appoint3 = {
+        id: 3,
+        specialty: 'Dermatología',
+        doctor: 'Camila Arenas',
+        patient: 'Alicia Castro',
         date: 'viernes',
-        time: '16:30'
+        time: '16:30',
+        cost: 30000,
+        minutes: 15
     };
     appointments.push(appoint1);
     appointments.push(appoint2);
-    const nextAppoint = appointments.pop();
-    console.log(`Su próxima cita es con ${nextAppoint.specialty} el ${nextAppoint.date} a las ${nextAppoint.time}`);
+    appointments.push(appoint3);
+    // const nextAppoint = appointments.pop();
+    // console.log(`Su próxima cita es con ${nextAppoint.specialty} el ${nextAppoint.date} a las ${nextAppoint.time}`);
 
-    // Queues Simulation:
+    // QUEUES Simulation:
     const patients = [];
     const patient1 = {
         patient: 'Fernando Numen',
@@ -87,18 +110,102 @@ fetch('../doctors.json')
     patients.push(patient1);
     patients.push(patient2);
     const nextPatient = patients.shift();
-    console.log(`El paciente ${nextPatient.patient} pasar con la doctora ${nextPatient.doctor} al box ${nextPatient.box}`);
+    // console.log(`El paciente ${nextPatient.patient} pasar con la doctora ${nextPatient.doctor} al box ${nextPatient.box}`);
 
-    // Algorithms:
+    // ALGORITHMS:
     // Algoritmo de búsqueda:
     const searchDoc = docName => jsonResponse.find(doc => doc.name === docName);
-    console.log(searchDoc("Alicia Marambio"));
+    // console.log(searchDoc("Alicia Marambio"));
 
     // Algoritmo de ordenamiento: ordena los doctores en orden descendiente por experiencia.
     jsonResponse.sort((a, b) => b.experience - a.experience);
-    console.log(jsonResponse);
+    // console.log(jsonResponse);
+
+    // CURRYING:
+    const patientName = "Alicia Castro";
+    const calculateCost = (appointments) => {
+        return (patientName) => {
+            const patientAppointments = appointments.filter(appoint => patientName === appoint.patient);
+            const totalCost = patientAppointments.reduce((accumulator, currentValue) => {
+                return accumulator + currentValue.cost;
+            }, 0);
+            return totalCost;
+        }
+    };
+    console.log(`Total a pagar de ${patientName}: $${calculateCost(appointments)(patientName)} CLP.`);
+
+    // ARROW Fn (FUNCIÓN FLECHA):
+    const avgWaitTime = appointments => {
+        const result = appointments.reduce((accumulator, currentValue) => {
+            return accumulator + currentValue.minutes;
+        }, 0);
+        return Math.floor((result / appointments.length));
+    };
+    console.log(`Tiempo promedio de espera: ${avgWaitTime(appointments)} minutos.`);
+
+    // RECURSION:
+    const billingDoc = "Camila Arenas";
+    const billingDocAppointments = appointments.filter(appoint => appoint.doctor === billingDoc);
+    const totalWeeklyHours = (billingDocAppointments, index = 0) => {
+        if (index === billingDocAppointments.length) {
+            return 0;
+        }
+        return billingDocAppointments[index].minutes + totalWeeklyHours(billingDocAppointments, index + 1);
+    };
+    console.log(`Profesional ${billingDoc} realizó ${(totalWeeklyHours(billingDocAppointments)) / 60} horas esta semana.`);
+
+    // FUNCTION COMPOSITION, aplicar descuento:
+    const applyDiscount = cost => discount => cost - (cost * discount);
+    const calculateDiscountedCost = cost => applyDiscount(cost)(0.1);
+    console.log(`El precio con descuento es $${calculateDiscountedCost(200000)} CLP.`);
+
+    // OOP:
+    class Doctor {
+        constructor(name, specialty, experience, appointments) {
+            this.name = name;
+            this.specialty = specialty;
+            this._experience = experience;
+            this.appointments = appointments;
+        }
+
+        get experience() {
+            return this._experience;
+        }
+
+        set experience(years) {
+            if (years < 0) {
+                throw new Error('years of experience must be a positive number.');
+            }
+            this._expecience = years;
+        }
+
+        showInformation() {
+            return `Doctor ${this.name}, Especialidad: ${this.specialty}, Experiencia: ${this.experience} años.`;
+        }
+
+        showAppointments(appointments) {
+            const totalDocAppoints = appointments.filter(appoint => appoint.doctor === this.name);
+            return `El médico ha realizado ${totalDocAppoints.length} atenciones.`;
+        }
+    };
+    class Surgeon extends Doctor {
+        constructor(name, specialty, experience, surgeries) {
+            super(name, specialty, experience);
+            this.surgeries = surgeries;
+        }
+
+        ShowSurgeonInfo() {
+            return `Cirujano ${this.name}, Especialidad: ${this.specialty}, Operaciones: ${this.surgeries}.`;
+        }
+    };
+    const practitioner = new Doctor('Camila Arenas', 'Dermatología', 8, appointments);
+    const surgeon = new Surgeon('Rodolfo Aldunate', 'Cardiología', 10, 23);
+    console.log(practitioner.showAppointments(appointments));
+    console.log(surgeon.ShowSurgeonInfo());
 
 
+
+    // ==========================================================================================================================
     // DOM manipulations:
     let specialties = document.getElementById('specialties');  // guarda las opciones del dropdown menu del modal pop-up en una variable.
     let specialists = document.getElementById('specialists');  // guarda el dropdown menu vacio que posterior% se poblará con médicos.

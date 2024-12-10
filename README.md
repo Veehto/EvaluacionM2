@@ -96,6 +96,25 @@ a menos que solamente las características de éstas últimas satisfagan las nec
 
 * **Algoritmo de Ordenamiento**: Se aplica el algoritmo de ordenamiento bubble sort, ya que se apunta a ordenar a los doctores de forma descendente con respecto a sus años de experiencia, esto lo hace comparando pares de elementos adyacentes y los intercambia si están en el orden correcto. La complejidad del algoritmo bubble sort tiende a ser cuadrática O(n^2) ya que tenemos que recorrer la el arreglo tantas veces como pares haya.
 
+### Uso de Programación Funcional
+* Es un paradigma de programación en JavaScript que apunta a trabajar con funciones de primera clase (las funciones pueden asignarse a variables, pasarse y referenciarse como argumentos y también retornadas por otras funciones). Se concentra en usar funciones puras, la inmutabilidad y la composición de funciones. En este proyecto se apunta a usar un enfoque más declarativo en distintas aplicaciones:
+    - **curryng**: permite convertir una función con múltiples argumentos en una secuencia de funciones que reciben un argumento cada vez. En el Proyecto se utiliza para calcular el total a pagar de un paciente, sumando las citas al doctor que tenga acumuladas.
+    - **Funciones Flecha**: proporcionan una sintaxis más concisa y manejan mejor el contexto de this en JavaScript.
+    - **Recursión**: un patrón común en el que una función se llama a sí misma para resolver problemas más pequeños. Se utiliza para calcular las horas totales en una semana realizadas por un doctor en específico.
+    - **Composición de Funciones**: permite encadenar funciones para crear nuevas funcionalidades. Se utiliza para calcular el precio después de aplicar un descuento en porcentaje.
+
+### Uso de Programación Orientada a Eventos (EOP) y Asincronía
+* Este paradigma se basa en la respuesta a eventos, lo que permite a las aplicaciones ser reactivas. Los desarrolladores pueden usar listeners para capturar eventos y desencadenar funciones específicas.
+
+* La Asincronía en JavaScript usa un modelo basado en eventos, lo que permite realizar múltiples tareas sin bloquear la ejecución. Se utiliza para buscar el archivo JSON en el proyecto e imprimirlo en la consola.
+
+### Uso de Programación Orientada a Objetos (OOP)
+* es un paradigma que organiza el código en torno a objetos, que representan entidades
+del mundo real. Los objetos tienen propiedades (datos) y métodos (funciones). En el proyecto se ponen en práctica distintos principios en el uso de Clases:
+    - **Herencia**: Permite que las clases hereden características de otras. En el proyecto se crea una Clase padre Doctor y se heredan propiedades para la clase hijo Surgeon.
+    - **Encapsulación**: Esconde detalles internos y exponer solo lo necesario. Pone cierta  capa de verificación a criterio del desarrollador, tratando de guiar el cambio de propiedades dentro de ciertas condiciones. En el proyecto se aplica para dar una capa de verificación al fijar los años de experiencia de los doctores, cuidando que siempre sean números positivos (mayores a 0).
+    - **Polimorfismo**: Permitir que los métodos se comporten de manera diferente según el contexto.
+
 ## Para Abrir el proyecto
 
 ### Visitar Repositorio
@@ -123,8 +142,10 @@ code .
 │   └── images/
 │       └── (todas las imágenes)
 ├── js/
-│   ├── contact.js
-│   └── load-list.js
+│   ├── contact-form.js
+│   ├── contact-prompt.js
+│   ├── load-list.js
+│   └── new-load.js
 ├── node_modules (gitignored)
 ├── sass/
 │   ├── abstracts/
