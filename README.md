@@ -144,8 +144,8 @@ code .
 ├── js/
 │   ├── contact-form.js
 │   ├── contact-prompt.js
-│   ├── load-list.js
-│   └── new-load.js
+│   ├── requirements.js
+│   └── script.js
 ├── node_modules (gitignored)
 ├── sass/
 │   ├── abstracts/

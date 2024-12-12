@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="./sass/style.css">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/4e26ad892b.js" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
     <script src="js/contact-form.js" defer></script>
-    <script src="js/load-list.js" defer></script>
+    <script src="js/contact-prompt.js" defer></script>
     <title>Contacto</title>
 </head>
 
@@ -172,27 +173,32 @@
             
             <div class="form__box">
                 <article class="form__inputs bg-primary-subtle">
-                    <form id="contact-form" action="./index.html" method="post">
+                    <form id="contact-form" action="./index.html" method="POST">
                         <h3>¡Haznos tus preguntas!</h3>
                         <br>
-                        <label for="name">Nombre: </label>
-                        <input id="name" name="name" type="text" value="" required>
+                        <label for="user-name">Nombre: </label>
+                        <input id="user-name" name="user-name" type="text" minlength="3" maxlength="100" required>
                         <br>
                         <br>
 
-                        <label for="email">Correo: </label>
-                        <input id="email" name="email" type="email" value="" required>
+                        <label for="user-email">Correo: </label>
+                        <input id="user-email" name="user-email" type="email" required>
                         <br>
                         <br>
 
-                        <label for="title">Asunto: </label>
-                        <input id="title" name="title" type="text" value="" required>
+                        <label for="user-phone">Teléfono: </label>
+                        <input id="user-phone" name="user-phone" type="number">
                         <br>
                         <br>
 
-                        <label for="message">Mensaje: </label>
+                        <label for="user-topic">Asunto: </label>
+                        <input id="user-topic" name="user-topic" type="text" required>
                         <br>
-                        <textarea id="message" name="message" rows="10" cols="40" required>Escribe acá tu consulta.</textarea>
+                        <br>
+
+                        <label for="user-message">Mensaje: </label>
+                        <br>
+                        <textarea id="user-message" name="user-message" rows="10" cols="40" required>Escribe aquí tu mensaje:</textarea>
                         <br>
                         <br>
 

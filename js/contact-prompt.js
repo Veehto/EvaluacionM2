@@ -26,7 +26,6 @@ if (!mail) {
 };
 
 
-
 // prompt número de teléfono
 const phoneNumber = parseInt(prompt('Cuál es tu número de teléfono?'));
 if (!phoneNumber || isNaN(phoneNumber)) {
@@ -45,3 +44,8 @@ console.log(phoneNumber);
 
 // mostrar al usuario la información que entregó.
 alert(`Your data: full name: ${fullName} \n mail: ${mail} \n phone Number: ${phoneNumber}`);
+
+// EOP: añadir información de prompts a los campos desl formulario:
+form[0].value = fullName;
+form[1].value = mail;
+form[2].value = phoneNumber;
