@@ -10,7 +10,8 @@
             "phone": "+56 22 367 512"
         },
         "image": "../assets/images/juan-perez.png",
-        "services": ["Consulta", "Telemedicina"]
+        "services": ["Consulta", "Telemedicina"],
+        "cost": 20000
     },
     {
         "name": "Pablo García",
@@ -23,7 +24,8 @@
             "phone": "+56 22 367 521"
         },
         "image": "../assets/images/pablo-garcia.png",
-        "services": ["Consulta"]
+        "services": ["Consulta"],
+        "cost": 20000
     },
     {
         "name": "Carmen López",
@@ -36,7 +38,8 @@
             "phone": "+56 22 367 559"
         },
         "image": "../assets/images/carmen-lopez.png",
-        "services": ["Consulta", "Telemedicina"]
+        "services": ["Consulta", "Telemedicina"],
+        "cost": 50000
     },
     {
         "name": "Alicia Marambio",
@@ -49,7 +52,8 @@
             "phone": "+56 22 367 554"
         },
         "image": "../assets/images/alicia-marambio.png",
-        "services": ["Consulta", "Telemedicina"]
+        "services": ["Consulta", "Telemedicina"],
+        "cost": 50000
     },
     {
         "name": "Pedro Messina",
@@ -62,7 +66,8 @@
             "phone": "+56 22 367 582"
         },
         "image": "../assets/images/pedro-messina.png",
-        "services": ["Consulta", "Telemedicina"]
+        "services": ["Consulta", "Telemedicina"],
+        "cost": 60000
     },
     {
         "name": "Pablo Urritia",
@@ -75,7 +80,8 @@
             "phone": "+56 22 367 583"
         },
         "image": "../assets/images/pablo-urrutia.png",
-        "services": ["Consulta"]
+        "services": ["Consulta"],
+        "cost": 70000
     },
     {
         "name": "Camila Arenas",
@@ -88,7 +94,8 @@
             "phone": "+56 22 367 562"
         },
         "image": "../assets/images/camila-arenas.png",
-        "services": ["Consulta", "Telemedicina"]
+        "services": ["Consulta", "Telemedicina"],
+        "cost": 30000
     },
     {
         "name": "Esteban Fernández",
@@ -101,6 +108,7 @@
             "phone": "+56 22 367 561"
         },
         "image": "../assets/images/esteban-fernandez.png",
-        "services": ["Consulta"]
+        "services": ["Consulta"],
+        "cost": 40000
     }
 ]

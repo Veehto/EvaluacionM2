@@ -106,7 +106,7 @@ a menos que solamente las características de éstas últimas satisfagan las nec
 ### Uso de Programación Orientada a Eventos (EOP) y Asincronía
 * Este paradigma se basa en la respuesta a eventos, lo que permite a las aplicaciones ser reactivas. Los desarrolladores pueden usar listeners para capturar eventos y desencadenar funciones específicas.
 
-* La Asincronía en JavaScript usa un modelo basado en eventos, lo que permite realizar múltiples tareas sin bloquear la ejecución. Se utiliza para buscar el archivo JSON en el proyecto e imprimirlo en la consola.
+* La Asincronía en JavaScript usa un modelo basado en eventos, lo que permite realizar múltiples tareas sin bloquear la ejecución. Se utiliza para buscar el archivo JSON en el proyecto e imprimirlo en la consola. En el proyecto se utiliza la sintaxis async/await para simplificar el manejo de código asincrónico, también evita el anidamiento excesivo de callbacks.
 
 ### Uso de Programación Orientada a Objetos (OOP)
 * es un paradigma que organiza el código en torno a objetos, que representan entidades

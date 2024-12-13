@@ -5,8 +5,6 @@ const getData = async () => {
         if (response.ok) {
             const jsonResponse = await response.json();
 
-            console.log('Data loaded successfully', jsonResponse);
-
              // DOM manipulations:
             let specialties = document.getElementById('specialties');  // guarda las opciones del dropdown menu del modal pop-up en una variable.
             let specialists = document.getElementById('specialists');  // guarda el dropdown menu vacio que posterior% se poblará con médicos.
@@ -71,7 +69,6 @@ const getData = async () => {
             specialties.addEventListener('click', clearDoctorsList);
             specialties.addEventListener('click', populateDoctorsList);
         }
-        // throw new Error('Request failed.');
     } catch (error) {
         console.error('Error loading data', error);
     }

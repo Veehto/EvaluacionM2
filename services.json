@@ -1,12 +1,26 @@
 [
     {
-        "Consultas": true,
-        "Telemedicina": true,
-        "Radiología e Imágenes": true,
-        "Laboratorio": true,
-        "Vacunatorio": true,
-        "Kinesiología": true,
-        "Odontología": true,
-        "Urgencias":true
+        "name": "Consulta General",
+        "Location": "Central"
+    },
+    {
+        "name": "Telemedicina",
+        "Location": "Central"
+    },
+    {
+        "name": "Radiología e Imágenes",
+        "Location": "Apoquindo"
+    },
+    {
+        "name": "Laboratorio",
+        "Location": "Apoquindo"
+    },
+    {
+        "name": "Vacunatorio",
+        "Location": "Recoleta"
+    },
+    {
+        "name": "Urgencias",
+        "Location": "central"
     }
 ]
