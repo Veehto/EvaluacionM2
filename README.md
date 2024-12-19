@@ -18,6 +18,78 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 
 
 ## Especificaciones Técnicas
+## CURRENT BRANCH NUEVO Implementación React
+* Esta branch del proyecto explora la implementación de React.js para la página web de la clínica, con el objectivo de desarrollar una aplicación web interactiva y eficiente. Se crean componentes reutilizables para distintas secciones de la web del hospital, usando JSX para renderizar datos y manejar el flujo de información con props. También se utilizan Hooks (como useState y useEffect) y formularios para manejar la interacción del usuario. Se crean 3 componentes principales:
+    - **DoctorCard**: Muestra la información de un doctor (nombre, especialidad, años de experiencia). Se anida en otro componente padre DoctorList.
+    - **ServiceList**: Lista los servicios médicos disponibles en el hospital. Incluye un componente hijo Service, que representa cada list item.
+    - **AppointmentForm**: Un formulario para que los usuarios agenden una cita con un doctor.
+
+## Para Abrir el proyecto
+
+### Visitar Repositorio
+* https://github.com/Veehto/EvaluacionM2/tree/React-branch
+* Asegurarse de que descargar proyecto desde rama **React-branch**.
+
+### Clonar Repositorio desde GitHub con CLI
+```
+git clone --branch React-branch https://github.com/Veehto/EvaluacionM2.git TU_CARPETA
+code .
+```
+
+### Intalar paquetes necesarios con npm y montar el servidor local
+* Dentro de la carpeta de trabajo:
+```
+npm install
+npm run dev
+```
+* Copiar la URL y pegar en el buscador del explorador web, o bien escribir en la consola la letra 'o' + ENTER, lo que abrirá el explorador web por defecto con la URL del servidor local.
+
+## Estructura del proyecto:
+```
+.
+├── node_modules (gitignored)
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── assets/
+│   │   ├── (all images)
+│   │   └── react.svg
+│   ├── components/
+│   │   ├── AppointmentForm.jsx
+│   │   ├── DoctorCard.jsx
+│   │   ├── DoctorList.jsx
+│   │   ├── Service.jsx
+│   │   └── ServiceList.jsx
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── appointments.json
+├── doctors.json
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── services.json
+└── vite.config.js
+
+```
+
+# React + Vite
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+## PREVIOUS BRANCHES Especificaciones Técnicas PASADAS
+**IMPORTANTE**: Desde este punto, se encuentran las implementaciones anteriores del proyecto presentes en las otras branches del repositorio.
+
 * **Media Queries**: Se implementaron puntos de quebre para aplicar cambios a la página dependiendo del tamaño de la pantalla, esto permite una mejor visibilidad en dispositivos de escritorio, tabletas y celulares.
 
 * **Implementación Sass**: Se implementa el preprocesador Sass para modularizar los estilos aplicados y hacer más llevadero futuras modificaciones. Se usa la arquitectura 7-1 para organizar los archivos parciles dentro de la carpeta sass/, el archivo main.scss importa todos los parciales.
@@ -25,7 +97,6 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 * **Metodología BEM**: También se cambia la convención de nombres de clases en las guías de estilo a BEM, para factorizar las reglas de estilo, mejorando la comprensión del código y si reutilización.
 
 * **Bootstrap package**: Uso del paquete de Bootstrap para agilizar e unificar la implementación del código. Se ocupan  principalmente 4 componentes: Nav Bar, Modal, Form y Carousel. También se hacen modificaciones personalizadas a algunos estilos de colores de Bootstrap, con la finalidad de ajustarse a la imagen e identidad de la clínica.
-
 
 ## Implementación de JavaScript
 Se elige implementar JavaScript al proyecto en curso por ser la opción más pertinente considerando la mano de obra, tiempo a disposición del equipo, y familiaridad con el lenguaje. 
@@ -114,79 +185,3 @@ del mundo real. Los objetos tienen propiedades (datos) y métodos (funciones). E
     - **Herencia**: Permite que las clases hereden características de otras. En el proyecto se crea una Clase padre Doctor y se heredan propiedades para la clase hijo Surgeon.
     - **Encapsulación**: Esconde detalles internos y exponer solo lo necesario. Pone cierta  capa de verificación a criterio del desarrollador, tratando de guiar el cambio de propiedades dentro de ciertas condiciones. En el proyecto se aplica para dar una capa de verificación al fijar los años de experiencia de los doctores, cuidando que siempre sean números positivos (mayores a 0).
     - **Polimorfismo**: Permitir que los métodos se comporten de manera diferente según el contexto.
-
-## Para Abrir el proyecto
-
-### Visitar Repositorio
-* https://github.com/Veehto/EvaluacionM2/tree/JS-branch
-* Asegurarse de que descargar proyecto desde rama **JS-branch**.
-
-### Clonar Repositorio desde GitHub con CLI
-```
-git clone --branch JS-branch https://github.com/Veehto/EvaluacionM2.git TU_CARPETA
-code .
-```
-
-### Abrir el Proyecto Localmente en un Navegador
-
-* Descomprimir el archivo .zip que incluye todos los archivos necesarios para abrir la página.
-* Una vez descomprimido, abrir el archivo index.html con el navegador web de preferencia.
-
-
-## Estructura del proyecto:
-```
-.
-├── assets/
-│   ├── css/
-│   │   └── styles.css (vanilla css, antes de aplicar BEM y Sass.)
-│   └── images/
-│       └── (todas las imágenes)
-├── js/
-│   ├── contact-form.js
-│   ├── contact-prompt.js
-│   ├── requirements.js
-│   └── script.js
-├── node_modules (gitignored)
-├── sass/
-│   ├── abstracts/
-│   │   ├── _functions.scss
-│   │   ├── _mixins.scss
-│   │   └── _variables.scss
-│   ├── base/
-│   │   ├── _base.scss
-│   │   ├── _fonts.scss
-│   │   ├── _reset.scss
-│   │   └── _typography.scss
-│   ├── components/
-│   │   ├── _buttons.scss
-│   │   ├── _cards.scss
-│   │   ├── _carousel.scss
-│   │   ├── _narrative.scss
-│   │   ├── _portrait.scss
-│   │   └── _welcome-banner.scss
-│   ├── layout/
-│   │   ├── _footer.scss
-│   │   ├── _forms.scss
-│   │   ├── _location.scss
-│   │   └── _navigation.scss
-│   ├── pages/
-│   │   ├── _contact.scss
-│   │   ├── _index.scss
-│   │   └── _medics.scss
-│   ├── themes
-│   ├── vendors/
-│   │   └── _bootstrap.scss
-│   ├── main.scss
-│   ├── style.css
-│   └── style.css.map
-├── .gitignore
-├── contact.html
-├── doctors.json
-├── index.html
-├── medics.html
-├── package-lock.json
-├── package.json
-├── README.md
-└── services.json
-
-```

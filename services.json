@@ -1,26 +1,26 @@
 [
     {
         "name": "Consulta General",
-        "Location": "Central"
+        "location": "Central"
     },
     {
         "name": "Telemedicina",
-        "Location": "Central"
+        "location": "Central"
     },
     {
         "name": "Radiología e Imágenes",
-        "Location": "Apoquindo"
+        "location": "Apoquindo"
     },
     {
         "name": "Laboratorio",
-        "Location": "Apoquindo"
+        "location": "Apoquindo"
     },
     {
         "name": "Vacunatorio",
-        "Location": "Recoleta"
+        "location": "Recoleta"
     },
     {
         "name": "Urgencias",
-        "Location": "central"
+        "location": "central"
     }
 ]
