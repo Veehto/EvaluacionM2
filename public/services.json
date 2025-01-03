@@ -22,5 +22,13 @@
     {
         "name": "Urgencias",
         "location": "central"
+    },
+    {
+        "name": "Ambulatorio",
+        "location": "central"
+    },
+    {
+        "name": "Paleativo",
+        "location": "central"
     }
 ]

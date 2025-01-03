@@ -1,6 +1,8 @@
-import Service from './Service';
+import { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import HOCServices from './HOCServices';
 
-export default function ServiceList({ services }) {
+function ServiceList({ services }) {
     return (
         <div className="accordion accordion-flush" id="accordionFlushExample">
             <div className="accordion-item">
@@ -14,11 +16,9 @@ export default function ServiceList({ services }) {
                         <ul className="list-group">
                             {
                                 services.map((service, index) => (
-                                    <Service
-                                        key={index}
-                                        name={service.name}
-                                        location={service.location}
-                                    />
+                                    <Fragment key={index}>
+                                        <li className="list-group-item"><strong>{service.name}</strong>, ubicado en {service.location}</li>
+                                    </Fragment>
                                 ))
                             }
                         </ul>
@@ -27,4 +27,15 @@ export default function ServiceList({ services }) {
             </div>
         </div>
     );
+};
+
+export default HOCServices(ServiceList);
+
+ServiceList.propTypes = {
+    services: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            location: PropTypes.string.isRequired,
+        })
+    ).isRequired,
 };

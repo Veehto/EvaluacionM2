@@ -1,20 +1,29 @@
-export default function DoctorCard({ name, specialty, experience, image }) {
+import PropTypes from 'prop-types';
+
+export default function DoctorCard({ name, specialty, experience, image, onClick }) {
+    
     const imageStyle = {
-        width: '18rem',
-        height: '18rem'
+        width: 'auto',
+        height: '18rem',
     };
     
     return (
-        <div className="col-lg-4 g-3">
+        <div className="col">
             <div className="card">
                 <img src={image} className="card-img-top" alt={name} style={imageStyle}></img>
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text">{specialty}</p>
-                    <p className="card-text">Experiencia de {experience} años</p>
-                    <button type="submit" className="btn btn-primary">Agendar</button>
+                    <button onClick={onClick} className="btn btn-primary">Más información</button>
                 </div>
             </div>
         </div>
     );
+};
+
+DoctorCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    specialty: PropTypes.string.isRequired,
+    experience: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
 };
