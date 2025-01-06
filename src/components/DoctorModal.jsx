@@ -1,12 +1,17 @@
 import { useContext, useEffect } from 'react';
 import { DoctorContext, ModalContext } from './DoctorContext';
 
-export default function DoctorModal() {
+export default function DoctorModal({ setView }) {
     const doctors = useContext(DoctorContext);
     const { isOpen, closeModal, selectedDoctorIndex } = useContext(ModalContext);
 
     const handleModalClick = (e) => {
         e.stopPropagation();
+    };
+
+    const handleAgendarHoraClick = () => {
+        setView("appointments");
+        closeModal();
     };
 
     useEffect(() => {
@@ -43,7 +48,7 @@ export default function DoctorModal() {
                         </div>
                         <div className="modal-footer">
                             <button onClick={closeModal} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" className="btn btn-primary">Agendar Hora</button>
+                            <button onClick={handleAgendarHoraClick} type="button" className="btn btn-primary">Agendar Hora</button>
                         </div>
                     </div>
                 </div>

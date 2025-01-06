@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { DoctorContext, ModalContext } from './DoctorContext';
 import PropTypes from 'prop-types';
 import DoctorCard from "./DoctorCard";
@@ -6,22 +6,46 @@ import DoctorCard from "./DoctorCard";
 export default function DoctorList() {
     const doctors = useContext(DoctorContext);
     const modal = useContext(ModalContext);
+    const [selectedSpecialty, setSelectedSpecialty] = useState('Todos');
+
+    const handleSpecialtyChange = (specialty) => {
+        setSelectedSpecialty(specialty);
+    };
+
+    const filteredDoctors = selectedSpecialty === 'Todos'
+        ? doctors
+        : doctors.filter(doctor => doctor.specialty === selectedSpecialty);
 
     return (
-        <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3'>
-            {
-                doctors.map((doctor, index) => (
-                    <DoctorCard
-                        key={index}
-                        name={doctor.name}
-                        specialty={doctor.specialty}
-                        experience={doctor.experience}
-                        image={doctor.image}
-                        onClick={() => modal.openModal(index)}
-                    />
-                ))
-            }
-        </div>
+        <>
+            <div className="dropdown">
+                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Especialidad
+                </button>
+                <ul className="dropdown-menu">
+                    <li><button className="dropdown-item" type="button" onClick={() => handleSpecialtyChange('Todos')}>Todos</button></li>
+                    <li><button className="dropdown-item" type="button" onClick={() => handleSpecialtyChange('Medicina General')}>Medicina General</button></li>
+                    <li><button className="dropdown-item" type="button" onClick={() => handleSpecialtyChange('Cardiología')}>Cardiología</button></li>
+                    <li><button className="dropdown-item" type="button" onClick={() => handleSpecialtyChange('Oncología')}>Oncología</button></li>
+                    <li><button className="dropdown-item" type="button" onClick={() => handleSpecialtyChange('Dermatología')}>Dermatología</button></li>
+                </ul>
+            </div>
+
+            <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3'>
+                {
+                    filteredDoctors.map((doctor, index) => (
+                        <DoctorCard
+                            key={index}
+                            name={doctor.name}
+                            specialty={doctor.specialty}
+                            experience={doctor.experience}
+                            image={doctor.image}
+                            onClick={() => modal.openModal(index)}
+                        />
+                    ))
+                }
+            </div>
+        </>
     );
 };
 

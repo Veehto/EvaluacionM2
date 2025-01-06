@@ -1,14 +1,15 @@
-import { Profiler } from 'react';
-import DoctorProvider from './components/DoctorContext';
-import DoctorList from './components/DoctorList';
-import ServiceList from './components/ServiceList';
-import AppointmentForm from './components/AppointmentForm';
-import Overlays from './components/Overlays';
+import { useState } from 'react';
+import Home from './views/Home';
+import DoctorListView from './views/DoctorListView';
+import AppointmentsView from './views/AppointmentsView';
 import './App.css';
 
 export default function App() {
     // const [doctors, setDoctors] = useState([]);
     // const [services, setServices] = useState([]);
+    
+    // State to control the current view
+    const [view, setView] = useState("home");
 
     // useEffect(() => {
     //     fetch("../doctors.json")
@@ -33,14 +34,17 @@ export default function App() {
 
     return (
         <div className='container text-center'>
-            <DoctorProvider>
-                <Overlays />
-                <Profiler id='DoctorList' onRender={onRenderCallback}>
-                    <DoctorList />
-                </Profiler>
-            </DoctorProvider>
-            <ServiceList />
-            <AppointmentForm />
+            <nav>
+                {/* View buttons */}
+                <button onClick={() => setView("home")}>Inicio</button>
+                <button onClick={() => setView("doctors")}>Doctores</button>
+                <button onClick={() => setView("appointments")}>Horas</button>
+            </nav>
+
+            {/* Checks to show the current view */}
+            {view === "home" && <Home setView={setView}/>}
+            {view === "doctors" && <DoctorListView onRender={onRenderCallback} setView={setView}/>}
+            {view === "appointments" && <AppointmentsView />}
         </div>
     );
 };
