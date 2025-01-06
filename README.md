@@ -53,6 +53,7 @@ npm run dev
 ├── node_modules (gitignored)
 ├── public/
 │   ├── doctors.json
+│   ├── frontis-clinica.jpg
 │   ├── servicess.json
 │   └── vite.svg
 ├── src/
@@ -66,8 +67,16 @@ npm run dev
 │   │   ├── DoctorList.jsx
 │   │   ├── DoctorModal.jsx
 │   │   ├── HOCServices.jsx
+│   │   ├── Narrative.jsx
+│   │   ├── Overlays.jsx
 │   │   ├── ServiceList.jsx
 │   │   └── StausMessage.jsx
+│   │   └── WelcomeHero.jsx
+│   ├── views/
+│   │   ├── AppointmentsView.jsx
+│   │   ├── DoctorListView.jsx
+│   │   ├── Home.jsx
+│   │   ├── ServiceListView.jsx
 │   ├── App.css
 │   ├── App.jsx
 │   ├── index.css
