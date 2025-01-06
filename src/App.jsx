@@ -23,13 +23,9 @@ export default function App() {
     //     .then((json) => setServices(json));
     // }, []);
 
+    // Callback function to log the render information
     function onRenderCallback(id, phase, actualDuration, baseDuration, startTime, commitTime) {
-        console.log(`ID: ${id}`);
-        console.log(`Phase: ${phase}`);
-        console.log(`Actual duration: ${actualDuration}`);
-        console.log(`Base duration: ${baseDuration}`);
-        console.log(`Start time: ${startTime}`);
-        console.log(`Commit time: ${commitTime}`);
+        console.log(`ID: ${id}, Phase: ${phase}, Actual duration: ${actualDuration}, Base duration: ${baseDuration}, Start time: ${startTime}, Commit time: ${commitTime}`);
     };
 
     return (

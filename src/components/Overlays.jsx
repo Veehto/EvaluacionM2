@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { createPortal } from 'react-dom';
-import { DoctorContext, ModalContext } from './DoctorContext';
+import { DoctorContext, ModalContext } from '../contexts/DoctorContext';
 import DoctorModal from "./DoctorModal";
 
 const modalRoot = document.getElementById('overlays');

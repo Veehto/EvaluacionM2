@@ -63,20 +63,22 @@ npm run dev
 │   ├── components/
 │   │   ├── AppointmentForm.jsx
 │   │   ├── DoctorCard.jsx
-│   │   ├── DoctorContext.jsx
 │   │   ├── DoctorList.jsx
 │   │   ├── DoctorModal.jsx
-│   │   ├── HOCServices.jsx
 │   │   ├── Narrative.jsx
 │   │   ├── Overlays.jsx
 │   │   ├── ServiceList.jsx
-│   │   └── StausMessage.jsx
+│   │   ├── StausMessage.jsx
 │   │   └── WelcomeHero.jsx
+│   ├── contexts/
+│   │   └── DoctorContext.jsx
+│   ├── hocs/
+│   │   └── HOCServices.jsx
 │   ├── views/
 │   │   ├── AppointmentsView.jsx
 │   │   ├── DoctorListView.jsx
 │   │   ├── Home.jsx
-│   │   ├── ServiceListView.jsx
+│   │   └── ServiceListView.jsx
 │   ├── App.css
 │   ├── App.jsx
 │   ├── index.css

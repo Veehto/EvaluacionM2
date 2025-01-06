@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { DoctorContext, ModalContext } from './DoctorContext';
+import { DoctorContext, ModalContext } from '../contexts/DoctorContext';
 import PropTypes from 'prop-types';
 import DoctorCard from "./DoctorCard";
 

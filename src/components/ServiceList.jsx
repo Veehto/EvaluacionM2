@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import HOCServices from './HOCServices';
+import HOCServices from '../hocs/HOCServices';
 
 function ServiceList({ services }) {
     return (

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { DoctorContext, ModalContext } from './DoctorContext';
+import { DoctorContext, ModalContext } from '../contexts/DoctorContext';
 
 export default function DoctorModal({ setView }) {
     const doctors = useContext(DoctorContext);

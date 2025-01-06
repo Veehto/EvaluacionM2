@@ -1,5 +1,5 @@
 import { Profiler } from "react";
-import DoctorProvider from "../components/DoctorContext";
+import DoctorProvider from "../contexts/DoctorContext";
 import Overlays from "../components/Overlays";
 import DoctorList from "../components/DoctorList";
 

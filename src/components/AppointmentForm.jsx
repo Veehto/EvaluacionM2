@@ -46,7 +46,7 @@ export default function AppointmentForm() {
                     <div className="card-body">
                         <form className="contact-form pb-5" onSubmit={handleSubmit}>
                             <div className="mb-3">
-                                <div className="form-check">
+                                <div className="htmlForm-check">
                                     <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
                                     <label className="form-check-label" htmlFor="flexRadioDefault1">
                                         RUT
