@@ -27,6 +27,9 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 ### React DOM
 * React crea su propia representación del DOM como un objeto JavaScript. Siempre que hay un cambio en el DOM, el framework hace una copia de este objeto JavaScript, realiza los cambios en esa copia y compara los dos objetos JS para ver qué ha cambiado, este proceso se llama “diffing”. Luego, informa al navegador sobre estos cambios y solo se vuelven a pintar esas partes del DOM. Realizar cambios en objetos JavaScript y compararlos es mucho más rápido que intentar hacer lo mismo con DOM. Dado que esta copia del DOM se almacena en la memoria como un objeto JavaScript.
 
+### Axios API Requests
+* Se empieza a aplicar la librería Axios para hacer peticiones fetch a una API simulada (existente en el directorio public del proyecto). Axios tiene un manejo de errores y traspaso a JSON automático, cancelación de solicitudes simples, tiene soporte de timeout, y una configuración avanzada amplia. A pesar de que requiera instalación y aprender sintaxis nueva, las ventajas de su uso motivan su implementación en el proyecto.
+
 ## Para Abrir el proyecto
 
 ### Visitar Repositorio
@@ -66,6 +69,7 @@ npm run dev
 │   │   ├── DoctorList.jsx
 │   │   ├── DoctorModal.jsx
 │   │   ├── Narrative.jsx
+│   │   ├── Notification.jsx
 │   │   ├── Overlays.jsx
 │   │   ├── ServiceList.jsx
 │   │   ├── StausMessage.jsx
@@ -74,6 +78,8 @@ npm run dev
 │   │   └── DoctorContext.jsx
 │   ├── hocs/
 │   │   └── HOCServices.jsx
+│   ├── services/
+│   │   └── DoctorApi.js
 │   ├── views/
 │   │   ├── AppointmentsView.jsx
 │   │   ├── DoctorListView.jsx
