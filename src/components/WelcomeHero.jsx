@@ -1,4 +1,8 @@
-export default function WelcomeHero({ setView }) {
+import { useNavigate } from "react-router";
+
+export default function WelcomeHero() {
+    const navigate = useNavigate();
+    
     const backgroundImg = {
         backgroundImage: 'url(/frontis-clinica.jpg)',
         backgroundSize: 'cover',
@@ -12,10 +16,10 @@ export default function WelcomeHero({ setView }) {
     };
 
     const handleAgendarHoraClick = () => {
-        setView("appointments");
+        navigate("/appointments");
     };
     const handleVerDoctoresClick = () => {
-        setView("doctors");
+        navigate("/doctors");
     };
 
     return (

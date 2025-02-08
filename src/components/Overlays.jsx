@@ -5,7 +5,7 @@ import DoctorModal from "./DoctorModal";
 
 const modalRoot = document.getElementById('overlays');
 
-export default function Overlays({ setView }) {
+export default function Overlays() {
     const doctors = useContext(DoctorContext);
     const modal = useContext(ModalContext);
 
@@ -17,7 +17,6 @@ export default function Overlays({ setView }) {
                         doctors={doctors} 
                         openModal={modal.openModal} 
                         closeModal={modal.closeModal} 
-                        setView={setView}
                     />
                 )
             }

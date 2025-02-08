@@ -1,8 +1,10 @@
 import { useContext, useEffect } from 'react';
 import { DoctorContext, ModalContext } from '../contexts/DoctorContext';
+import { useNavigate } from 'react-router';
 
-export default function DoctorModal({ setView }) {
-    const doctors = useContext(DoctorContext);
+export default function DoctorModal() {
+    const navigate = useNavigate();
+    const { doctors } = useContext(DoctorContext);
     const { isOpen, closeModal, selectedDoctorIndex } = useContext(ModalContext);
 
     const handleModalClick = (e) => {
@@ -10,7 +12,7 @@ export default function DoctorModal({ setView }) {
     };
 
     const handleAgendarHoraClick = () => {
-        setView("appointments");
+        navigate("/appointments");
         closeModal();
     };
 
@@ -25,7 +27,7 @@ export default function DoctorModal({ setView }) {
         };
     }, [isOpen]);
 
-    if (selectedDoctorIndex === null) return null;
+    if (selectedDoctorIndex === null || !doctors[selectedDoctorIndex]) return null;
 
     const doctor = doctors[selectedDoctorIndex];
 

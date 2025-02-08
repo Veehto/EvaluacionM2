@@ -9,10 +9,12 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
+
         if (storedUser) {
             const decryptedUser = decryptData(storedUser);
             setUser(decryptedUser);
         }
+        
         setLoading(false);
     }, []);
 

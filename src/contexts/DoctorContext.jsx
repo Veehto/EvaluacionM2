@@ -23,7 +23,7 @@ export default function DoctorProvider({ children }) {
         setNotification(null);
         try {
             // Simulate a 50% chance of failure:
-            if (Math.random() < .5) {
+            if (Math.random() < .3) {
                 throw new Error('Failed to load doctors data.');
             }
             const response = await axios.get('/doctors.json');

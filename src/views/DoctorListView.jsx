@@ -1,19 +1,14 @@
-import { Profiler } from "react";
-import DoctorProvider from "../contexts/DoctorContext";
-import Overlays from "../components/Overlays";
-import DoctorList from "../components/DoctorList";
+import DoctorProvider from "../contexts/DoctorContext"
+import MainLayout from "../layouts/MainLayout";
+import DoctorListContent from "../components/DoctorListContent";
 
-
-export default function DoctorListView({ onRender, setView }) {
+export default function DoctorListView({ onRender }) {
     return (
-        <div>
-            <h1>Doctores</h1>
-            <DoctorProvider>
-                <Overlays setView={setView}/>
-                <Profiler id='DoctorList' onRender={onRender}>
-                    <DoctorList />
-                </Profiler>
-            </DoctorProvider>
-        </div>
+        <DoctorProvider>
+            <MainLayout>
+                <h1>Doctores</h1>
+                <DoctorListContent onRender={onRender} />
+            </MainLayout>
+        </DoctorProvider>
     );
 };

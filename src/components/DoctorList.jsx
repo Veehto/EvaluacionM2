@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { DoctorContext, ModalContext } from '../contexts/DoctorContext';
 import PropTypes from 'prop-types';
 import DoctorCard from "./DoctorCard";
@@ -6,7 +6,7 @@ import Notification from './Notification';
 
 export default function DoctorList() {
     const { doctors, loading, fetchDoctors, notification }= useContext(DoctorContext);
-    const modal = useContext(ModalContext);
+    const { openModal } = useContext(ModalContext);
     const [selectedSpecialty, setSelectedSpecialty] = useState('Todos');
 
     const handleSpecialtyChange = (specialty) => {
@@ -51,7 +51,7 @@ export default function DoctorList() {
                                         specialty={doctor.specialty}
                                         experience={doctor.experience}
                                         image={doctor.image}
-                                        onClick={() => modal.openModal(index)}
+                                        onClick={() => openModal(index)}
                                     />
                                 ))
                             )
