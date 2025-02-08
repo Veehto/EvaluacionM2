@@ -15,7 +15,7 @@ const Login = () => {
         if (username === 'admin' && password === 'password') {
             login('admin');
             navigate('/dashboard');
-        } else if (username === 'user' && password === 'password') {
+        } else if (username === 'user' && password === 'contrasena') {
             login('user');
             navigate('/');
         } else {

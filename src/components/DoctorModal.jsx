@@ -12,7 +12,7 @@ export default function DoctorModal() {
     };
 
     const handleAgendarHoraClick = () => {
-        navigate("/appointments");
+        navigate("/make-appointments");
         closeModal();
     };
 

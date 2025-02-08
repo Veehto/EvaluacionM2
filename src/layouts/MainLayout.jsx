@@ -36,6 +36,9 @@ const MainLayout = ({ children }) => {
                                         <Link className="nav-link" to='/services'>Servicios</Link>
                                     </li>
                                     <li className="nav-item">
+                                        <Link className="nav-link" to='/make-appointments'>Reservar Hora</Link>
+                                    </li>
+                                    <li className="nav-item">
                                         <button
                                             className="nav-link btn btn-link"
                                             onClick={logout}
@@ -57,7 +60,7 @@ const MainLayout = ({ children }) => {
             <main style={{ paddingTop: '60px' }}>
                 {children}
             </main>
-            <footer>
+            <footer className="bg-light text-center fixed-bottom">
                 <p>&copy; 2025 Clínica Mision Real</p>
             </footer>
         </div>
