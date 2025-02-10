@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function DoctorCard({ name, specialty, experience, image, onClick }) {
+export default function DoctorCard({ name, specialty, image, onClick }) {
     
     const imageStyle = {
         width: '100%',

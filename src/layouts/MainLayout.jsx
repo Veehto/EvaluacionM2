@@ -9,9 +9,6 @@ const MainLayout = ({ children }) => {
             <header>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top rounded mb-4 shadow-sm p-3 mb-5 bg-white border-bottom border-dark">
                     <Link className="navbar-brand" to='/'>Clínica Misión Real</Link>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
 
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ml-auto">
@@ -47,7 +44,7 @@ const MainLayout = ({ children }) => {
                                                 border: "none",
                                                 cursor: "pointer",
                                             }}
-                                        >
+                                            >
                                             Cerrar Sesión
                                         </button>
                                     </li>
@@ -55,9 +52,14 @@ const MainLayout = ({ children }) => {
                             )}
                         </ul>
                     </div>
+                    {user && (
+                        <div className="text-right text-secondary small font-weight-bold"> 
+                            <p>Autenticado como: <strong>{user.role}</strong>.</p>
+                        </div>
+                    )}
                 </nav>
             </header>
-            <main style={{ paddingTop: '60px' }}>
+            <main style={{ paddingTop: '60px'}}>
                 {children}
             </main>
             <footer className="bg-light text-center fixed-bottom">

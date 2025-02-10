@@ -29,24 +29,49 @@ const Dashboard = () => {
         }
     }, [user]);
 
+    const renderTableHeaders = () => {
+        if (secureData.length === 0) return null;
+        const headers = Object.keys(secureData[0]);
+        return (
+            <tr>
+                {headers.map((header) => (
+                    <th key={header}>{header}</th>
+                ))}
+            </tr>
+        );
+    };
+
+    const renderTableRows = () => {
+        return secureData.map((item, index) => (
+            <tr key={index}>
+                {Object.values(item).map((value, idx) => (
+                    <td key={idx}>{value}</td>
+                ))}
+            </tr>
+        ));
+    };
+
     return (
     <MainLayout>
         <h1>Dashboard</h1>
         {user?.role === "admin" && (
-        <>
-            <p>Bienvenido, Administrador</p>
-            {error && <p style={{ color: "red" }}> {error} </p>}
-            <ul>
-            {secureData.map((item) => (
-                <li key={item.id}>{item.info}</li>
-            ))}
-            </ul>
-        </>
+            <>
+                <p>Bienvenido, Administrador</p>
+                {error && <p style={{ color: "red" }}>{error}</p>}
+                <table>
+                    <thead>
+                        {renderTableHeaders()}
+                    </thead>
+                    <tbody>
+                        {renderTableRows()}
+                    </tbody>
+                </table>
+            </>
         )}
         {user?.role === "user" && (
-        <>
-            <p>Bienvenido, Usuario. No tienes acceso esta página.</p>
-        </>
+            <>
+                <p>Bienvenido, Usuario. No tienes acceso a esta página.</p>
+            </>
         )}
     </MainLayout>
     );

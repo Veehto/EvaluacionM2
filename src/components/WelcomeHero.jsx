@@ -16,7 +16,7 @@ export default function WelcomeHero() {
     };
 
     const handleAgendarHoraClick = () => {
-        navigate("/appointments");
+        navigate("/make-appointments");
     };
     const handleVerDoctoresClick = () => {
         navigate("/doctors");

@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "rut": "12345678-9",
+        "patient": "John Doe",
+        "specialty": "Dermatología",
+        "specialist": "Esteban Fernández",
+        "date": "2021-01-01",
+        "time": "10:00"
+    },
+    {
+        "id": 2,
+        "rut": "14321443-2",
+        "patient": "Jane Doe",
+        "specialty": "Dermatología",
+        "specialist": "Esteban Fernández",
+        "date": "2021-01-01",
+        "time": "11:00"
+    },
+    {
+        "id": 3,
+        "rut": "14321443-2",
+        "patient": "Jane Doe",
+        "specialty": "Medicina General",
+        "specialist": "Juan Pérez",
+        "date": "2021-01-01",
+        "time": "11:00"
+    },
+    {
+        "id": 4,
+        "rut": "12345678-9",
+        "patient": "John Doe",
+        "specialty": "Oncología",
+        "specialist": "Pablo Urrutia",
+        "date": "2021-01-02",
+        "time": "10:00"
+    },
+    {
+        "id": 5,
+        "rut": "11364523-9",
+        "patient": "Pablo Saldaña",
+        "specialty": "Medicina General",
+        "specialist": "Pablo García",
+        "date": "2021-01-02",
+        "time": "12:00"
+    },
+    {
+        "id": 6,
+        "rut": "11364523-9",
+        "patient": "Pablo Saldaña",
+        "specialty": "Dermatología",
+        "specialist": "Camila Arenas",
+        "date": "2021-01-06",
+        "time": "12:00"
+    },
+    {
+        "id": 7,
+        "rut": "11364523-9",
+        "patient": "Pablo Saldaña",
+        "specialty": "Cardiología",
+        "specialist": "Alicia Marambio",
+        "date": "2021-02-22",
+        "time": "14:00"
+    },
+    {
+        "id": 8,
+        "rut": "14321443-2",
+        "patient": "Jane Doe",
+        "specialty": "Cardiología",
+        "specialist": "Alicia Marambio",
+        "date": "2021-02-06",
+        "time": "18:00"
+    }
+]
