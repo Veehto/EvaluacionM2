@@ -18,14 +18,20 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 
 
 ## Especificaciones Técnicas
-### CURRENT BRANCH Implementación React
-* Esta branch del proyecto explora la implementación de React.js para la página web de la clínica, con el objectivo de desarrollar una aplicación web interactiva y eficiente. Se crean componentes reutilizables para distintas secciones de la web del hospital, usando JSX para renderizar datos y manejar el flujo de información con props. También se utilizan Hooks (como useState y useEffect) y formularios para manejar la interacción del usuario. Se crean 3 componentes principales:
-    - **DoctorCard**: Muestra la información de un doctor (nombre, especialidad, años de experiencia). Se anida en otro componente padre DoctorList.
-    - **ServiceList**: Lista los servicios médicos disponibles en el hospital. Incluye un componente hijo Service, que representa cada list item.
-    - **AppointmentForm**: Un formulario para que los usuarios agenden una cita con un doctor.
+### Implementación React
+* Esta branch del proyecto explora la implementación de React.js para la página web de la clínica, con el objectivo de desarrollar una aplicación web interactiva y eficiente. Se crean componentes reutilizables para distintas secciones de la web del hospital, usando JSX para renderizar datos y manejar el flujo de información con props. También se utilizan Hooks (como useState y useEffect) y formularios para manejar la interacción del usuario.
 
 ### React DOM
 * React crea su propia representación del DOM como un objeto JavaScript. Siempre que hay un cambio en el DOM, el framework hace una copia de este objeto JavaScript, realiza los cambios en esa copia y compara los dos objetos JS para ver qué ha cambiado, este proceso se llama “diffing”. Luego, informa al navegador sobre estos cambios y solo se vuelven a pintar esas partes del DOM. Realizar cambios en objetos JavaScript y compararlos es mucho más rápido que intentar hacer lo mismo con DOM. Dado que esta copia del DOM se almacena en la memoria como un objeto JavaScript.
+
+### React Router
+* En aplicaciones React se puede utilizar React Router DOM para la navegación para proteger las rutas sensibles, permitiendo solo a los usuarios autenticados acceder a ellas. Esto se puede hacer implementando Rutas Protegidas.
+
+### Crypto-JS
+* Para encriptar datos sensibles aplicando cifrado antes de que lleguen al backend.
+
+### DOMpurify
+* Para repeler ataques Cross-Site-Scripting.
 
 ### Axios API Requests
 * Se empieza a aplicar la librería Axios para hacer peticiones fetch a una API simulada (existente en el directorio public del proyecto). Axios tiene un manejo de errores y traspaso a JSON automático, cancelación de solicitudes simples, tiene soporte de timeout, y una configuración avanzada amplia. A pesar de que requiera instalación y aprender sintaxis nueva, las ventajas de su uso motivan su implementación en el proyecto.
@@ -38,7 +44,8 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 
 ### Clonar Repositorio desde GitHub con CLI
 ```
-git clone --branch React-branch https://github.com/Veehto/EvaluacionM2.git TU_CARPETA
+git clone --branch React-branch https://github.com/Veehto/EvaluacionM2.git tu_carpeta
+cd tu_carpeta
 code .
 ```
 
@@ -48,6 +55,8 @@ code .
 npm install
 npm run dev
 ```
+ La aplicación estará disponible en `http://localhost:5173`.
+
 * Copiar la URL y pegar en el buscador del explorador web, o bien escribir en la consola la letra 'o' + ENTER, lo que abrirá el explorador web por defecto con la URL del servidor local.
 
 ## Estructura del proyecto:
@@ -55,8 +64,10 @@ npm run dev
 .
 ├── node_modules (gitignored)
 ├── public/
+│   ├── appointments.json
 │   ├── doctors.json
 │   ├── frontis-clinica.jpg
+│   ├── securedData.jpg
 │   ├── servicess.json
 │   └── vite.svg
 ├── src/
@@ -65,8 +76,10 @@ npm run dev
 │   │   └── react.svg
 │   ├── components/
 │   │   ├── AppointmentForm.jsx
+│   │   ├── Appointments.jsx
 │   │   ├── DoctorCard.jsx
 │   │   ├── DoctorList.jsx
+│   │   ├── DoctorListContent.jsx
 │   │   ├── DoctorModal.jsx
 │   │   ├── Narrative.jsx
 │   │   ├── Notification.jsx
@@ -75,30 +88,44 @@ npm run dev
 │   │   ├── StausMessage.jsx
 │   │   └── WelcomeHero.jsx
 │   ├── contexts/
+│   │   ├── AuthContext.jsx
 │   │   └── DoctorContext.jsx
 │   ├── hocs/
 │   │   └── HOCServices.jsx
+│   ├── layouts/
+│   │   └── MainLayout.jsx
+│   ├── routes/
+│   │   ├── AppRoutes.jsx
+│   │   └── SecureRoute.jsx
 │   ├── services/
-│   │   └── DoctorApi.js
+│   │   └── api.js
+│   ├── utils/
+│   │   └── encryption.js
 │   ├── views/
+│   │   ├── AppointmentsFormView.jsx
 │   │   ├── AppointmentsView.jsx
+│   │   ├── Dashboard.jsx
 │   │   ├── DoctorListView.jsx
 │   │   ├── Home.jsx
+│   │   ├── Login.jsx
 │   │   └── ServiceListView.jsx
 │   ├── App.css
 │   ├── App.jsx
 │   ├── index.css
 │   └── main.jsx
+├── .env (gitignored)
 ├── .gitignore
-├── appointments.json
 ├── eslint.config.js
 ├── index.html
 ├── package-lock.json
 ├── package.json
 ├── README.md
 └── vite.config.js
-
 ```
+
+## Autor
+
+- [Victor CS](https://github.com/Veehto)
 
 # React + Vite
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
