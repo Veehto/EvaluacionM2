@@ -12,6 +12,7 @@ export default function AppointmentForm() {
         date: '',
         time: '',
     });
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const [status, setStatus] = useState('');
     const inputRef = useRef(null);
 
@@ -34,6 +35,7 @@ export default function AppointmentForm() {
 
         console.log('Form sent successfully', sanitizedFormData);
         setStatus('Hora agendada correctamente');
+        setIsSubmitted(true);
     };
 
     const handleFocus = () => {
@@ -57,7 +59,7 @@ export default function AppointmentForm() {
             <div className='col'>
                 <div className="card mt-2">
                     <div className="card-body">
-                        <form className="contact-form pb-5" onSubmit={handleSubmit}>
+                        <form className="contact-form pb-2" onSubmit={handleSubmit}>
                             <div className="mb-3">
                                 <div className="htmlForm-check">
                                     <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
@@ -146,7 +148,17 @@ export default function AppointmentForm() {
                                 <button type="submit" className="btn btn-primary">Enviar</button>
                             </div>
                         </form>
-                        <StatusMessage status={status} />
+                        {status && <StatusMessage status={status} />}
+                        {isSubmitted && (
+                            <div className="text-center">
+                                <h3>Tu Hora al Médico:</h3>
+                                <p>{formData.name}</p>
+                                <p>{formData.specialty}</p>
+                                <p>{formData.doctor}</p>
+                                <p>{formData.date}</p>
+                                <p>{formData.time}</p>
+                            </div>
+                    )}
                     </div>
                 </div>
             </div>
@@ -154,8 +166,8 @@ export default function AppointmentForm() {
     );
 };
 
-// In this example, the user input is sanitized using the DOMPurify library before being stored in the component's state.
-// Sanitize the user input before using it in any way that could potentially introduce XSS vulnerabilities. 
-// This includes sanitizing the input before displaying it or sending it to the server.
-// User input is sanitized both when it is entered and when the form is submitted, 
-// effectively preventing cross-site scripting (XSS) attacks.
+/*
+    In this example, the user input is sanitized using the DOMPurify library before being stored in the component's state. Sanitize the user input before using it 
+    in any way that could potentially introduce XSS vulnerabilities. This includes sanitizing the input before displaying it or sending it to the server.
+    User input is sanitized both when it is entered and when the form is submitted, effectively preventing cross-site scripting (XSS) attacks.
+*/

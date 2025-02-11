@@ -16,20 +16,30 @@ const Appointments = () => {
     const handleSearch = async (e) => {
         e.preventDefault();
         setError(null);
+        
+        // Check if the input is empty
+        if (!query.trim()) {
+            setError("Ingrese un nombre.");
+            setAppointments([]); // Clear the appointments list
+            return;
+        }
+
         try {
             const sanitizeQuery = sanitizeInput(query);
             const allAppointments = await getAppointments();
-            const filteredAppointments = allAppointments.filter(
-                (appointment) =>
-                    appointment.patient.toLowerCase().includes(sanitizeQuery.toLowerCase()) ||
-                    appointment.specialty.toLowerCase().includes(sanitizeQuery.toLowerCase())
+            const filteredAppointments = allAppointments.filter((appointment) =>
+                appointment.patient.toLowerCase().includes(sanitizeQuery.toLowerCase()) ||
+                appointment.specialty.toLowerCase().includes(sanitizeQuery.toLowerCase())
             );
+
             setAppointments(filteredAppointments);
+            
             if (filteredAppointments.length === 0) {
-                setError("Error al buscar citas. Intenta nuevamente.");
+                setError("No se encontraron citas para el paciente o especialidad especificados.");
             }
         } catch (error) {
-            setError("Error al buscar citas. Intenta nuevamente. " + error);
+            setError("Error al buscar citas. Intenta nuevamente.");
+            console.error(error);
         }
     };
 
@@ -43,7 +53,7 @@ const Appointments = () => {
             <h1>Buscar Citas</h1>
             <form onSubmit={handleSearch}>
                 <label htmlFor="search">
-                    Nombre o Especialidad:
+                    Nombre:
                     <input
                         type="text"
                         value={query}
@@ -57,8 +67,8 @@ const Appointments = () => {
             <div className='row mt-3'>
                 {
                     appointments.map((appointment, index) => (
-                        <div className="col">
-                            <div id={index} className="card" style={cardStyle}>
+                        <div key={index} className="col">
+                            <div className="card" style={cardStyle}>
                                 <div className="card-body">
                                     <h5 className="card-title">Paciente: {appointment.patient}</h5>
                                     <p className="card-text">Doctor: {appointment.specialist}</p>
@@ -76,3 +86,14 @@ const Appointments = () => {
 };
 
 export default Appointments;
+
+/*
+Check for Empty Input: Added a check to see if the query is empty or contains only whitespace using !query.trim(). 
+If the input is empty, set an error message and clear the appointments list.
+
+Clear Appointments List: Set the appointments state to an empty array when the input is empty to ensure that 
+no appointments are displayed.
+
+By making these changes, the entire list of appointments will not be displayed when the search input is empty, 
+and an appropriate error message will be shown instead.
+*/

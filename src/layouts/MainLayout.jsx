@@ -59,7 +59,7 @@ const MainLayout = ({ children }) => {
                     )}
                 </nav>
             </header>
-            <main style={{ paddingTop: '60px'}}>
+            <main style={{ paddingTop: '60px', marginBottom: '60px' }}>
                 {children}
             </main>
             <footer className="bg-light text-center fixed-bottom">
