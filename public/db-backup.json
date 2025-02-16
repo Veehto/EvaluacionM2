@@ -1,0 +1,434 @@
+{
+  "doctors": [
+    {
+      "id": "1",
+      "name": "Juan Pérez",
+      "specialty": "Medicina General",
+      "experience": 5,
+      "schedule": [
+        "lunes",
+        "miércoles",
+        "viernes"
+      ],
+      "available": true,
+      "contact": {
+        "mail": "jperez@misionreal.cl",
+        "phone": "+56 22 367 512"
+      },
+      "image": "./src/assets/juan-perez.png",
+      "services": [
+        "Consulta",
+        "Telemedicina"
+      ],
+      "cost": 20000
+    },
+    {
+      "id": "2",
+      "name": "Pablo García",
+      "specialty": "Medicina General",
+      "experience": 10,
+      "schedule": [
+        "martes",
+        "jueves"
+      ],
+      "available": true,
+      "contact": {
+        "mail": "pgarcia@misionreal.cl",
+        "phone": "+56 22 367 521"
+      },
+      "image": "./src/assets/pablo-garcia.png",
+      "services": [
+        "Consulta"
+      ],
+      "cost": 20000
+    },
+    {
+      "id": "3",
+      "name": "Carmen López",
+      "specialty": "Cardiología",
+      "experience": 10,
+      "schedule": [
+        "lunes",
+        "miércoles",
+        "viernes"
+      ],
+      "available": true,
+      "contact": {
+        "mail": "clopez@misionreal.cl",
+        "phone": "+56 22 367 559"
+      },
+      "image": "./src/assets/carmen-lopez.png",
+      "services": [
+        "Consulta",
+        "Telemedicina"
+      ],
+      "cost": 50000
+    },
+    {
+      "id": "4",
+      "name": "Alicia Marambio",
+      "specialty": "Cardiología",
+      "experience": 6,
+      "schedule": [
+        "martes",
+        "jueves"
+      ],
+      "available": true,
+      "contact": {
+        "mail": "amarambio@misionreal.cl",
+        "phone": "+56 22 367 554"
+      },
+      "image": "./src/assets/alicia-marambio.png",
+      "services": [
+        "Consulta",
+        "Telemedicina"
+      ],
+      "cost": 50000
+    },
+    {
+      "id": "5",
+      "name": "Pedro Messina",
+      "specialty": "Oncología",
+      "experience": 12,
+      "schedule": [
+        "lunes",
+        "miércoles",
+        "viernes"
+      ],
+      "available": true,
+      "contact": {
+        "mail": "pmessina@misionreal.cl",
+        "phone": "+56 22 367 582"
+      },
+      "image": "./src/assets/pedro-messina.png",
+      "services": [
+        "Consulta",
+        "Telemedicina"
+      ],
+      "cost": 60000
+    },
+    {
+      "id": "6",
+      "name": "Pablo Urritia",
+      "specialty": "Oncología",
+      "experience": 20,
+      "schedule": [
+        "martes",
+        "jueves"
+      ],
+      "available": true,
+      "contact": {
+        "mail": "purrutia@misionreal.cl",
+        "phone": "+56 22 367 583"
+      },
+      "image": "./src/assets/pablo-urrutia.png",
+      "services": [
+        "Consulta"
+      ],
+      "cost": 70000
+    },
+    {
+      "id": "7",
+      "name": "Morin Salinas",
+      "specialty": "Dermatología",
+      "experience": 6,
+      "schedule": [
+        "lunes",
+        "miércoles",
+        "viernes"
+      ],
+      "available": true,
+      "contact": {
+        "mail": "morinsalinas@misionreal.cl",
+        "phone": "+56 22 367 562"
+      },
+      "image": "./src/assets/morin-salinas.png",
+      "services": [
+        "Consulta",
+        "Telemedicina"
+      ],
+      "cost": 30000
+    },
+    {
+      "id": "8",
+      "name": "Esteban Fernández",
+      "specialty": "Dermatología",
+      "experience": 25,
+      "schedule": [
+        "martes",
+        "jueves"
+      ],
+      "available": true,
+      "contact": {
+        "mail": "efernandez@misionreal.cl",
+        "phone": "+56 22 367 561"
+      },
+      "image": "./src/assets/esteban-fernandez.png",
+      "services": [
+        "Consulta"
+      ],
+      "cost": 40000
+    },
+    {
+      "id": "9",
+      "name": "Doctor Vichy",
+      "specialty": "Dermatología",
+      "experience": "17",
+      "schedule": [
+        "jueves",
+        " viernes"
+      ],
+      "available": "false",
+      "contact": {
+        "phone": "+562 4567 678",
+        "mail": "vichydoc@misionreal.cl"
+      },
+      "image": "./src/assets/doctor-placeholder.png",
+      "services": [
+        "Consulta",
+        "Telemedicina",
+        "Hidratación"
+      ],
+      "cost": "20000"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "1",
+      "rut": "12345678-9",
+      "patient": "John Doe",
+      "specialty": "Dermatología",
+      "specialist": "Esteban Fernández",
+      "date": "2021-01-01",
+      "time": "10:00"
+    },
+    {
+      "id": "2",
+      "rut": "14321443-2",
+      "patient": "Jane Doe",
+      "specialty": "Dermatología",
+      "specialist": "Esteban Fernández",
+      "date": "2021-01-01",
+      "time": "11:00"
+    },
+    {
+      "id": "3",
+      "rut": "14321443-2",
+      "patient": "Jane Doe",
+      "specialty": "Medicina General",
+      "specialist": "Juan Pérez",
+      "date": "2021-01-01",
+      "time": "11:00"
+    },
+    {
+      "id": "4",
+      "rut": "12345678-9",
+      "patient": "John Doe",
+      "specialty": "Oncología",
+      "specialist": "Pablo Urrutia",
+      "date": "2021-01-02",
+      "time": "10:00"
+    },
+    {
+      "id": "5",
+      "rut": "11364523-9",
+      "patient": "Pablo Saldaña",
+      "specialty": "Medicina General",
+      "specialist": "Pablo García",
+      "date": "2021-01-02",
+      "time": "12:00"
+    },
+    {
+      "id": "6",
+      "rut": "11364523-9",
+      "patient": "Pablo Saldaña",
+      "specialty": "Dermatología",
+      "specialist": "Morin Salinas",
+      "date": "2021-01-06",
+      "time": "12:00"
+    },
+    {
+      "id": "7",
+      "rut": "11364523-9",
+      "patient": "Pablo Saldaña",
+      "specialty": "Cardiología",
+      "specialist": "Alicia Marambio",
+      "date": "2021-02-22",
+      "time": "14:00"
+    },
+    {
+      "id": "8",
+      "rut": "14321443-2",
+      "patient": "Jane Doe",
+      "specialty": "Cardiología",
+      "specialist": "Alicia Marambio",
+      "date": "2021-02-06",
+      "time": "18:00"
+    }
+  ],
+  "patients": [],
+  "services": [
+    {
+      "id": "1",
+      "name": "Consulta General",
+      "location": "Central"
+    },
+    {
+      "id": "2",
+      "name": "Telemedicina",
+      "location": "Central"
+    },
+    {
+      "id": "3",
+      "name": "Radiología e Imágenes",
+      "location": "Apoquindo"
+    },
+    {
+      "id": "4",
+      "name": "Laboratorio",
+      "location": "Apoquindo"
+    },
+    {
+      "id": "5",
+      "name": "Vacunatorio",
+      "location": "Recoleta"
+    },
+    {
+      "id": "6",
+      "name": "Urgencias",
+      "location": "central"
+    },
+    {
+      "id": "7",
+      "name": "Ambulatorio",
+      "location": "central"
+    },
+    {
+      "id": "8",
+      "name": "Paleativo",
+      "location": "central"
+    }
+  ],
+  "secure-data": [
+    {
+      "id": "1",
+      "department": "IT",
+      "budget": 10000000,
+      "employees": 10
+    },
+    {
+      "id": "2",
+      "department": "HR",
+      "budget": 500000,
+      "employees": 5
+    },
+    {
+      "id": "3",
+      "department": "Finance",
+      "budget": 2000000,
+      "employees": 2
+    },
+    {
+      "id": "4",
+      "department": "Marketing",
+      "budget": 3000000,
+      "employees": 3
+    },
+    {
+      "id": "5",
+      "department": "Sales",
+      "budget": 4000000,
+      "employees": 4
+    },
+    {
+      "id": "6",
+      "department": "Operations",
+      "budget": 5000000,
+      "employees": 5
+    },
+    {
+      "id": "7",
+      "department": "Legal",
+      "budget": 6000000,
+      "employees": 6
+    },
+    {
+      "id": "8",
+      "department": "Customer Service",
+      "budget": 7000000,
+      "employees": 7
+    },
+    {
+      "id": "9",
+      "department": "Research and Development",
+      "budget": 8000000,
+      "employees": 8
+    },
+    {
+      "id": "10",
+      "department": "Quality Assurance",
+      "budget": 9000000,
+      "employees": 9
+    },
+    {
+      "id": "11",
+      "department": "Purchasing",
+      "budget": 10000000,
+      "employees": 10
+    },
+    {
+      "id": "12",
+      "department": "Engineering",
+      "budget": 11000000,
+      "employees": 11
+    },
+    {
+      "id": "13",
+      "department": "Product Management",
+      "budget": 12000000,
+      "employees": 12
+    },
+    {
+      "id": "14",
+      "department": "Project Management",
+      "budget": 13000000,
+      "employees": 13
+    },
+    {
+      "id": "15",
+      "department": "Training",
+      "budget": 14000000,
+      "employees": 14
+    },
+    {
+      "id": "16",
+      "department": "Facilities",
+      "budget": 15000000,
+      "employees": 15
+    },
+    {
+      "id": "17",
+      "department": "Security",
+      "budget": 16000000,
+      "employees": 16
+    },
+    {
+      "id": "18",
+      "department": "Compliance",
+      "budget": 17000000,
+      "employees": 17
+    },
+    {
+      "id": "19",
+      "department": "Administration",
+      "budget": 18000000,
+      "employees": 18
+    },
+    {
+      "id": "20",
+      "department": "Management",
+      "budget": 19000000,
+      "employees": 19
+    }
+  ]
+}

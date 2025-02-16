@@ -64,11 +64,9 @@ npm run dev
 .
 ├── node_modules (gitignored)
 ├── public/
-│   ├── appointments.json
-│   ├── doctors.json
+│   ├── db-backup.json
+│   ├── db.json
 │   ├── frontis-clinica.jpg
-│   ├── securedData.jpg
-│   ├── servicess.json
 │   └── vite.svg
 ├── src/
 │   ├── assets/
@@ -77,10 +75,13 @@ npm run dev
 │   ├── components/
 │   │   ├── AppointmentForm.jsx
 │   │   ├── Appointments.jsx
+│   │   ├── ConfirmationModal.jsx
 │   │   ├── DoctorCard.jsx
+│   │   ├── DoctorForm.jsx
 │   │   ├── DoctorList.jsx
 │   │   ├── DoctorListContent.jsx
 │   │   ├── DoctorModal.jsx
+│   │   ├── EditDoctorForm.jsx
 │   │   ├── Narrative.jsx
 │   │   ├── Notification.jsx
 │   │   ├── Overlays.jsx
@@ -98,7 +99,7 @@ npm run dev
 │   │   ├── AppRoutes.jsx
 │   │   └── SecureRoute.jsx
 │   ├── services/
-│   │   └── api.js
+│   │   └── service.js
 │   ├── utils/
 │   │   └── encryption.js
 │   ├── views/

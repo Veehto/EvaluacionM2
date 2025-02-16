@@ -17,6 +17,10 @@ export default function DoctorList() {
         fetchDoctors();
     };
 
+    // const handleDelete = (id) => {
+    //     setDoctors(doctors.filter(doctor => doctor.id !== id));
+    // };
+
     const filteredDoctors = selectedSpecialty === 'Todos'
         ? doctors
         : doctors.filter(doctor => doctor.specialty === selectedSpecialty);
@@ -44,14 +48,16 @@ export default function DoctorList() {
                     <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3'>
                         {
                             loading ? (<p>Cargando...</p>) : (
-                                filteredDoctors.map((doctor, index) => (
+                                filteredDoctors.map((doctor) => (
                                     <DoctorCard
-                                        key={index}
+                                        key={doctor.id}
+                                        id={doctor.id}
                                         name={doctor.name}
                                         specialty={doctor.specialty}
                                         experience={doctor.experience}
                                         image={doctor.image}
-                                        onClick={() => openModal(index)}
+                                        onClick={() => openModal(doctor.id)}
+                                        // onDelete={handleDelete}
                                     />
                                 ))
                             )

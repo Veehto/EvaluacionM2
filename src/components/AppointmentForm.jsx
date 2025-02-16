@@ -5,7 +5,7 @@ import StatusMessage from "./StatusMessage";
 
 export default function AppointmentForm() {
     const [formData, setFormData] = useState({
-        idnumber: '',
+        rut: '',
         name: '',
         specialty: '',
         doctor: '',
@@ -25,7 +25,7 @@ export default function AppointmentForm() {
         event.preventDefault();
 
         const sanitizedFormData = {
-            idnumber: DOMPurify.sanitize(formData.idnumber),
+            rut: DOMPurify.sanitize(formData.rut),
             name: DOMPurify.sanitize(formData.name),
             specialty: DOMPurify.sanitize(formData.specialty),
             doctor: DOMPurify.sanitize(formData.doctor),
@@ -77,10 +77,10 @@ export default function AppointmentForm() {
                             <div className="mb-3">
                                 <input 
                                     type="text"
-                                    name="idnumber"
+                                    name="rut"
                                     className="form-control"
                                     placeholder="Rut o Pasaporte"
-                                    value={formData.idnumber}
+                                    value={formData.rut}
                                     onChange={handleChange}
                                     ref={inputRef}
                                     required

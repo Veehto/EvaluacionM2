@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getAppointments } from "../services/api";
+import { getAppointments } from "../services/service";
 import MainLayout from "../layouts/MainLayout";
 
 const Appointments = () => {

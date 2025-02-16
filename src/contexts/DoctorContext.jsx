@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext } from 'react';
-import axios from 'axios';
+import { getDoctors } from '../services/service';
 
 export const DoctorContext = createContext(null);
 export const ModalContext = createContext(null);
@@ -11,12 +11,18 @@ export default function DoctorProvider({ children }) {
     const [loading, setLoading] = useState(true);
     const [notification, setNotification] = useState(null);
     
-    const openModal = (index) => {
-        setSelectedDoctorIndex(index);
-        setIsOpen(true);
+    const openModal = (doctorId) => {
+        const index = doctors.findIndex(doctor => doctor.id === doctorId);
+        if (index !== -1) {
+            setSelectedDoctorIndex(index);
+            setIsOpen(true);
+        }
     };
 
-    const closeModal = () => setIsOpen(false);
+    const closeModal = () => {
+        setIsOpen(false);
+        setSelectedDoctorIndex(null);
+    };
 
     const fetchDoctors = async () => {
         setLoading(true);
@@ -26,8 +32,8 @@ export default function DoctorProvider({ children }) {
             if (Math.random() < .3) {
                 throw new Error('Failed to load doctors data.');
             }
-            const response = await axios.get('/doctors.json');
-            setDoctors(response.data);
+            const response = await getDoctors();
+            setDoctors(response);
         } catch (error) {
             console.log(error);
             setNotification('Error en cargar lista de doctores. Por favor, refresque la lista.');
@@ -37,33 +43,11 @@ export default function DoctorProvider({ children }) {
     };
 
     useEffect(() => {
-        // fetch("/doctors.json")
-        // .then((response) => response.json())
-        // .then((json) => setDoctors(json))
-        // .catch(error => console.log(error));
-                
-        // axios:
-        // axios
-        //     .get('/doctors.json')
-        //     .then(response => setDoctors(response.data))
-        //     .catch(error => console.log(error));
-
         fetchDoctors();
-
-        // axios service
-        // const fetchDoctors = async () => {
-        //     try {
-        //         const data = await getDoctors();
-        //         setDoctors(data);
-        //     } catch (error) {
-        //         console.log(error);
-        //     };
-        // };
-        // fetchDoctors();
     }, []);
     
     return (
-        <DoctorContext.Provider value={{ doctors, loading, fetchDoctors, notification }}>
+        <DoctorContext.Provider value={{ doctors, setDoctors, loading, fetchDoctors, notification }}>
             <ModalContext.Provider value={{ isOpen, openModal, closeModal, selectedDoctorIndex }}>
                 {children}
             </ModalContext.Provider>

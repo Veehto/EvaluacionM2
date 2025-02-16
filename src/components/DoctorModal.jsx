@@ -1,12 +1,19 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { DoctorContext, ModalContext } from '../contexts/DoctorContext';
 import { useNavigate } from 'react-router';
+import { useAuth } from "../contexts/AuthContext";
+import { deleteDoctor } from "../services/service";
+import ConfirmationModal from './ConfirmationModal';
+import EditDoctorForm from './EditDoctorForm';
 
-export default function DoctorModal() {
+export default function DoctorModal({ id, onDelete }) {
     const navigate = useNavigate();
-    const { doctors } = useContext(DoctorContext);
+    const { user } = useAuth();
+    const { doctors, setDoctors } = useContext(DoctorContext);
     const { isOpen, closeModal, selectedDoctorIndex } = useContext(ModalContext);
-
+    const [showModal, setShowModal] = useState(false);
+    const [isEditing, setIsEditing] = useState(false);
+    
     const handleModalClick = (e) => {
         e.stopPropagation();
     };
@@ -14,6 +21,27 @@ export default function DoctorModal() {
     const handleAgendarHoraClick = () => {
         navigate("/make-appointments");
         closeModal();
+    };
+    
+    const handleDelete = async () => {
+        const doctorId = doctors[selectedDoctorIndex].id;
+        try {
+            console.log(`Deleting doctor with ID: ${doctorId}`);
+            await deleteDoctor(doctorId);
+            setDoctors(doctors.filter(doctor => doctor.id !== doctorId));
+            setShowModal(false);
+            closeModal();
+        } catch (error) {
+            console.error("Error deleting doctor:", error);
+        }
+    };
+
+    const handleEdit = () => {
+        setIsEditing(true);
+    };
+
+    const handleUpdate = (updatedDoctor) => {
+        setDoctors(doctors.map(doctor => doctor.id === updatedDoctor.id ? updatedDoctor : doctor));
     };
 
     useEffect(() => {
@@ -31,6 +59,13 @@ export default function DoctorModal() {
 
     const doctor = doctors[selectedDoctorIndex];
 
+    const imageStyle = {
+        width: '60%',
+        height: 'auto',
+        display: 'block',
+        margin: '0 auto'
+    };
+
     return (
         <>
             {isOpen && <div className="modal-backdrop fade show"></div>}
@@ -42,15 +77,45 @@ export default function DoctorModal() {
                             <button onClick={closeModal} type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <img src={doctor.image} alt={doctor.name} style={{ width: '100%' }} />
-                            <p>Especialidad: {doctor.specialty}</p>
-                            <p>Servicios: {doctor.services.join(', ')}</p>
-                            <p>Disponibilidad: {doctor.schedule.join(', ')}</p>
-                            <p>Experiencia: {doctor.experience} años</p>
+                            {isEditing ? (
+                                <EditDoctorForm doctor={doctor} onClose={() => setIsEditing(false)} onUpdate={handleUpdate} />
+                            ) : (
+                                <>
+                                    <img src={doctor.image} alt={doctor.name} style={imageStyle} />
+                                    <p>Especialidad: {doctor.specialty}</p>
+                                    <p>Servicios: {doctor.services.join(', ')}</p>
+                                    <p>Disponibilidad: {doctor.schedule.join(', ')}</p>
+                                    {user?.role === 'admin' && (
+                                        <>
+                                            <p>Experiencia: {doctor.experience} años</p>
+                                            <p>Activo: {doctor.available === true ? 'Sí' : 'No'}</p>
+                                            <p>Teléfono: {doctor.contact.phone}</p>
+                                            <p>Email: {doctor.contact.mail}</p>
+                                            <p>imagen: {doctor.image}</p>
+                                            <p>Costo: {doctor.cost}</p>
+                                        </>
+                                    )}
+                                </>
+                            )}
                         </div>
                         <div className="modal-footer">
                             <button onClick={closeModal} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button onClick={handleAgendarHoraClick} type="button" className="btn btn-primary">Agendar Hora</button>
+                            {!isEditing && (
+                                <>
+                                    <button onClick={handleAgendarHoraClick} type="button" className="btn btn-primary">Agendar Hora</button>
+                                    {user?.role === "admin" && (
+                                        <>
+                                            <button onClick={handleEdit} className="btn btn-warning">Editar</button>
+                                            <button onClick={() => setShowModal(true)} className="btn btn-danger ms-2">Eliminar</button>
+                                            <ConfirmationModal
+                                                show={showModal}
+                                                onClose={() => setShowModal(false)}
+                                                onConfirm={handleDelete}
+                                            />
+                                        </>
+                                    )}
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>

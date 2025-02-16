@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function DoctorCard({ name, specialty, image, onClick }) {
-    
+export default function DoctorCard({ id, name, specialty, image, onClick }) {
     const imageStyle = {
         width: '100%',
         height: '100%',
@@ -27,8 +26,9 @@ export default function DoctorCard({ name, specialty, image, onClick }) {
 };
 
 DoctorCard.propTypes = {
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     specialty: PropTypes.string.isRequired,
-    experience: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
 };
