@@ -3,19 +3,22 @@
 
 El proposito del proyecto es brindar una solucion a la Clínica Misión Real para solucionar su falta de presencia en línea. Para esto se ha creado una página web estática y responsiva que refleja la identidad del hospital, con información sobre los servicios médicos, el equipo médico, la ubicación de la clínica, redes sociales para contactarse y conectar de más formas, y con una sección de testimonios de los mismos paciente para demostrar que la preferencia del público.
 
-### Secciones y Características de la página Principal:
-* Menú de navegación para acceder a todas las secciones de página.
-* Bienvenida con el nombre de la clínica, botón para reservar hora con un profesional, y foto de la clínica.
-* Misión y visión de el establecimiento de salud.
-* Servicios prestador por la clínica.
-* Testimonios de pacientes que se han atendido aquí y que están satisfechos con la experiencia recibida.
+### Características de la página Principal:
+* Implementación de usuarios `admin` y `user`, los cuales tienen distintos permisos par acceder a elementos y funciones de la página:
+    - Sin haber iniciado sessión, el sitio da acceso al home page (bienvenida a la clínica, misión y visión de la clínica, botones para ver doctores y agendar hora, los cuales necesitan de inicio de sesión) y a la página para iniciar sesión.
 
-### Página del Equipo Médico
-* Presentar al equipo de médicos, representantes de las especialidades que ofrece el establecimiento.
-
-### Página de Contacto
-* Formulario de contacto donde se ingresa el nombre, correo electrónico, asunto y mensaje.
-
+    - `admin`: el menú de navegación da accesso a:
+        - **Inicio**: vista al home page.
+        - **dashboard**: información de cada departamento (presupuestos y personal).
+        - **Reservas**: Permite buscar las citas de pacientes existentes en la base de datos.
+        - **Doctores**: Muestra la lista de doctores con funcionalidades adicionales del `admin` como agregar nuevos doctores, y en el pop-up modal está toda información existente en la base de datos sobre el doctor y los botones para agendar hora, editar y eliminar al doctor de la base de datos.
+        - **Servicios**: Lista de servicios de la clínica.
+        - **Reservar Hora**: Formulario para agendar una cita al doctor, la que después se muestra en la página dinámicamente.
+    - `user`: el menú de navegación da accesso a:
+         - **Inicio**: vista al home page.
+         - **Doctores**: Muestra la lista de doctores. Como `user`, la página sólo muestra la lista de doctores y en el pop-up modal sólo cierta información del doctor y el botón para de agendar hora
+         - **Servicios**: Lista de servicios de la clínica.
+         - **Reservar Hora**: Formulario para agendar una cita al doctor, la que después se muestra en la página dinámicamente.
 
 ## Especificaciones Técnicas
 ### Implementación React
@@ -35,6 +38,13 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 
 ### Axios API Requests
 * Se empieza a aplicar la librería Axios para hacer peticiones fetch a una API simulada (existente en el directorio public del proyecto). Axios tiene un manejo de errores y traspaso a JSON automático, cancelación de solicitudes simples, tiene soporte de timeout, y una configuración avanzada amplia. A pesar de que requiera instalación y aprender sintaxis nueva, las ventajas de su uso motivan su implementación en el proyecto.
+
+* Axios se encarga de manejar los permisos del `admin` para manipular la base de datos de doctores mediante llamadas GET, POST, DELETE y PUT.
+
+* Se simula un error al cargar la lista de doctores para observar los mensajes de error desplegados por la página (.3 % de las veces). Cuando la página falla al cargar la lista, se despliega un mesaje de error en rojo y existe un botón para refrescar la lista y poder obtener a los médicos.
+
+### json-server & json-server-auth
+* Se implementa un servidor json local para almacenar la base de datos. Se refactorizan los archivos `.json` en un solo archivo `db.json` y se levanta un servidor con él.
 
 ## Para Abrir el proyecto
 
@@ -58,6 +68,33 @@ npm run dev
  La aplicación estará disponible en `http://localhost:5173`.
 
 * Copiar la URL y pegar en el buscador del explorador web, o bien escribir en la consola la letra 'o' + ENTER, lo que abrirá el explorador web por defecto con la URL del servidor local.
+
+### Montar Servidor para la Base de Datos
+* Dentro de la carpeta de trabajo y en otro terminal:
+```
+npm run server
+```
+ Los endpoints para los recursos están en las siguientes rutas:
+
+Endpoints:
+* index
+http://localhost:3001/
+
+* Resources
+`http://localhost:3001/doctors`
+`http://localhost:3001/appointments`
+`http://localhost:3001/patients`
+`http://localhost:3001/services`
+`http://localhost:3001/secure-data`
+
+### Credenciales
+* En vista a que este es un proyecto de aprendisaje (sin datos que en verdad sean sensibles), se otorgan las credenciales para acceder al sitio como `user` y `admin` aquí:
+
+    * user: `admin`
+      password: `password`
+
+    * user: `user`
+      password: `contrasena`
 
 ## Estructura del proyecto:
 ```
