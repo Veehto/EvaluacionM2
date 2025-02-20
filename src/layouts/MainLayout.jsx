@@ -7,7 +7,7 @@ const MainLayout = ({ children }) => {
     return (
         <div className='container text-center'>
             <header>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top rounded mb-4 shadow-sm p-3 mb-5 bg-white border-bottom border-dark">
+                <nav className="navbar navbar-expand-lg navbar-light bg-primary-subtle fixed-top rounded mb-4 shadow-sm p-3 mb-5 bg-white border-bottom border-dark">
                     <Link className="navbar-brand" to='/'>Clínica Misión Real</Link>
 
                     <div className="collapse navbar-collapse" id="navbarNav">
