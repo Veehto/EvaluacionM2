@@ -15,7 +15,7 @@
         "mail": "jperez@misionreal.cl",
         "phone": "+56 22 367 512"
       },
-      "image": "./src/assets/juan-perez.png",
+      "image": "/images/juan-perez.png",
       "services": [
         "Consulta",
         "Telemedicina"
@@ -36,7 +36,7 @@
         "mail": "pgarcia@misionreal.cl",
         "phone": "+56 22 367 521"
       },
-      "image": "./src/assets/pablo-garcia.png",
+      "image": "/images/pablo-garcia.png",
       "services": [
         "Consulta"
       ],
@@ -57,7 +57,7 @@
         "mail": "clopez@misionreal.cl",
         "phone": "+56 22 367 559"
       },
-      "image": "./src/assets/carmen-lopez.png",
+      "image": "/images/carmen-lopez.png",
       "services": [
         "Consulta",
         "Telemedicina"
@@ -78,7 +78,7 @@
         "mail": "amarambio@misionreal.cl",
         "phone": "+56 22 367 554"
       },
-      "image": "./src/assets/alicia-marambio.png",
+      "image": "/images/alicia-marambio.png",
       "services": [
         "Consulta",
         "Telemedicina"
@@ -100,7 +100,7 @@
         "mail": "pmessina@misionreal.cl",
         "phone": "+56 22 367 582"
       },
-      "image": "./src/assets/pedro-messina.png",
+      "image": "/images/pedro-messina.png",
       "services": [
         "Consulta",
         "Telemedicina"
@@ -121,7 +121,7 @@
         "mail": "purrutia@misionreal.cl",
         "phone": "+56 22 367 583"
       },
-      "image": "./src/assets/pablo-urrutia.png",
+      "image": "/images/pablo-urrutia.png",
       "services": [
         "Consulta"
       ],
@@ -142,7 +142,7 @@
         "mail": "morinsalinas@misionreal.cl",
         "phone": "+56 22 367 562"
       },
-      "image": "./src/assets/morin-salinas.png",
+      "image": "/images/morin-salinas.png",
       "services": [
         "Consulta",
         "Telemedicina"
@@ -163,7 +163,7 @@
         "mail": "efernandez@misionreal.cl",
         "phone": "+56 22 367 561"
       },
-      "image": "./src/assets/esteban-fernandez.png",
+      "image": "/images/esteban-fernandez.png",
       "services": [
         "Consulta"
       ],
@@ -183,7 +183,7 @@
         "phone": "+562 4567 678",
         "mail": "vichydoc@misionreal.cl"
       },
-      "image": "./src/assets/doctor-placeholder.png",
+      "image": "/images/doctor-placeholder.png",
       "services": [
         "Consulta",
         "Telemedicina",

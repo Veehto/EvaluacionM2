@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 
 export default function DoctorCard({ id, name, specialty, image, onClick }) {
     const imageStyle = {
-        width: '100%',
-        height: '100%',
+        width: 'auto',
+        height: '70%',
     };
 
     const cardStyle = {

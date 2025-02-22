@@ -29,9 +29,9 @@ export default function DoctorProvider({ children }) {
         setNotification(null);
         try {
             // Simulate a 50% chance of failure:
-            if (Math.random() < .3) {
-                throw new Error('Failed to load doctors data.');
-            }
+            // if (Math.random() < .3) {
+            //     throw new Error('Failed to load doctors data.');
+            // }
             const response = await getDoctors();
             setDoctors(response);
         } catch (error) {

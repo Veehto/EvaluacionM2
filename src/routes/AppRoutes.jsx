@@ -17,6 +17,7 @@ const AppRoutes = ({ onRender }) => {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/doctors" element={<DoctorListView onRender={onRender} />} />
                     <Route path="/dashboard" element={<SecureRoute allowedRoles={["admin"]}><Dashboard /></SecureRoute>} />
                     <Route path="/appointments" element={<SecureRoute allowedRoles={["admin"]}><AppointmentsView /></SecureRoute>} />
                     <Route path="/make-appointments" element={<SecureRoute allowedRoles={["admin", "user"]}><AppointmentsFormView /></SecureRoute>} />

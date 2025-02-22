@@ -24,7 +24,7 @@ export default function WelcomeHero() {
 
     return (
         <div className="px-4 py-5 my-5 text-center" style={backgroundImg}>
-            <img className="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"></img>
+            <img className="d-block mx-auto mb-4" src="/icons/icon-72x72.png" alt="icon-72x72" width="72" height="72"></img>
             <h1 className="display-5 fw-bold text-body-emphasis">Clínica Misión Real</h1>
             <div className="col-lg-6 mx-auto" style={backgroundColor}>
                 <p className="lead mb-4">Nuestra misión es con tu salud y comodidad.</p>

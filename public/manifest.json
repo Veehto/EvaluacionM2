@@ -4,7 +4,7 @@
     "description": "Web app for Clínica Misión Real",
     "start_url": "/",
     "display": "standalone",
-    "theme_color": "#f0f0f5",
+    "theme_color": "#cfe2ff",
     "background_color": "#ffffff",
     "icons": [
         {
@@ -13,9 +13,9 @@
             "type": "image/png"
         },
         {
-          "src": "icons/icon-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png"
+            "src": "icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
         },
         {
             "src": "icons/icon-144x144.png",
@@ -28,7 +28,7 @@
             "type": "image/png"
         },
         {
-            "src": "icons/icon-72x972.png",
+            "src": "icons/icon-72x72.png",
             "sizes": "72x72",
             "type": "image/png"
         },
