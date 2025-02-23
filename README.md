@@ -3,7 +3,7 @@
 
 El proposito del proyecto es brindar una solucion a la Clínica Misión Real para solucionar su falta de presencia en línea. Para esto se ha creado una página web estática y responsiva que refleja la identidad del hospital, con información sobre los servicios médicos, el equipo médico, la ubicación de la clínica, redes sociales para contactarse y conectar de más formas, y con una sección de testimonios de los mismos paciente para demostrar que la preferencia del público.
 
-### Características de la página Principal:
+### Características Principales:
 * Implementación de usuarios `admin` y `user`, los cuales tienen distintos permisos par acceder a elementos y funciones de la página:
     - Sin haber iniciado sessión, el sitio da acceso al home page (bienvenida a la clínica, misión y visión de la clínica, botones para ver doctores y agendar hora, los cuales necesitan de inicio de sesión) y a la página para iniciar sesión.
 
@@ -20,12 +20,10 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
          - **Servicios**: Lista de servicios de la clínica.
          - **Reservar Hora**: Formulario para agendar una cita al doctor, la que después se muestra en la página dinámicamente.
 
+
 ## Especificaciones Técnicas
 ### Implementación React
-* Esta branch del proyecto explora la implementación de React.js para la página web de la clínica, con el objectivo de desarrollar una aplicación web interactiva y eficiente. Se crean componentes reutilizables para distintas secciones de la web del hospital, usando JSX para renderizar datos y manejar el flujo de información con props. También se utilizan Hooks (como useState y useEffect) y formularios para manejar la interacción del usuario.
-
-### React DOM
-* React crea su propia representación del DOM como un objeto JavaScript. Siempre que hay un cambio en el DOM, el framework hace una copia de este objeto JavaScript, realiza los cambios en esa copia y compara los dos objetos JS para ver qué ha cambiado, este proceso se llama “diffing”. Luego, informa al navegador sobre estos cambios y solo se vuelven a pintar esas partes del DOM. Realizar cambios en objetos JavaScript y compararlos es mucho más rápido que intentar hacer lo mismo con DOM. Dado que esta copia del DOM se almacena en la memoria como un objeto JavaScript.
+* Esta branch del proyecto explora la implementación de React.js para la página web de la clínica, con el objectivo de desarrollar una aplicación web interactiva y eficiente. Se crean componentes reutilizables para distintas secciones de la web del hospital, usando JSX para renderizar datos y manejar el flujo de información con props. También se utilizan Hooks (como useState y useEffect) y formularios para manejar la interacción del usuario. React crea su propia representación del DOM como un objeto JavaScript. Siempre que hay un cambio en el DOM, el framework hace una copia de este objeto JavaScript, realiza los cambios en esa copia y compara los dos objetos JS para ver qué ha cambiado, este proceso se llama “diffing”. Luego, informa al navegador sobre estos cambios y solo se vuelven a pintar esas partes del DOM. Realizar cambios en objetos JavaScript y compararlos es mucho más rápido que intentar hacer lo mismo con DOM. Dado que esta copia del DOM se almacena en la memoria como un objeto JavaScript.
 
 ### React Router
 * En aplicaciones React se puede utilizar React Router DOM para la navegación para proteger las rutas sensibles, permitiendo solo a los usuarios autenticados acceder a ellas. Esto se puede hacer implementando Rutas Protegidas.
@@ -41,13 +39,39 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 
 * Axios se encarga de manejar los permisos del `admin` para manipular la base de datos de doctores mediante llamadas GET, POST, DELETE y PUT.
 
-* Se simula un error al cargar la lista de doctores para observar los mensajes de error desplegados por la página (.3 % de las veces). Cuando la página falla al cargar la lista, se despliega un mesaje de error en rojo y existe un botón para refrescar la lista y poder obtener a los médicos.
+* **UPDATE**: Simulación de error desactivada para asegurar el funcionamiento de la web app como PWA.
+Se simula un error al cargar la lista de doctores para observar los mensajes de error desplegados por la página (.3 % de las veces). Cuando la página falla al cargar la lista, se despliega un mesaje de error en rojo y existe un botón para refrescar la lista y poder obtener a los médicos.
 
 ### json-server & json-server-auth
 * Se implementa un servidor json local para almacenar la base de datos. Se refactorizan los archivos `.json` en un solo archivo `db.json` y se levanta un servidor con él.
 
-## Para Abrir el proyecto
+### Descargar como PWA
+* La aplicación web ahora se puede descargar como una *Progressive Web Application (PWA)* con el objetivo de ofrecer algunas ventajas como funcionalidad offline a través del uso del caché. Para que la web app funcione como PWA se realizaron las siguientes implementaciones:
 
+    - **Manifiesto**: se crea un manifiesto con los campos escenciales para operar.
+        - name
+        - short_name
+        - description
+        - start_url
+        - display
+        - theme_color
+        - background_color
+        - icons (48x48, 72x72, 96x96, 144x144, 192x192, 512x512)
+    
+    - **Service Worker**: Registro de un service worker script (sw.js) para habilitar el funcionamiento offline y la gestión del caché. Este script se encarga de almacenar en la memoria caché los componentes y archivos necesarios para el funcionamiento básico de la aplicación. En concreto para esta aplicación web, se almacenan en caché lo necesario para desplegar la página de bienvenida y la vista de user de la lista de doctores.
+
+    - **Estrategias de Almacenamiento de Caché**: Se implementan dos estrategias, una actualmente en funcionamiento
+        - *Stale-While-Revalidate*: **En funcionamiento**. El Service Worker carga primero los recursos del caché, mientras actualiza la versión en segundo plano desde la red.
+        - *Cache-First*: Se priorizan los recursos del caché, solo se realiza una solicitud a la red si no se encuentra el recurso en caché.
+
+    - **Creación build**: Para asegurar el funcionamiento de la web app como WPA, primero se hace una build de la aplicación y se sirve en un servidor.
+
+    - **Pruebas de Funcionamiento Offline con *Google Lighthouse***: Actualmente, la capacidad de *Google Lighthouse* para realizar pruebas en PWAs está deprecada. Las herramientas de desarrollador de *Google Chrome* permiten chequear y debug el estado del Service Worker, el manifiesto, y la instalavilidad de la aplicación web.
+
+    ![screenshot de la PWA instalada junto con la vista de las herramientas de desarrollador que muestra el estado del service worker.](src\assets\images\pwa.png)
+
+
+## Para Abrir el proyecto
 ### Visitar Repositorio
 * https://github.com/Veehto/EvaluacionM2/tree/React-branch
 * Asegurarse de que descargar proyecto desde rama **React-branch**.
@@ -59,16 +83,6 @@ cd tu_carpeta
 code .
 ```
 
-### Intalar paquetes necesarios con npm y montar el servidor local
-* Dentro de la carpeta de trabajo:
-```
-npm install
-npm run dev
-```
- La aplicación estará disponible en `http://localhost:5173`.
-
-* Copiar la URL y pegar en el buscador del explorador web, o bien escribir en la consola la letra 'o' + ENTER, lo que abrirá el explorador web por defecto con la URL del servidor local.
-
 ### Montar Servidor para la Base de Datos
 * Dentro de la carpeta de trabajo y en otro terminal:
 ```
@@ -78,37 +92,72 @@ npm run server
 
 Endpoints:
 * index
+```
 http://localhost:3001/
+```
 
 * Resources
-`http://localhost:3001/doctors`
-`http://localhost:3001/appointments`
-`http://localhost:3001/patients`
-`http://localhost:3001/services`
-`http://localhost:3001/secure-data`
+```
+http://localhost:3001/doctors
+http://localhost:3001/appointments
+http://localhost:3001/patients
+http://localhost:3001/services
+http://localhost:3001/secure-data
+```
+
+### Intalar paquetes necesarios con npm y montar el servidor local (Development)
+* Dentro de la carpeta de trabajo:
+```
+npm install
+npm run dev
+```
+La aplicación estará disponible en `http://localhost:5173`.
+
+* Copiar la URL y pegar en el buscador del explorador web, o bien escribir en la consola la letra 'o' + ENTER, lo que abrirá el explorador web por defecto con la URL del servidor local.
+
+
+### Montar servidor local (Distribution)
+* Para crear una build, es decir para compilar el proyecto y crear una carpeta `dist`, ejecuta el siguiente comando:
+```
+npm run build
+```
+
+* Levantar un servidor con el paquete `serve`, instalándolo localmente en el proyecto o de forma global con la bandera `-g`
+```
+npm install -g serve
+serve -s dist
+```
+
+La aplicación estará disponible en `http://localhost:3000`.
+
 
 ### Credenciales
 * En vista a que este es un proyecto de aprendisaje (sin datos que en verdad sean sensibles), se otorgan las credenciales para acceder al sitio como `user` y `admin` aquí:
 
-    * user: `admin`
-      password: `password`
+    * user: `admin` 
+      password: `password` 
 
-    * user: `user`
-      password: `contrasena`
+    * user: `user` 
+      password: `contrasena` 
 
 ## Estructura del proyecto:
 ```
 .
+├── dist (gitignored)
 ├── node_modules (gitignored)
 ├── public/
+│   ├── icons/
+│   ├── images/
 │   ├── db-backup.json
 │   ├── db.json
 │   ├── frontis-clinica.jpg
+│   ├── manifest.js
+│   ├── react.svg
+│   ├── sw.js
 │   └── vite.svg
 ├── src/
 │   ├── assets/
-│   │   ├── (all images)
-│   │   └── react.svg
+│   │   └── images/
 │   ├── components/
 │   │   ├── AppointmentForm.jsx
 │   │   ├── Appointments.jsx
@@ -131,7 +180,8 @@ http://localhost:3001/
 │   ├── hocs/
 │   │   └── HOCServices.jsx
 │   ├── layouts/
-│   │   └── MainLayout.jsx
+│   │   ├── MainLayout.jsx
+│   │   └── MainLayout.css
 │   ├── routes/
 │   │   ├── AppRoutes.jsx
 │   │   └── SecureRoute.jsx
