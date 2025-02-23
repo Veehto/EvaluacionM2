@@ -68,7 +68,7 @@ Se simula un error al cargar la lista de doctores para observar los mensajes de 
 
     - **Pruebas de Funcionamiento Offline con *Google Lighthouse***: Actualmente, la capacidad de *Google Lighthouse* para realizar pruebas en PWAs está deprecada. Las herramientas de desarrollador de *Google Chrome* permiten chequear y debug el estado del Service Worker, el manifiesto, y la instalavilidad de la aplicación web.
 
-    ![screenshot de la PWA instalada junto con la vista de las herramientas de desarrollador que muestra el estado del service worker.](src\assets\images\pwa.png)
+    ![screenshot de la PWA instalada junto con la vista de las herramientas de desarrollador que muestra el estado del service worker.](src/assets/images/pwa.png)
 
 
 ## Para Abrir el proyecto
