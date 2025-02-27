@@ -134,6 +134,11 @@ serve -s dist
 
 La aplicación estará disponible en `http://localhost:3000`.
 
+### Instalar PWA
+* Al abrir la web app, el navegador dará la opción para instalar la aplicación al dispositivo (esquina superior derecha del navegador).
+
+* Al instalar, se abrirá la aplicación de forma independiente del explorador y se creará un acceso directo en el escritorio del dispositivo.
+
 
 ### Credenciales
 * En vista a que este es un proyecto de aprendisaje (sin datos que en verdad sean sensibles), se otorgan las credenciales para acceder al sitio como `user` y `admin` aquí:
