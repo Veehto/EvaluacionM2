@@ -66,9 +66,13 @@ Se simula un error al cargar la lista de doctores para observar los mensajes de 
 
     - **Creación build**: Para asegurar el funcionamiento de la web app como WPA, primero se hace una build de la aplicación y se sirve en un servidor.
 
+    - **LocalStorage Web Storage Object**: Almacena datos de usuario, en este caso las credenciales (ya sea `admin` o `user`) para que persista incluso después de recargar la página o en modo offline.
+
+    - **IndexedDB Web Storage Object**: Se implementa una base de datos con IndexedDB para manejar datos más complejos o a mayor escala como lo es la base de datos que contiene los doctores, citas con doctores, servicios y datos seguros.
+
     - **Pruebas de Funcionamiento Offline con *Google Lighthouse***: Actualmente, la capacidad de *Google Lighthouse* para realizar pruebas en PWAs está deprecada. Las herramientas de desarrollador de *Google Chrome* permiten chequear y debug el estado del Service Worker, el manifiesto, y la instalavilidad de la aplicación web.
 
-    ![screenshot de la PWA instalada junto con la vista de las herramientas de desarrollador que muestra el estado del service worker.](src/assets/images/pwa.png)
+    ![screenshot de la PWA instalada junto con la vista de las herramientas de desarrollador que muestra el estado del service worker.](src/assets/images/pwa-offline-2.png)
 
 
 ## Para Abrir el proyecto

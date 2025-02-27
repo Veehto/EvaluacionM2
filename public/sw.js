@@ -1,8 +1,8 @@
 const CACHE_NAME = 'pwa-cache-v1'; // name of the cache storage.
 const urlsToCache = [
-    '/', 
-    '/index.html', 
-    '/main.html', 
+    '/',
+    '/index.html',
+    '/main.html',
     '/icons/icon-192x192.png',
     '/icons/icon-512x512.png',
     '/icons/icon-72x72.png',
@@ -51,6 +51,8 @@ const urlsToCache = [
     '/src/views/ServiceListView.jsx'
 ]; //array of URLs that will be cached during the service worker installation.
 
+importScripts('/indexedDB-cjs.js'); // import the IndexedDB utility functions.
+
 // Install a service worker
 self.addEventListener('install', event => {
     event.waitUntil(
@@ -66,33 +68,34 @@ self.addEventListener('install', event => {
     );
 });
 
-// cache-first strategy, NO cache Update
-/*
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        (async () => {
-        const cachedResponse = await caches.match(event.request);
-            if (cachedResponse) {
-                return cachedResponse;
-            }
-            return fetch(event.request);
-        })()
-    );
-});
-*/
-
-
 // stale-while-revalidate strategy
 self.addEventListener('fetch', event => {
-    event.respondWith(caches.open(CACHE_NAME)
-        .then(async cache => {
-            const response = await cache.match(event.request);
-            const fetchPromise = fetch(event.request)
-                .then(networkResponse => {
-                    cache.put(event.request, networkResponse.clone());
-                    return networkResponse;
-                });
+    event.respondWith(
+        caches.open(CACHE_NAME)
+            .then(async cache => {
+                const response = await cache.match(event.request);
+                const fetchPromise = fetch(event.request)
+                    .then(networkResponse => {
+                        cache.put(event.request, networkResponse.clone());
+                        return networkResponse;
+                    });
                 return response || fetchPromise;
-        })
+            })
     );
+});
+
+// Fetch data from IndexedDB
+self.addEventListener('fetch', event => {
+    if (event.request.url.includes('/api/')) {
+        event.respondWith(
+            getAllData().then(data => {
+                return new Response(JSON.stringify(data), {
+                    headers: { 'Content-Type': 'application/json' }
+                });
+            }).catch(error => {
+                console.error('Error fetching data from IndexedDB:', error);
+                return fetch(event.request);
+            })
+        );
+    }
 });
