@@ -84,6 +84,47 @@ self.addEventListener('fetch', event => {
     );
 });
 
+// NetworkFirst strategy
+/*
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        fetch(event.request)
+            .then(networkResponse => {
+                // If the request is successful, update the cache
+                return caches.open(CACHE_NAME).then(cache => {
+                    cache.put(event.request, networkResponse.clone());
+                    return networkResponse;
+                });
+            })
+            .catch(() => {
+                // If the network request fails, try to serve the request from the cache
+                return caches.match(event.request).then(cachedResponse => {
+                    return cachedResponse || fetch(event.request);
+                });
+            })
+    );
+});
+*/
+
+// Cache-first strategy
+/*
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request)
+            .then(cachedResponse => {
+                // Return the cached response if found, otherwise fetch from network
+                return cachedResponse || fetch(event.request).then(networkResponse => {
+                    // Update the cache with the new response
+                    return caches.open(CACHE_NAME).then(cache => {
+                        cache.put(event.request, networkResponse.clone());
+                        return networkResponse;
+                    });
+                });
+            })
+    );
+});
+*/
+
 // Fetch data from IndexedDB
 self.addEventListener('fetch', event => {
     if (event.request.url.includes('/api/')) {
