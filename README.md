@@ -5,19 +5,22 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 
 ### Características Principales:
 * Implementación de usuarios `admin` y `user`, los cuales tienen distintos permisos par acceder a elementos y funciones de la página:
-    - Sin haber iniciado sessión, el sitio da acceso al home page (bienvenida a la clínica, misión y visión de la clínica, botones para ver doctores y agendar hora, los cuales necesitan de inicio de sesión) y a la página para iniciar sesión.
+    - Sin haber iniciado sessión, el sitio da acceso a:
+        - **Home Page**
+        - **Doctores**
+        - **Servicios**
 
     - `admin`: el menú de navegación da accesso a:
         - **Inicio**: vista al home page.
         - **dashboard**: información de cada departamento (presupuestos y personal).
         - **Reservas**: Permite buscar las citas de pacientes existentes en la base de datos.
         - **Doctores**: Muestra la lista de doctores con funcionalidades adicionales del `admin` como agregar nuevos doctores, y en el pop-up modal está toda información existente en la base de datos sobre el doctor y los botones para agendar hora, editar y eliminar al doctor de la base de datos.
-        - **Servicios**: Lista de servicios de la clínica.
+        - **Servicios**: Lista de servicios de la clínica, da la opción de obtener la ubicación del usuario (latitud y longitud).
         - **Reservar Hora**: Formulario para agendar una cita al doctor, la que después se muestra en la página dinámicamente.
     - `user`: el menú de navegación da accesso a:
          - **Inicio**: vista al home page.
          - **Doctores**: Muestra la lista de doctores. Como `user`, la página sólo muestra la lista de doctores y en el pop-up modal sólo cierta información del doctor y el botón para de agendar hora
-         - **Servicios**: Lista de servicios de la clínica.
+         - **Servicios**: Lista de servicios de la clínica, da la opción de obtener la ubicación del usuario (latitud y longitud).
          - **Reservar Hora**: Formulario para agendar una cita al doctor, la que después se muestra en la página dinámicamente.
 
 
@@ -63,6 +66,7 @@ Se simula un error al cargar la lista de doctores para observar los mensajes de 
     - **Estrategias de Almacenamiento de Caché**: Se implementan dos estrategias, una actualmente en funcionamiento
         - *Stale-While-Revalidate*: **En funcionamiento**. El Service Worker carga primero los recursos del caché, mientras actualiza la versión en segundo plano desde la red.
         - *Cache-First*: Se priorizan los recursos del caché, solo se realiza una solicitud a la red si no se encuentra el recurso en caché.
+        - *Network-First*: Se intenta primero obtener los recursos de la red, y si la solicitud falla (por ejemplo, si no hay conexión), se busca en el caché.
 
     - **Creación build**: Para asegurar el funcionamiento de la web app como WPA, primero se hace una build de la aplicación y se sirve en un servidor.
 
@@ -72,7 +76,7 @@ Se simula un error al cargar la lista de doctores para observar los mensajes de 
 
     - **Pruebas de Funcionamiento Offline con *Google Lighthouse***: Actualmente, la capacidad de *Google Lighthouse* para realizar pruebas en PWAs está deprecada. Las herramientas de desarrollador de *Google Chrome* permiten chequear y debug el estado del Service Worker, el manifiesto, y la instalavilidad de la aplicación web.
 
-    ![screenshot de la PWA instalada junto con la vista de las herramientas de desarrollador que muestra el estado del service worker.](src/assets/images/pwa-offline-2.png)
+    ![screenshot de la PWA instalada junto con la vista de las herramientas de desarrollador que muestra el estado del service worker.](src/assets/images/pwa-3.png)
 
 
 ## Para Abrir el proyecto
@@ -176,6 +180,7 @@ La aplicación estará disponible en `http://localhost:3000`.
 │   │   ├── DoctorListContent.jsx
 │   │   ├── DoctorModal.jsx
 │   │   ├── EditDoctorForm.jsx
+│   │   ├── GetLocation.jsx
 │   │   ├── Narrative.jsx
 │   │   ├── Notification.jsx
 │   │   ├── Overlays.jsx

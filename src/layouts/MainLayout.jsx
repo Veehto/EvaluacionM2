@@ -16,8 +16,13 @@ const MainLayout = ({ children }) => {
                     <div className="collapse navbar-collapse " id="navbarNav">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item"><Link className="nav-link" to='/'>Inicio</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to='/doctors'>Doctores</Link></li>
-                            {!user && (<li className="nav-item"><Link className="nav-link border border-secondary-subtle rounded-pill" to='/login'>Login</Link></li>)}
+                            {!user && (
+                                <>
+                                    <li className="nav-item"><Link className="nav-link" to='/doctors'>Doctores</Link></li>
+                                    <li className="nav-item"><Link className="nav-link" to='/services'>Servicios</Link></li>
+                                    <li className="nav-item"><Link className="nav-link border border-secondary-subtle rounded-pill" to='/login'>Login</Link></li>
+                                </>
+                            )}
                             {user?.role === 'admin' && (
                                 <>
                                     <li className="nav-item">

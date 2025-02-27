@@ -18,14 +18,13 @@ const GetLocation = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!title.trim() || !content.trim()) return;
 
         setLocation(null);
     };
 
     return (
         <div className="container my-4">
-            <form onSubmit={handleSubmit} className="p-3 bg-secondary rounded">
+            <form onSubmit={handleSubmit} className="p-3 bg-info-subtle rounded">
                 <button onClick={getLocation} className="btn btn-primary">📍 Obtener Ubicación</button>
                 <p>Latitude: {location?.latitude}</p>
                 <p>Longitude: {location?.longitude}</p>
@@ -40,3 +39,5 @@ const GetLocation = () => {
     );
 
 };
+
+export default GetLocation;
