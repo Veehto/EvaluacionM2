@@ -160,10 +160,9 @@ La aplicación estará disponible en `http://localhost:3000`.
 │   ├── db-backup.json
 │   ├── db.json
 │   ├── frontis-clinica.jpg
+│   ├── indexedDB'cjs.js
 │   ├── manifest.js
-│   ├── react.svg
 │   ├── sw.js
-│   └── vite.svg
 ├── src/
 │   ├── assets/
 │   │   └── images/
@@ -197,7 +196,8 @@ La aplicación estará disponible en `http://localhost:3000`.
 │   ├── services/
 │   │   └── service.js
 │   ├── utils/
-│   │   └── encryption.js
+│   │   ├── encryption.js
+│   │   └── indexedDB.js
 │   ├── views/
 │   │   ├── AppointmentsFormView.jsx
 │   │   ├── AppointmentsView.jsx
