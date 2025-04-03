@@ -17,11 +17,13 @@ const AppRoutes = ({ onRender }) => {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/doctors" element={<DoctorListView onRender={onRender} />} />
+                    <Route path="/services" element={<ServicesListView />} />
                     <Route path="/dashboard" element={<SecureRoute allowedRoles={["admin"]}><Dashboard /></SecureRoute>} />
                     <Route path="/appointments" element={<SecureRoute allowedRoles={["admin"]}><AppointmentsView /></SecureRoute>} />
                     <Route path="/make-appointments" element={<SecureRoute allowedRoles={["admin", "user"]}><AppointmentsFormView /></SecureRoute>} />
-                    <Route path="/doctors" element={<SecureRoute allowedRoles={["admin", "user"]}><DoctorListView onRender={onRender} /></SecureRoute>} />
-                    <Route path="/services" element={<SecureRoute allowedRoles={["admin", "user"]}><ServicesListView /></SecureRoute>} />
+                    {/* <Route path="/doctors" element={<SecureRoute allowedRoles={["admin", "user"]}><DoctorListView onRender={onRender} /></SecureRoute>} /> */}
+                    {/* <Route path="/services" element={<SecureRoute allowedRoles={["admin", "user"]}><ServicesListView /></SecureRoute>} /> */}
                 </Routes>
             </BrowserRouter>
         </AuthProvider>
