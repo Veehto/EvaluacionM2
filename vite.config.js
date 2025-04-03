@@ -9,6 +9,9 @@ dotenv.config();
 export default defineConfig({
   plugins: [react()],
   server: {
-    open: true
-  }
+    open: false,
+  },
+  preview: {
+    open: false,
+  },
 })
