@@ -14,4 +14,9 @@ export default defineConfig({
   preview: {
     open: false,
   },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './setupTests.js',
+  },
 })
