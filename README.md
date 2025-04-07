@@ -25,8 +25,25 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 
 
 ## Especificaciones Técnicas
+### Integración de Docker al proyecto
+* Se crean dos archivos, `Dockerfile` y `Dockerfile.server` para generar las imágenes necesarias para construir dos instancias: un contenedor que tiene el frontend de la aplicación y otro que contiene la JSON database. Se generan las imágenes y los contenedores por separado usando el archivo `compose.yml`.
+
+### Pruebas Unitarias con Vitest
+Se escriben tres pruebas unitarias para testear la funcionalidad esperada de el componente `DoctorCard.jsx` y para los archivos `service.js` y `encryption.js`. Para los tests se usa Vitest, un framework nativo de Vite con una API que la hace compatible con Jest.
+
+### Configuración de Pipeline CI/CD con GitHub Actions
+* Se implementan dos archivos en el directorio `.github/workflows`, `ci.yml` y `docker-image.yml`. `ci.yml` se encarga de realizar pruebas de instalación de dependencias y tests unitarios cada vez que se ejecute un push o pull request al repositorio. `docker-image.yml` Se encarga de construir y verificar los contenedores Docker.
+
+### Gestión Github
+* `main`: host de la rama principal de desarrollo y de la versión para publicación.
+* `tailwind-branch`: Branch en desarrollo que pretende reemplazar el uso de Bootstrap framework por Tailwindcss.
+* versiones pasadas:
+    - BEM-Sass-branch
+    - Bootstrap-Sass-BEM
+    - JS-branch
+
 ### Implementación React
-* Esta branch del proyecto explora la implementación de React.js para la página web de la clínica, con el objectivo de desarrollar una aplicación web interactiva y eficiente. Se crean componentes reutilizables para distintas secciones de la web del hospital, usando JSX para renderizar datos y manejar el flujo de información con props. También se utilizan Hooks (como useState y useEffect) y formularios para manejar la interacción del usuario. React crea su propia representación del DOM como un objeto JavaScript. Siempre que hay un cambio en el DOM, el framework hace una copia de este objeto JavaScript, realiza los cambios en esa copia y compara los dos objetos JS para ver qué ha cambiado, este proceso se llama “diffing”. Luego, informa al navegador sobre estos cambios y solo se vuelven a pintar esas partes del DOM. Realizar cambios en objetos JavaScript y compararlos es mucho más rápido que intentar hacer lo mismo con DOM. Dado que esta copia del DOM se almacena en la memoria como un objeto JavaScript.
+* Se utiliza la librería React.js para desarrollar una aplicación web interactiva y eficiente. Se crean componentes reutilizables para distintas secciones de la web del hospital, usando JSX para renderizar datos y manejar el flujo de información con props. También se utilizan Hooks (como useState y useEffect) y formularios para manejar la interacción del usuario. React crea su propia representación del DOM como un objeto JavaScript. Siempre que hay un cambio en el DOM, el framework hace una copia de este objeto JavaScript, realiza los cambios en esa copia y compara los dos objetos JS para ver qué ha cambiado, este proceso se llama “diffing”. Luego, informa al navegador sobre estos cambios y solo se vuelven a pintar esas partes del DOM. Realizar cambios en objetos JavaScript y compararlos es mucho más rápido que intentar hacer lo mismo con DOM. Dado que esta copia del DOM se almacena en la memoria como un objeto JavaScript.
 
 ### React Router
 * En aplicaciones React se puede utilizar React Router DOM para la navegación para proteger las rutas sensibles, permitiendo solo a los usuarios autenticados acceder a ellas. Esto se puede hacer implementando Rutas Protegidas.
@@ -42,8 +59,7 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 
 * Axios se encarga de manejar los permisos del `admin` para manipular la base de datos de doctores mediante llamadas GET, POST, DELETE y PUT.
 
-* **UPDATE**: Simulación de error desactivada para asegurar el funcionamiento de la web app como PWA.
-Se simula un error al cargar la lista de doctores para observar los mensajes de error desplegados por la página (.3 % de las veces). Cuando la página falla al cargar la lista, se despliega un mesaje de error en rojo y existe un botón para refrescar la lista y poder obtener a los médicos.
+* Simulación de error desactivada para asegurar el funcionamiento de la web app como PWA. Anteriormente, se simulaba un error al cargar la lista de doctores para observar los mensajes de error desplegados por la página (.3 % de las veces). Cuando la página falla al cargar la lista, se despliega un mesaje de error en rojo y existe un botón para refrescar la lista y poder obtener a los médicos.
 
 ### json-server & json-server-auth
 * Se implementa un servidor json local para almacenar la base de datos. Se refactorizan los archivos `.json` en un solo archivo `db.json` y se levanta un servidor con él.
@@ -81,15 +97,22 @@ Se simula un error al cargar la lista de doctores para observar los mensajes de 
 
 ## Para Abrir el proyecto
 ### Visitar Repositorio
-* https://github.com/Veehto/EvaluacionM2/tree/React-branch
-* Asegurarse de que descargar proyecto desde rama **React-branch**.
+* https://github.com/Veehto/misionreal-webapp-adalid-project
 
 ### Clonar Repositorio desde GitHub con CLI
 ```
-git clone --branch React-branch https://github.com/Veehto/EvaluacionM2.git tu_carpeta
+git clone https://github.com/Veehto/misionreal-webapp-adalid-project tu_carpeta
 cd tu_carpeta
 code .
 ```
+
+### Docker Containers
+Si ususrio tiene instalado Docker en su sistema, puede ejecutar el archivo `compose.yaml` para poner la web app en funcionamiento rápidamente usando el comando:
+
+```
+docker-compose up --build
+```
+Se generarán dos contenedores, frontend en `http://localhost:4173` y database en `http://localhost:3001`.
 
 ### Montar Servidor para la Base de Datos
 * Dentro de la carpeta de trabajo y en otro terminal:
@@ -156,12 +179,16 @@ La aplicación estará disponible en `http://localhost:3000`.
 ## Estructura del proyecto:
 ```
 .
+├── .github
+│   └── workflows/
+│       ├── ci.yml
+│       └── docker-image.yml
+├── coverage (gitignored)
 ├── dist (gitignored)
 ├── node_modules (gitignored)
 ├── public/
 │   ├── icons/
 │   ├── images/
-│   ├── db-backup.json
 │   ├── db.json
 │   ├── frontis-clinica.jpg
 │   ├── indexedDB'cjs.js
@@ -175,6 +202,7 @@ La aplicación estará disponible en `http://localhost:3000`.
 │   │   ├── Appointments.jsx
 │   │   ├── ConfirmationModal.jsx
 │   │   ├── DoctorCard.jsx
+│   │   ├── DoctorCard.test.jsx
 │   │   ├── DoctorForm.jsx
 │   │   ├── DoctorList.jsx
 │   │   ├── DoctorListContent.jsx
@@ -199,9 +227,11 @@ La aplicación estará disponible en `http://localhost:3000`.
 │   │   ├── AppRoutes.jsx
 │   │   └── SecureRoute.jsx
 │   ├── services/
-│   │   └── service.js
+│   │   ├── service.js
+│   │   └── service.test.js
 │   ├── utils/
 │   │   ├── encryption.js
+│   │   ├── encryption.test.js
 │   │   └── indexedDB.js
 │   ├── views/
 │   │   ├── AppointmentsFormView.jsx
@@ -215,13 +245,19 @@ La aplicación estará disponible en `http://localhost:3000`.
 │   ├── App.jsx
 │   ├── index.css
 │   └── main.jsx
+├── .dockerignore
 ├── .env (gitignored)
 ├── .gitignore
+├── .dockerignore
+├── Dockerfile
+├── Dockerfile.server
 ├── eslint.config.js
 ├── index.html
 ├── package-lock.json
 ├── package.json
+├── README.Docker.md
 ├── README.md
+├── setupTests.js
 └── vite.config.js
 ```
 
@@ -239,7 +275,7 @@ Currently, two official plugins are available:
 
 
 
-## PREVIOUS BRANCHES Especificaciones Técnicas PASADAS
+## PREVIOUS BRANCHES Especificaciones Técnicas Versiones PASADAS
 **IMPORTANTE**: Desde este punto, se encuentran las implementaciones anteriores del proyecto presentes en las otras branches del repositorio.
 
 * **Media Queries**: Se implementaron puntos de quebre para aplicar cambios a la página dependiendo del tamaño de la pantalla, esto permite una mejor visibilidad en dispositivos de escritorio, tabletas y celulares.
