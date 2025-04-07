@@ -27,9 +27,17 @@ jobs:
       #     username: ${{ secrets.DOCKER_USERNAME }}
       #     password: ${{ secrets.DOCKER_PASSWORD }}
 
+      # Step 3: Ensure Docker Is Running
+      - name: Ensure Docker Is Running
+        run: sudo systemctl start docker
+
+      # Step 4: Install Docker Compose Plugin (if needed)
+      - name: Install Docker Compose Plugin
+        run: sudo apt-get update && sudo apt-get install -y docker-compose-plugin
+
       # Step 4: Build and start containers using docker-compose
       - name: Build and Start Containers
-        run: docker-compose -f compose.yaml up --build -d
+        run: docker compose -f compose.yaml up --build -d
 
       # Step 5: Verify Frontend Container
       - name: Verify Frontend Container
