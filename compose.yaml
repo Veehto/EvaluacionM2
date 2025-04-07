@@ -1,0 +1,24 @@
+services:
+  database:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - "3001:3001" # Expose the database server
+    volumes:
+      - ./public/db.json:/app/public/db.json # Mount the database file
+    networks:
+      - app-network
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4173:4173" # Expose the Vite preview server for production
+    depends_on:
+      - database # Ensure the database service starts before the frontend
+    networks:
+      - app-network
+
+networks:
+  app-network:

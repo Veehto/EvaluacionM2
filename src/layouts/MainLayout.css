@@ -1,0 +1,13 @@
+.navbar-toggler-icon {
+    width: 23px;
+    height: 23px;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
