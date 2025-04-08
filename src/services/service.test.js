@@ -5,6 +5,11 @@ import { getDoctors, postDoctors, deleteDoctor } from './service';
 // Mock axios
 vi.mock('axios');
 
+// Set the API_URL for tests
+beforeAll(() => {
+    process.env.API_URL = "http://localhost:3001";
+});
+
 describe('service.js - getDoctors', () => {
     it('should return a list of doctors on a successful API call', async () => {
         // Arrange

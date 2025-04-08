@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const API_URL = "http://localhost:3001";
-const API_URL = "https://misionreal-database.onrender.com"; // Replace with your deployed URL
+// Use environment variable or default to localhost
+const API_URL = process.env.API_URL || "https://misionreal-database.onrender.com";
 
 // Doctors service
 export const getDoctors = async () => {
