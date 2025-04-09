@@ -6,9 +6,9 @@ import { getDoctors, postDoctors, deleteDoctor } from './service';
 vi.mock('axios');
 
 // Set the API_URL for tests
-beforeAll(() => {
-    process.env.API_URL = "http://localhost:3001";
-});
+// beforeAll(() => {
+//     process.env.API_URL = "http://localhost:3001";
+// });
 
 describe('service.js - getDoctors', () => {
     it('should return a list of doctors on a successful API call', async () => {
@@ -24,7 +24,7 @@ describe('service.js - getDoctors', () => {
 
         // Assert
         expect(result).toEqual(mockDoctors);
-        expect(axios.get).toHaveBeenCalledWith('http://localhost:3001/doctors');
+        expect(axios.get).toHaveBeenCalledWith('https://misionreal-database.onrender.com/doctors');
     });
 
     it('should throw an error on a failed API call', async () => {
@@ -34,7 +34,7 @@ describe('service.js - getDoctors', () => {
 
         // Action & Assert
         await expect(getDoctors()).rejects.toThrow('Network Error');
-        expect(axios.get).toHaveBeenCalledWith('http://localhost:3001/doctors');
+        expect(axios.get).toHaveBeenCalledWith('https://misionreal-database.onrender.com/doctors');
     });
 
     it('should post a new doctor and return the created doctor', async () => {
@@ -48,7 +48,7 @@ describe('service.js - getDoctors', () => {
     
         // Assert
         expect(result).toEqual(mockResponse);
-        expect(axios.post).toHaveBeenCalledWith('http://localhost:3001/doctors', newDoctor);
+        expect(axios.post).toHaveBeenCalledWith('https://misionreal-database.onrender.com/doctors', newDoctor);
     });
 
     it('should delete a doctor and return the response', async () => {
@@ -62,6 +62,6 @@ describe('service.js - getDoctors', () => {
     
         // Assert
         expect(result).toEqual(mockResponse);
-        expect(axios.delete).toHaveBeenCalledWith(`http://localhost:3001/doctors/${doctorId}`);
+        expect(axios.delete).toHaveBeenCalledWith(`https://misionreal-database.onrender.com/doctors/${doctorId}`);
     });
 });
