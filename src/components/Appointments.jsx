@@ -50,7 +50,7 @@ const Appointments = () => {
 
     return (
         <MainLayout>
-            <h1>Buscar Citas</h1>
+            <h1>Buscar Reservas</h1>
             <form onSubmit={handleSearch}>
                 <label htmlFor="search">
                     Nombre:

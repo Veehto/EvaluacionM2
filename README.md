@@ -1,7 +1,7 @@
 # Clínica Misión Real
 ========================================
 
-El proposito del proyecto es brindar una solucion a la Clínica Misión Real para solucionar su falta de presencia en línea. Para esto se ha creado una página web estática y responsiva que refleja la identidad del hospital, con información sobre los servicios médicos, el equipo médico, la ubicación de la clínica, redes sociales para contactarse y conectar de más formas, y con una sección de testimonios de los mismos paciente para demostrar que la preferencia del público.
+El proposito del proyecto es brindar una solucion a la Clínica Misión Real para solucionar su falta de presencia en línea. La web app refleja la identidad del hospital, y brinda funcionalidades esenciales como ver los médicos, ver las sucursales existentes en los servicios, y agendar horas.
 
 ### Características Principales:
 * Implementación de usuarios `admin` y `user`, los cuales tienen distintos permisos par acceder a elementos y funciones de la página:
@@ -24,6 +24,48 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
          - **Reservar Hora**: Formulario para agendar una cita al doctor, la que después se muestra en la página dinámicamente.
 
 
+## Demo
+* Y está disponible al público la versión 1.0 de la aplicación web. Ésta está alojada en el sitio de PaaS Netlify, que aloja el frontend; y la base de datos está alojada en Render.
+
+## Capturas de Pantalla del Proyecto
+
+- ![Home](src/assets/images/screenshots/1.png)
+   Vista inicio de la aplicación.
+
+- ![Home](src/assets/images/screenshots/2.png)
+   Vista inicio de la aplicación. Final página.
+
+- ![Doctores](src/assets/images/screenshots/3.png)
+   Vista página Doctores.
+
+- ![Doctores](src/assets/images/screenshots/4.png)
+   Vista página Doctores. Detalle doctor.
+
+- ![Agendar Hora](src/assets/images/screenshots/5.png)
+   Vista página Agendar Hora (user), formulario para agendar una hora.
+
+- ![Servicios](src/assets/images/screenshots/6.png)
+   Vista página de Servicios.
+
+- ![Dashboard](src/assets/images/screenshots/7.png)
+   Vista Dashboard (Admin). Con mock Información de administración.
+
+- ![Reservas](src/assets/images/screenshots/8.png)
+   Vista Reservas (Admin). Ver citas de pacientes.
+
+- ![Docotores](src/assets/images/screenshots/9.png)
+   Vista Doctores (Admin). Con formulario para agregar doctores.
+
+- ![Docotores](src/assets/images/screenshots/10.png)
+   Vista Doctores (Admin). Detalles del doctor con opciones de editar o eliminar de base de datos.
+
+- ![Docotores](src/assets/images/screenshots/11.png)
+   Vista Doctores (Admin). Formulario para editar información de doctor.
+
+- ![Docotores](src/assets/images/screenshots/12.png)
+   Vista Doctores (Admin). Opción de eliminar despliega pop-up de confirmación.
+
+
 ## Especificaciones Técnicas
 ### Integración de Docker al proyecto
 * Se crean dos archivos, `Dockerfile` y `Dockerfile.server` para generar las imágenes necesarias para construir dos instancias: un contenedor que tiene el frontend de la aplicación y otro que contiene la JSON database. Se generan las imágenes y los contenedores por separado usando el archivo `compose.yml`.
@@ -43,7 +85,7 @@ Se escriben tres pruebas unitarias para testear la funcionalidad esperada de el 
     - JS-branch
 
 ### Implementación React
-* Se utiliza la librería React.js para desarrollar una aplicación web interactiva y eficiente. Se crean componentes reutilizables para distintas secciones de la web del hospital, usando JSX para renderizar datos y manejar el flujo de información con props. También se utilizan Hooks (como useState y useEffect) y formularios para manejar la interacción del usuario. React crea su propia representación del DOM como un objeto JavaScript. Siempre que hay un cambio en el DOM, el framework hace una copia de este objeto JavaScript, realiza los cambios en esa copia y compara los dos objetos JS para ver qué ha cambiado, este proceso se llama “diffing”. Luego, informa al navegador sobre estos cambios y solo se vuelven a pintar esas partes del DOM. Realizar cambios en objetos JavaScript y compararlos es mucho más rápido que intentar hacer lo mismo con DOM. Dado que esta copia del DOM se almacena en la memoria como un objeto JavaScript.
+* Se utiliza la librería React.js para desarrollar una aplicación web interactiva y eficiente, empleando componentes reutilizables para distintas secciones de la web del hospital.
 
 ### React Router
 * En aplicaciones React se puede utilizar React Router DOM para la navegación para proteger las rutas sensibles, permitiendo solo a los usuarios autenticados acceder a ellas. Esto se puede hacer implementando Rutas Protegidas.
@@ -55,17 +97,14 @@ Se escriben tres pruebas unitarias para testear la funcionalidad esperada de el 
 * Para repeler ataques Cross-Site-Scripting.
 
 ### Axios API Requests
-* Se empieza a aplicar la librería Axios para hacer peticiones fetch a una API simulada (existente en el directorio public del proyecto). Axios tiene un manejo de errores y traspaso a JSON automático, cancelación de solicitudes simples, tiene soporte de timeout, y una configuración avanzada amplia. A pesar de que requiera instalación y aprender sintaxis nueva, las ventajas de su uso motivan su implementación en el proyecto.
+* Se empieza a aplicar la librería Axios para hacer peticiones a la API. Axios tiene un manejo de errores y traspaso a JSON automático, cancelación de solicitudes simples, y soporte con timeout. A pesar de que requiera instalación y aprender sintaxis nueva, las ventajas de su uso motivan su implementación en el proyecto.
 
 * Axios se encarga de manejar los permisos del `admin` para manipular la base de datos de doctores mediante llamadas GET, POST, DELETE y PUT.
 
-* Simulación de error desactivada para asegurar el funcionamiento de la web app como PWA. Anteriormente, se simulaba un error al cargar la lista de doctores para observar los mensajes de error desplegados por la página (.3 % de las veces). Cuando la página falla al cargar la lista, se despliega un mesaje de error en rojo y existe un botón para refrescar la lista y poder obtener a los médicos.
-
-### json-server & json-server-auth
-* Se implementa un servidor json local para almacenar la base de datos. Se refactorizan los archivos `.json` en un solo archivo `db.json` y se levanta un servidor con él.
+* *Simulación de error desactivada para asegurar el funcionamiento de la web app como PWA.* Anteriormente, se simulaba un error al cargar la lista de doctores para observar los mensajes de error desplegados por la página (.3 % de las veces).
 
 ### Descargar como PWA
-* La aplicación web ahora se puede descargar como una *Progressive Web Application (PWA)* con el objetivo de ofrecer algunas ventajas como funcionalidad offline a través del uso del caché. Para que la web app funcione como PWA se realizaron las siguientes implementaciones:
+* La app se puede descargar como una *Progressive Web Application (PWA)* con el objetivo de ofrecer algunas ventajas como funcionalidad offline a través del uso del caché. Para que la web app funcione como PWA se realizaron las siguientes implementaciones:
 
     - **Manifiesto**: se crea un manifiesto con los campos escenciales para operar.
         - name
@@ -77,7 +116,7 @@ Se escriben tres pruebas unitarias para testear la funcionalidad esperada de el 
         - background_color
         - icons (48x48, 72x72, 96x96, 144x144, 192x192, 512x512)
     
-    - **Service Worker**: Registro de un service worker script (sw.js) para habilitar el funcionamiento offline y la gestión del caché. Este script se encarga de almacenar en la memoria caché los componentes y archivos necesarios para el funcionamiento básico de la aplicación. En concreto para esta aplicación web, se almacenan en caché lo necesario para desplegar la página de bienvenida y la vista de user de la lista de doctores.
+    - **Service Worker**: Registro de un service worker script (sw.js) para habilitar el funcionamiento offline y la gestión del caché. Este script se encarga de almacenar en la memoria caché los componentes y archivos necesarios para el funcionamiento básico de la aplicación.
 
     - **Estrategias de Almacenamiento de Caché**: Se implementan dos estrategias, una actualmente en funcionamiento
         - *Stale-While-Revalidate*: **En funcionamiento**. El Service Worker carga primero los recursos del caché, mientras actualiza la versión en segundo plano desde la red.
@@ -90,14 +129,15 @@ Se escriben tres pruebas unitarias para testear la funcionalidad esperada de el 
 
     - **IndexedDB Web Storage Object**: Se implementa una base de datos con IndexedDB para manejar datos más complejos o a mayor escala como lo es la base de datos que contiene los doctores, citas con doctores, servicios y datos seguros.
 
-    - **Pruebas de Funcionamiento Offline con *Google Lighthouse***: Actualmente, la capacidad de *Google Lighthouse* para realizar pruebas en PWAs está deprecada. Las herramientas de desarrollador de *Google Chrome* permiten chequear y debug el estado del Service Worker, el manifiesto, y la instalavilidad de la aplicación web.
+    - **Pruebas de Funcionamiento Offline con *Google Lighthouse***: *deprecada*. Las herramientas de desarrollador de *Google Chrome* permiten chequear y debug el estado del Service Worker, el manifiesto, y la instalavilidad de la aplicación web.
 
-    ![screenshot de la PWA instalada junto con la vista de las herramientas de desarrollador que muestra el estado del service worker.](src/assets/images/pwa-3.png)
+    ![screenshot de la PWA instalada junto con la vista de las herramientas de desarrollador que muestra el estado del service worker.](src/assets/images/pwa/pwa-3.png)
 
 
 ## Para Abrir el proyecto
 ### Visitar Repositorio
 * https://github.com/Veehto/misionreal-webapp-adalid-project
+
 
 ### Clonar Repositorio desde GitHub con CLI
 ```
@@ -106,13 +146,15 @@ cd tu_carpeta
 code .
 ```
 
+
 ### Docker Containers
-Si ususrio tiene instalado Docker en su sistema, puede ejecutar el archivo `compose.yaml` para poner la web app en funcionamiento rápidamente usando el comando:
+Si usuario tiene instalado Docker en su sistema, puede ejecutar el archivo `compose.yaml` para poner la web app en funcionamiento rápidamente usando el comando:
 
 ```
 docker-compose up --build
 ```
-Se generarán dos contenedores, frontend en `http://localhost:4173` y database en `http://localhost:3001`.
+Se generarán dos contenedores, frontend en `http://localhost:4173` y database en `http://localhost:3001`. Si el usuario que clona el proyecto no está usando Docker, puede saltar este paso.
+
 
 ### Montar Servidor para la Base de Datos
 * Dentro de la carpeta de trabajo y en otro terminal:
@@ -135,6 +177,7 @@ http://localhost:3001/patients
 http://localhost:3001/services
 http://localhost:3001/secure-data
 ```
+
 
 ### Intalar paquetes necesarios con npm y montar el servidor local (Development)
 * Dentro de la carpeta de trabajo:
@@ -164,6 +207,10 @@ La aplicación estará disponible en `http://localhost:3000`.
 ### Instalar PWA
 * Al abrir la web app, el navegador dará la opción para instalar la aplicación al dispositivo (esquina superior derecha del navegador).
 
+- ![pwa](src/assets/images/pwa/pwa-install-1.png)
+
+- ![pwa](src/assets/images/pwa/pwa-install-2.png)
+
 * Al instalar, se abrirá la aplicación de forma independiente del explorador y se creará un acceso directo en el escritorio del dispositivo.
 
 
@@ -175,6 +222,7 @@ La aplicación estará disponible en `http://localhost:3000`.
 
     * user: `user` 
       password: `contrasena` 
+
 
 ## Estructura del proyecto:
 ```
@@ -261,18 +309,12 @@ La aplicación estará disponible en `http://localhost:3000`.
 └── vite.config.js
 ```
 
-## Autor
 
+## Autor
 - [Victor CS](https://github.com/Veehto)
 
-# React + Vite
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
+==============================================================================================
 
 
 ## PREVIOUS BRANCHES Especificaciones Técnicas Versiones PASADAS
