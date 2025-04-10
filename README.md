@@ -67,6 +67,18 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 
 
 ## Especificaciones Técnicas
+### Construido con
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [React.js](https://react.dev/)
+- [npm](https://www.npmjs.com/)
+- [Vite](https://vite.dev/)
+- [json-server](https://github.com/typicode/json-server)
+- [Bootstrap](https://getbootstrap.com/)
+- [Docker](https://www.docker.com/)
+- [Vitest](https://vitest.dev/)
+- [Axios](https://axios-http.com/)
+
+
 ### Integración de Docker al proyecto
 * Se crean dos archivos, `Dockerfile` y `Dockerfile.server` para generar las imágenes necesarias para construir dos instancias: un contenedor que tiene el frontend de la aplicación y otro que contiene la JSON database. Se generan las imágenes y los contenedores por separado usando el archivo `compose.yml`.
 
