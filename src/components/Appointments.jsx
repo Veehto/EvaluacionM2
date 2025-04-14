@@ -43,43 +43,61 @@ const Appointments = () => {
         }
     };
 
-    const cardStyle = {
-        height: 'auto',
-        width: 'auto',
-    };
-
     return (
         <MainLayout>
-            <h1>Buscar Reservas</h1>
-            <form onSubmit={handleSearch}>
-                <label htmlFor="search">
-                    Nombre:
-                    <input
+            <section class="pt-1 text-center container">
+                <div class="row pt-lg-1">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <h1 class="fw-light">Buscar Reservas</h1>
+                        <p class="lead text-body-secondary">
+                            Encuentra tus reservas en esta lista. Puedes buscar por nombre de paciente o especialidad.
+                        </p>
+                        {/* <p>
+                            <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                        </p> */}
+                    </div>
+                </div>
+            </section>
+
+            <form onSubmit={handleSearch} style={{maxWidth: '70%', margin: "0 auto"}} className="mt-5 p-4 border rounded-3 bg-light">
+                <div className="mb-3">
+                    <label htmlFor="buscarCitaPaciente" className="form-label" style={{float: 'left'}}>Nombre paciente</label>
+                    <input 
                         type="text"
-                        value={query}
+                        value={query} 
+                        className="form-control" 
+                        id="buscarCitaPaciente" 
+                        placeholder="ej: John, Jane, o Pablo" 
                         onChange={(e) => setQuery(e.target.value)}
-                        placeholder="John, Jane, o Pablo"
                     />
-                </label>
-                <button type="submit">Buscar</button>
+                </div>
+                <button type="submit" className="btn btn-primary">Buscar</button>
             </form>
+
             {error && <p style={{ color: "red" }}>{error}</p>}
-            <div className='row mt-3'>
-                {
-                    appointments.map((appointment, index) => (
-                        <div key={index} className="col">
-                            <div className="card" style={cardStyle}>
-                                <div className="card-body">
-                                    <h5 className="card-title">Paciente: {appointment.patient}</h5>
-                                    <p className="card-text">Doctor: {appointment.specialist}</p>
-                                    <p className="card-text">Especialidad: {appointment.specialty}</p>
-                                    <p className="card-text">Fecha: {appointment.date}</p>
-                                    <p className="card-text">Hora: {appointment.time}</p>
+
+            <div class="album py-5 bg-body-tertiary">
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-3">
+                        {
+                            appointments.map((appointment, index) => (
+                                <div key={index} class="col">
+                                    <div class="card shadow-sm">
+                                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Paciente</text></svg>
+                                        <div class="card-body">
+                                            <h5 className="card-title">{appointment.patient}</h5>
+                                            <p className="card-text">Doctor: {appointment.specialist}</p>
+                                            <p className="card-text">Especialidad: {appointment.specialty}</p>
+                                            <p className="card-text">Fecha: {appointment.date}</p>
+                                            <p className="card-text">Hora: {appointment.time}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    ))
-                }
+                            ))
+                        }
+                    </div>
+                </div>
             </div>
         </MainLayout>
     );

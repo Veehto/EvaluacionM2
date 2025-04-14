@@ -10,9 +10,8 @@ export default function DoctorListView({ onRender }) {
     return (
         <DoctorProvider>
             <MainLayout>
-                <h1>Doctores</h1>
-                {user?.role === "admin" && <DoctorForm />}
                 <DoctorListContent onRender={onRender} />
+                {user?.role === "admin" && <DoctorForm />}
             </MainLayout>
         </DoctorProvider>
     );

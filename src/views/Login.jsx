@@ -25,27 +25,41 @@ const Login = () => {
 
     return (
         <MainLayout>
-            <h1>Iniciar Sesión</h1>
-            <form onSubmit={handleLogin}>
-                <label htmlFor="username">Usuario:</label>
-                <input 
-                    id="username"
-                    name="username"
-                    type="text" 
-                    placeholder="Usuario"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <label htmlFor="password">Password:</label>
-                <input 
-                    id="password"
-                    name="password"
-                    type="password" 
-                    placeholder="Contraseña"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit">Iniciar Sesión</button>
+            <form onSubmit={handleLogin} style={{maxWidth: '70%', margin: "0 auto"}} className="mt-5 p-4 border rounded-3 bg-light">
+                <img className="mb-4" src="/icons/icon-72x72.png" alt="icon-72x72" />
+                <h1 className="h3 mb-3 fw-normal">Iniciar Sesión</h1>
+                <div class="form-floating mb-2">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="floatingInput" 
+                        placeholder="name@example.com" 
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <label for="floatingInput">Usuario</label>
+                </div>
+                <div class="form-floating">
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="floatingPassword" 
+                        placeholder="Password" 
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div className="form-check text-start my-3">
+                    <label className="form-check-label" htmlFor="checkDefault">Recuérdame</label>
+                    <input
+                        className="form-check-input" 
+                        type="checkbox" 
+                        value="remember-me" 
+                        id="checkDefault" 
+                    />
+                </div>
+                <button className="btn btn-primary w-100 py-2" type="submit">Login</button>
             </form>
         </MainLayout>
     );

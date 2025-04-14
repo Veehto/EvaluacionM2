@@ -1,6 +1,6 @@
 import WelcomeHero from "../components/WelcomeHero";
 import Narrative from "../components/Narrative";
-import ServiceList from '../components/ServiceList';
+// import ServiceList from '../components/ServiceList';
 import MainLayout from "../layouts/MainLayout";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
         <MainLayout>
             <WelcomeHero />
             <Narrative />
-            <ServiceList />
+            {/* <ServiceList /> */}
         </MainLayout>
     );
 };

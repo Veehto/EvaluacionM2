@@ -53,26 +53,41 @@ const Dashboard = () => {
 
     return (
     <MainLayout>
-        <h1>Dashboard</h1>
-        {user?.role === "admin" && (
-            <>
-                <p>Bienvenido, Administrador</p>
-                {error && <p style={{ color: "red" }}>{error}</p>}
-                <table>
-                    <thead>
-                        {renderTableHeaders()}
-                    </thead>
-                    <tbody>
-                        {renderTableRows()}
-                    </tbody>
-                </table>
-            </>
-        )}
-        {user?.role === "user" && (
-            <>
-                <p>Bienvenido, Usuario. No tienes acceso a esta página.</p>
-            </>
-        )}
+        <section className="pt-1 text-center container">
+            <div className="row pt-lg-5">
+                <div className="col-lg-6 col-md-8 mx-auto">
+                    <h1 className="fw-light">Dashboard</h1>
+                    <p className="lead text-body-secondary">
+                        Bienvenido, Administrador.
+                    </p>
+                    {/* <p>
+                        <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                    </p> */}
+                </div>
+            </div>
+        </section>
+
+        <div className="container text-center">
+            {user?.role === "admin" && (
+                <>
+                    {error && <p style={{ color: "red" }}>{error}</p>}
+                    <table style={{margin: "0 auto"}}>
+                        <thead>
+                            {renderTableHeaders()}
+                        </thead>
+                        <tbody>
+                            {renderTableRows()}
+                        </tbody>
+                    </table>
+                </>
+            )}
+            {user?.role === "user" && (
+                <>
+                    <p>Bienvenido, Usuario. No tienes acceso a esta página.</p>
+                </>
+            )}
+        </div>
     </MainLayout>
     );
 };

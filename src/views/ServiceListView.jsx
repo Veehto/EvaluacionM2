@@ -5,7 +5,6 @@ import GetLocation from '../components/GetLocation';
 export default function ServiceListView() {
     return (
         <MainLayout>
-            <h1>Servicios</h1>
             <ServiceList />
             <GetLocation />
         </MainLayout>

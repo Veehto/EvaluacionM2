@@ -1,7 +1,27 @@
 # Clínica Misión Real
-========================================
-
 El proposito del proyecto es brindar una solucion a la Clínica Misión Real para solucionar su falta de presencia en línea. La web app refleja la identidad del hospital, y brinda funcionalidades esenciales como ver los médicos, ver las sucursales existentes en los servicios, y agendar horas.
+
+
+## Feedback recibido durante curso Adalid Chile
+### Proyecto final: Web App Clínica/Hospital
+* Mejoras generales:
+    - Se mejora el estilo de todos los componentes.
+
+* Sección de Inicio de Sesión:
+    - Se mejora el estilo y presentación del componente Login.
+
+* Sección Doctores:
+    - Se mejora el estilo y la responsividad de las tarjetas de doctores.
+
+* Sección Reservas:
+    - Se mejora el estilo y presentación del componente de búsqueda de reservas.
+    - Se mejora el estilo de las tarjetas de reservas de pacientes.
+
+
+## Roadmap
+* Implementar input de búsqueda de doctores por nombre.
+* Desarrollar branch en que pretende reemplazar el uso de Bootstrap framework por Tailwindcss.
+
 
 ### Características Principales:
 * Implementación de usuarios `admin` y `user`, los cuales tienen distintos permisos par acceder a elementos y funciones de la página:
@@ -25,44 +45,48 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 
 
 ## Demo
-* Y está disponible al público la versión 1.0 de la aplicación web. Ésta está alojada en el sitio de PaaS Netlify, que aloja el frontend; y la base de datos está alojada en Render.
+https://misionrealclinica.netlify.app/
+* Ya está disponible al público la versión 1.0 de la aplicación web. Ésta está alojada en el sitio de PaaS Netlify, que aloja el frontend, y la base de datos está alojada en Render.
+
 
 ## Capturas de Pantalla del Proyecto
+![Login](src/assets/images/screenshots/0.png)<br>
+   Vista de formulario de inicio de sesión para administrador y usuario.
 
-- ![Home](src/assets/images/screenshots/1.png)
+![Home](src/assets/images/screenshots/1.png)<br>
    Vista inicio de la aplicación.
 
-- ![Home](src/assets/images/screenshots/2.png)
-   Vista inicio de la aplicación. Final página.
-
-- ![Doctores](src/assets/images/screenshots/3.png)
+![Doctores](src/assets/images/screenshots/3.png)<br>
    Vista página Doctores.
 
-- ![Doctores](src/assets/images/screenshots/4.png)
+![Doctores](src/assets/images/screenshots/4.png)<br>
    Vista página Doctores. Detalle doctor.
 
-- ![Agendar Hora](src/assets/images/screenshots/5.png)
+![Reservar Hora](src/assets/images/screenshots/5.png)<br>
    Vista página Agendar Hora (user), formulario para agendar una hora.
 
-- ![Servicios](src/assets/images/screenshots/6.png)
+![Servicios](src/assets/images/screenshots/6.png)<br>
    Vista página de Servicios.
 
-- ![Dashboard](src/assets/images/screenshots/7.png)
+![Dashboard](src/assets/images/screenshots/7.png)<br>
    Vista Dashboard (Admin). Con mock Información de administración.
 
-- ![Reservas](src/assets/images/screenshots/8.png)
+![Reservas](src/assets/images/screenshots/8.png)<br>
    Vista Reservas (Admin). Ver citas de pacientes.
 
-- ![Docotores](src/assets/images/screenshots/9.png)
-   Vista Doctores (Admin). Con formulario para agregar doctores.
+![Reservas](src/assets/images/screenshots/8,5.png)<br>
+   Vista Reservas (Admin). Tarjetas de citas de pacientes.
 
-- ![Docotores](src/assets/images/screenshots/10.png)
+![Docotores](src/assets/images/screenshots/9.png)<br>
+   Vista Doctores (Admin). Con formulario para agregar doctores al final de la página.
+
+![Docotores](src/assets/images/screenshots/10.png)<br>
    Vista Doctores (Admin). Detalles del doctor con opciones de editar o eliminar de base de datos.
 
-- ![Docotores](src/assets/images/screenshots/11.png)
+![Docotores](src/assets/images/screenshots/11.png)<br>
    Vista Doctores (Admin). Formulario para editar información de doctor.
 
-- ![Docotores](src/assets/images/screenshots/12.png)
+![Docotores](src/assets/images/screenshots/12.png)<br>
    Vista Doctores (Admin). Opción de eliminar despliega pop-up de confirmación.
 
 
@@ -78,7 +102,6 @@ El proposito del proyecto es brindar una solucion a la Clínica Misión Real par
 - [Vitest](https://vitest.dev/)
 - [Axios](https://axios-http.com/)
 
-
 ### Integración de Docker al proyecto
 * Se crean dos archivos, `Dockerfile` y `Dockerfile.server` para generar las imágenes necesarias para construir dos instancias: un contenedor que tiene el frontend de la aplicación y otro que contiene la JSON database. Se generan las imágenes y los contenedores por separado usando el archivo `compose.yml`.
 
@@ -92,9 +115,9 @@ Se escriben tres pruebas unitarias para testear la funcionalidad esperada de el 
 * `main`: host de la rama principal de desarrollo y de la versión para publicación.
 * `tailwind-branch`: Branch en desarrollo que pretende reemplazar el uso de Bootstrap framework por Tailwindcss.
 * versiones pasadas:
-    - BEM-Sass-branch
-    - Bootstrap-Sass-BEM
-    - JS-branch
+    - `BEM-Sass-branch`: Landing page estática estilizada con pre-procesador Sass y usando la notación BEM para mejor organización y factorización de las reglas CSS.
+    - `Bootstrap-Sass-BEM`: Landing page estática, que desde la base de Sass se agrega el uso del framework Bootstrap para elementos como la barra de navegación y sección de comentarios de usuarios. Se aprovechan las características responsivas del framework, lo que agilizó el desarrollo del estilo y adaptabilidad del sitio.
+    - `JS-branch`: Sobre la base de la versión anterior (`Bootstrap-Sass-BEM`) se agrega interactividad y funcionalidad expandida al sitio agregando lógica con JavaScript, principalmente en menús desplegables, formularios, y pop-up modals.
 
 ### Implementación React
 * Se utiliza la librería React.js para desarrollar una aplicación web interactiva y eficiente, empleando componentes reutilizables para distintas secciones de la web del hospital.
@@ -257,9 +280,12 @@ La aplicación estará disponible en `http://localhost:3000`.
 ├── src/
 │   ├── assets/
 │   │   └── images/
+│   │       ├── pwa/
+│   │       └── screenshots/
 │   ├── components/
 │   │   ├── AppointmentForm.jsx
 │   │   ├── Appointments.jsx
+│   │   ├── Component.jsx
 │   │   ├── ConfirmationModal.jsx
 │   │   ├── DoctorCard.jsx
 │   │   ├── DoctorCard.test.jsx
@@ -326,7 +352,7 @@ La aplicación estará disponible en `http://localhost:3000`.
 - [Victor CS](https://github.com/Veehto)
 
 
-==============================================================================================
+<hr>
 
 
 ## PREVIOUS BRANCHES Especificaciones Técnicas Versiones PASADAS
